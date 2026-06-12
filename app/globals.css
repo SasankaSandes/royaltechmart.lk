@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
+/* ---- RTM Design Tokens ---- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --yellow: #FDEA0A;
+  --yellow-deep: #E9D400;
+  --yellow-soft: #FEF6A8;
+  --ink: #111110;
+  --ink-2: #45453f;
+  --muted: #74746d;
+  --bg: #ffffff;
+  --surface: #f7f7f3;
+  --surface-2: #efefe9;
+  --line: #e9e9e2;
+  --line-2: #dcdcd3;
+  --wa: #25D366;
+  --wa-deep: #1da851;
+  --radius: 16px;
+  --radius-sm: 11px;
+  --radius-lg: 26px;
+  --pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(17,17,16,.05);
+  --shadow: 0 6px 24px -12px rgba(17,17,16,.18);
+  --shadow-lg: 0 24px 60px -24px rgba(17,17,16,.28);
+  --container: 1200px;
+  --font-head: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+  --head-bg: rgba(255,255,255,.82);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+::selection { background: var(--yellow); color: var(--ink); }
+
+/* ---- Layout helpers ---- */
+.wrap {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 28px;
+}
+.section { padding-block: 84px; }
+.section--tight { padding-block: 56px; }
+
+/* ---- Mono eyebrow ---- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+/* ---- Stars ---- */
+.stars { color: var(--yellow-deep); font-size: 13px; letter-spacing: 1px; }
+
+/* Stock badge colours */
+.stock-in   { background: #d1fae5; color: #1B8A4B; }
+.stock-low  { background: #fef3c7; color: #B4791B; }
+.stock-out  { background: #fee2e2; color: #B43B3B; }
+
+.cat-card { transition: transform .2s, box-shadow .2s; }
+.cat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+@media (max-width: 720px) {
+  .wrap { padding-inline: 18px; }
+  .section { padding-block: 56px; }
 }
