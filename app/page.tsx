@@ -11,12 +11,6 @@ import type { Product } from '@/lib/types';
 
 export const revalidate = 3600;
 
-const STATS = [
-  { value: '2,000+', label: 'Happy customers' },
-  { value: '100%', label: 'Genuine products' },
-  { value: '25+', label: 'Districts delivered' },
-];
-
 const CAT_NUMS = ['01', '02', '03', '04', '05'];
 
 export default async function Home() {
@@ -38,14 +32,13 @@ export default async function Home() {
             <div>
               <p className="eyebrow" style={{ marginBottom: 20 }}>Sri Lanka&apos;s mobile accessories store</p>
               <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontFamily: 'var(--font-head)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.02, marginBottom: 24 }}>
-                Genuine tech,{' '}
-                <span style={{ background: 'var(--yellow)', padding: '0 6px', borderRadius: 6 }}>royally priced</span>{' '}
-                for Sri Lanka
+                Tech accessories,{' '}
+                <span style={{ background: 'var(--yellow)', padding: '0 6px', borderRadius: 6 }}>delivered across Sri Lanka</span>
               </h1>
               <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 36, maxWidth: 480 }}>
-                From noise-cancelling earbuds to GaN chargers — every product is genuine, warranty-backed, and one WhatsApp away.
+                Pay on delivery, order on WhatsApp.
               </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 48 }}>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Link href="/shop" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                   background: 'var(--ink)', color: '#fff',
@@ -61,14 +54,6 @@ export default async function Home() {
                   {Icons.whatsapp} Chat to order
                 </a>
               </div>
-              <div style={{ display: 'flex', gap: 40 }}>
-                {STATS.map(s => (
-                  <div key={s.label}>
-                    <p style={{ fontFamily: 'var(--font-head)', fontSize: 28, fontWeight: 800, letterSpacing: '-0.02em' }}>{s.value}</p>
-                    <p style={{ fontSize: 13, color: 'var(--muted)' }}>{s.label}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Right — hero art */}
@@ -78,20 +63,8 @@ export default async function Home() {
               position: 'relative', overflow: 'hidden',
             }}>
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8 }}>
-                <span style={{ fontFamily: 'var(--mono)', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,.6)' }}>Royal Tech Mart</span>
-                <span style={{ fontFamily: 'var(--font-head)', fontSize: 48, fontWeight: 800, color: '#fff' }}>RTM</span>
-              </div>
-              {/* Floating badge */}
-              <div style={{
-                position: 'absolute', bottom: 24, left: 24,
-                background: '#fff', borderRadius: 12, padding: '10px 16px',
-                boxShadow: 'var(--shadow)', display: 'flex', alignItems: 'center', gap: 10,
-              }}>
-                <span style={{ color: 'var(--wa)' }}>{Icons.check}</span>
-                <div>
-                  <p style={{ fontSize: 12, fontWeight: 700 }}>100% Genuine</p>
-                  <p style={{ fontSize: 11, color: 'var(--muted)' }}>All products verified</p>
-                </div>
+                <span style={{ fontFamily: 'var(--mono)', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,.6)' }}>Novatek</span>
+                <span style={{ fontFamily: 'var(--font-head)', fontSize: 48, fontWeight: 800, color: '#fff' }}>NVT</span>
               </div>
               <div style={{
                 position: 'absolute', top: 24, right: 24,
@@ -195,7 +168,7 @@ export default async function Home() {
           <span style={{
             position: 'absolute', right: -20, top: -20, fontSize: 200, fontFamily: 'var(--font-head)',
             fontWeight: 800, color: 'rgba(17,17,16,.06)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none',
-          }}>RTM</span>
+          }}>NVT</span>
         </section>
 
         {/* Fresh arrivals */}

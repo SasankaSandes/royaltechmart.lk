@@ -1,7 +1,7 @@
 import { Icons } from './Icons';
 
 const ITEMS = [
-  { icon: Icons.check, title: '100% Genuine', sub: 'Sourced direct from brands' },
+  { icon: Icons.check, title: 'Pay on Delivery', sub: 'Across Sri Lanka' },
   { icon: Icons.truck, title: 'Island-wide Delivery', sub: 'Cash on delivery available' },
   { icon: Icons.shield, title: 'Warranty Backed', sub: 'Every product covered' },
   { icon: Icons.whatsapp, title: 'Order on WhatsApp', sub: 'Fast, easy, no app needed' },

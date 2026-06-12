@@ -8,12 +8,11 @@ import { waLink, FB_PAGE, EMAIL, PHONE } from '@/lib/catalog';
 import { Icons } from '@/components/Icons';
 
 export const metadata: Metadata = {
-  title: 'About — Royal Tech Mart',
-  description: 'Sri Lanka\'s trusted mobile accessories store. Learn about Royal Tech Mart and how to reach us.',
+  title: 'About — Novatek',
+  description: 'About Novatek — Sri Lanka\'s gadget store. Pay on delivery, order on WhatsApp.',
 };
 
 const WHY = [
-  { icon: Icons.check, title: '100% Genuine Products', body: 'Every item is sourced direct from authorised distributors. No fakes, no refurbs — just the real thing.' },
   { icon: Icons.truck, title: 'Island-wide Delivery', body: 'We deliver to all 25 districts. Cash on delivery available — pay when your order arrives.' },
   { icon: Icons.shield, title: 'Warranty Backed', body: 'All products carry manufacturer warranty. We handle claims so you don\'t have to.' },
   { icon: Icons.bolt, title: 'Fast WhatsApp Ordering', body: 'No accounts, no checkout forms. See something you like — one tap and your order is placed.' },
@@ -24,7 +23,6 @@ const FAQS = [
   { q: 'Do you accept cash on delivery?', a: 'Yes! COD is available island-wide. Pay when your order arrives — no upfront payment needed.' },
   { q: 'How long does delivery take?', a: 'Orders typically arrive within 1–3 business days depending on your location. We\'ll keep you updated via WhatsApp.' },
   { q: 'What is your return policy?', a: 'We accept returns within 7 days of delivery for unused products in original packaging. Contact us on WhatsApp to initiate a return.' },
-  { q: 'Are the products genuine?', a: 'Absolutely. We only source products from authorised distributors. Every item carries manufacturer warranty.' },
 ];
 
 export default function AboutPage() {
@@ -37,20 +35,20 @@ export default function AboutPage() {
           <div className="wrap" style={{ maxWidth: 720 }}>
             <p className="eyebrow" style={{ marginBottom: 16 }}>Our story</p>
             <h1 style={{ fontSize: 'clamp(36px,5vw,56px)', marginBottom: 20, fontFamily: 'var(--font-head)' }}>
-              Genuine mobile tech, royally priced.
+              Tech accessories for Sri Lanka.
             </h1>
             <p style={{ fontSize: 17, color: 'var(--ink-2)', lineHeight: 1.7 }}>
-              Royal Tech Mart was built for Sri Lankan customers who want quality mobile accessories without the hassle. No overpriced stores, no fake products — just genuine tech, fair prices, and the simplest ordering experience possible.
+              Novatek is Sri Lanka&apos;s trusted gadget store, bringing you the best value tech accessories.
             </p>
           </div>
         </section>
 
-        {/* Why RTM + Contact */}
+        {/* Why Novatek + Contact */}
         <section className="section">
           <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
-            {/* Why RTM */}
+            {/* Why Novatek */}
             <div>
-              <h2 style={{ fontSize: 'clamp(24px,3vw,34px)', marginBottom: 32 }}>Why Royal Tech Mart?</h2>
+              <h2 style={{ fontSize: 'clamp(24px,3vw,34px)', marginBottom: 32 }}>Why Novatek?</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
                 {WHY.map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -87,7 +85,7 @@ export default function AboutPage() {
                 {[
                   [Icons.phone, PHONE, `tel:${PHONE}`],
                   [Icons.mail, EMAIL, `mailto:${EMAIL}`],
-                  [Icons.facebook, 'facebook.com/royaltechmart', FB_PAGE],
+                  [Icons.facebook, 'facebook.com/novatek', FB_PAGE],
                   [Icons.clock, 'Mon–Sat · 9am – 7pm', null],
                   [Icons.pin, 'Island-wide delivery · Sri Lanka', null],
                 ].map(([icon, text, href], i) => (

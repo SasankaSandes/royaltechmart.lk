@@ -1,8 +1,8 @@
 import type { Product, CategoryInfo, Category } from './types';
 
 export const WHATSAPP = '94764834970';
-export const FB_PAGE = 'https://facebook.com/royaltechmart';
-export const EMAIL = 'hello@royaltechmart.lk';
+export const FB_PAGE = 'https://facebook.com/novatek'; // TODO: update to real Novatek page when live
+export const EMAIL = 'hello@novatek.lk'; // TODO: confirm real domain/email
 export const PHONE = '+94 76 483 4970';
 
 export const CATEGORIES: CategoryInfo[] = [
@@ -18,7 +18,7 @@ export function money(n: number): string {
 }
 
 export function itemCode(id: number): string {
-  return 'RTM-' + String(id).padStart(3, '0');
+  return 'NVT-' + String(id).padStart(3, '0');
 }
 
 export function slugify(name: string): string {
@@ -36,13 +36,13 @@ export function waLink(product?: Product): string {
   let text: string;
   if (product) {
     text =
-      `Hi Royal Tech Mart 👋\n\nI'd like to order:\n` +
+      `Hi Novatek 👋\n\nI'd like to order:\n` +
       `• ${product.name}\n` +
       `• Price: ${money(product.price)}\n` +
       `• Item code: ${itemCode(product.id)}\n\n` +
       `Please share availability & delivery details.`;
   } else {
-    text = `Hi Royal Tech Mart 👋 I'd like to know more about your products.`;
+    text = `Hi Novatek 👋 I'd like to know more about your products.`;
   }
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
 }

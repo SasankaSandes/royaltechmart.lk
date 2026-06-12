@@ -28,8 +28,8 @@ export default async function AdminPage() {
               background: '#111110', borderRadius: 8, width: 36, height: 36,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: 'var(--font-head)', fontWeight: 800, color: '#FDEA0A', fontSize: 14,
-            }}>R</span>
-            <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>RTM Admin</span>
+            }}>N</span>
+            <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Novatek Admin</span>
           </div>
           <form action={loginAction}>
             <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8 }}>Password</label>
@@ -64,7 +64,7 @@ export default async function AdminPage() {
           <span style={{
             fontFamily: 'var(--font-head)', fontWeight: 800,
             color: '#FDEA0A', fontSize: 16,
-          }}>RTM Admin</span>
+          }}>Novatek Admin</span>
           <span style={{ color: 'rgba(255,255,255,.3)', fontSize: 13 }}>Product Catalog</span>
         </div>
         <Link href="/" style={{ color: 'rgba(255,255,255,.5)', fontSize: 13 }}>← Back to site</Link>

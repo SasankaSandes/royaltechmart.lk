@@ -23,10 +23,10 @@ export default function Header() {
             background: '#111110', borderRadius: 10,
             width: 46, height: 46, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
           }}>
-            <Image src="/rtm-logo.png" alt="RTM" width={32} height={32} style={{ objectFit: 'contain' }} />
+            <Image src="/rtm-logo.png" alt="Novatek" width={32} height={32} style={{ objectFit: 'contain' }} />
           </span>
           <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>
-            Royal Tech Mart
+            Novatek
           </span>
         </Link>
 

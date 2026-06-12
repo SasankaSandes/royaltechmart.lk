@@ -10,7 +10,7 @@ import { CATEGORIES, money, waLink, itemCode, productUrl, PHONE } from '@/lib/ca
 import { getProductBySlug as bySlug, getRelatedProducts as related, getAllSlugs } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 
-const SITE_URL = 'https://royaltechmart.lk';
+const SITE_URL = 'https://novatek.lk'; // TODO: confirm real domain
 
 // ISR — revalidate product pages every hour so price/stock edits go live quickly
 export const revalidate = 3600;
@@ -25,10 +25,10 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params;
   const product = await bySlug(slug);
-  if (!product) return { title: 'Product not found — Royal Tech Mart' };
+  if (!product) return { title: 'Product not found — Novatek' };
   const ogImage = product.image ? `${SITE_URL}${product.image}` : undefined;
   return {
-    title: `${product.name} — Royal Tech Mart`,
+    title: `${product.name} — Novatek`,
     description: product.short,
     openGraph: {
       title: `${product.name} — ${money(product.price)}`,
@@ -110,7 +110,7 @@ export default async function ProductPage(
                     <span style={{
                       fontFamily: 'var(--font-head)', fontSize: 28, fontWeight: 800,
                       color: product.tone[0] === '#101010' ? '#FDEA0A' : '#fff', opacity: 0.7,
-                    }}>{brand || 'RTM'}</span>
+                    }}>{brand || 'NVT'}</span>
                     <span style={{
                       fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700,
                       textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,.45)',
@@ -227,7 +227,7 @@ export default async function ProductPage(
               <p style={{ fontSize: 14, color: 'var(--ink-2)', lineHeight: 1.75, marginBottom: 14 }}>{product.short}</p>
               {brand && (
                 <p style={{ fontSize: 13, color: 'var(--muted)' }}>
-                  Sold by <strong style={{ color: 'var(--ink)' }}>Royal Tech Mart</strong>. Genuine {brand} product sourced from authorised distributors — covered by {product.warranty}.
+                  Sold by <strong style={{ color: 'var(--ink)' }}>Novatek</strong>. {brand} product from authorised distributors, covered by {product.warranty}.
                 </p>
               )}
             </div>

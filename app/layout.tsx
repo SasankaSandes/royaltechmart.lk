@@ -24,11 +24,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Royal Tech Mart — Genuine mobile tech, royally priced.',
-  description: "Sri Lanka's trusted mobile accessories store. Earbuds, chargers, power banks, holders & cables. Island-wide delivery. Order on WhatsApp.",
-  metadataBase: new URL('https://royaltechmart.lk'),
+  title: 'Novatek — Tech accessories in Sri Lanka',
+  description: 'Tech accessories in Sri Lanka — earbuds, chargers, power banks, holders and cables. Pay on delivery, order on WhatsApp.',
+  metadataBase: new URL('https://novatek.lk'), // TODO: confirm real domain
   openGraph: {
-    siteName: 'Royal Tech Mart',
+    siteName: 'Novatek',
     locale: 'en_LK',
     type: 'website',
   },

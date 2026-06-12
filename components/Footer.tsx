@@ -12,12 +12,12 @@ export default function Footer() {
           <div>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
               <span style={{ background: '#111110', border: '1px solid #333', borderRadius: 10, width: 46, height: 46, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Image src="/rtm-logo.png" alt="RTM" width={32} height={32} style={{ objectFit: 'contain' }} />
+                <Image src="/rtm-logo.png" alt="Novatek" width={32} height={32} style={{ objectFit: 'contain' }} />
               </span>
-              <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Royal Tech Mart</span>
+              <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Novatek</span>
             </Link>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.65, marginBottom: 20 }}>
-              Genuine mobile accessories, royally priced. Island-wide delivery. Order on WhatsApp.
+              Tech accessories, delivered island-wide. Pay on delivery, order on WhatsApp.
             </p>
             <div style={{ display: 'flex', gap: 10 }}>
               <a href={FB_PAGE} target="_blank" rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export default function Footer() {
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ color: 'rgba(255,255,255,.35)', fontSize: 13 }}>
-            © {new Date().getFullYear()} Royal Tech Mart. All rights reserved.
+            © {new Date().getFullYear()} Novatek. All rights reserved.
           </p>
           <p style={{ color: 'rgba(255,255,255,.35)', fontSize: 13 }}>
             Island-wide delivery · Cash on delivery
