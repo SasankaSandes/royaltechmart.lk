@@ -9,12 +9,12 @@ const ITEMS = [
 
 export default function TrustStrip() {
   return (
-    <section style={{ background: 'var(--ink)', color: '#fff', paddingBlock: 36 }}>
+    <section style={{ background: 'var(--surface-ink)', color: '#fff', paddingBlock: 36 }}>
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
           {ITEMS.map(item => (
             <div key={item.title} style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-              <span style={{ color: 'var(--yellow)', flexShrink: 0, marginTop: 2 }}>{item.icon}</span>
+              <span style={{ color: 'var(--accent-mist)', flexShrink: 0, marginTop: 2 }}>{item.icon}</span>
               <div>
                 <p style={{ fontWeight: 700, fontSize: 15, marginBottom: 3 }}>{item.title}</p>
                 <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 13 }}>{item.sub}</p>

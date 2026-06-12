@@ -12,22 +12,14 @@ export default function Header() {
   return (
     <header style={{
       position: 'sticky', top: 0, zIndex: 50,
-      height: 76, display: 'flex', alignItems: 'center',
-      background: 'var(--head-bg)', backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid var(--line)',
+      height: 80, display: 'flex', alignItems: 'center',
+      background: 'var(--surface-raised)',
+      boxShadow: 'var(--shadow)',
     }}>
       <div className="wrap" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-        {/* Logo */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
-          <span style={{
-            background: '#111110', borderRadius: 10,
-            width: 46, height: 46, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-          }}>
-            <Image src="/rtm-logo.png" alt="Novatek" width={32} height={32} style={{ objectFit: 'contain' }} />
-          </span>
-          <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>
-            Novatek
-          </span>
+        {/* Wordmark */}
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }} aria-label="Novatek home">
+          <Image src="/novatek-logo.svg" alt="Novatek" width={120} height={33} priority style={{ height: 22, width: 'auto' }} />
         </Link>
 
         {/* Nav */}

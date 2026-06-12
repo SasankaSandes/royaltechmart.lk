@@ -42,7 +42,7 @@ export async function generateMetadata(
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <span style={{ display: 'inline-flex', gap: 3, color: '#E9D400', alignItems: 'center' }}>
+    <span style={{ display: 'inline-flex', gap: 3, color: 'var(--nv-slate-400)', alignItems: 'center' }}>
       {[1, 2, 3, 4, 5].map(i => (
         <span key={i} style={{ opacity: i <= Math.round(rating) ? 1 : 0.2 }}>{Icons.star}</span>
       ))}
@@ -93,9 +93,9 @@ export default async function ProductPage(
             {/* ── Left — Image ── */}
             <div style={{ position: 'sticky', top: 96 }}>
               <div style={{
-                aspectRatio: '1', borderRadius: 'var(--radius-lg)',
+                aspectRatio: '1', borderRadius: 'var(--radius-xl)',
                 overflow: 'hidden', marginBottom: 12,
-                background: `linear-gradient(135deg, ${product.tone[0]} 0%, ${product.tone[1]} 100%)`,
+                background: 'var(--surface-card)', boxShadow: 'var(--shadow-sm)',
                 position: 'relative',
               }}>
                 {product.image ? (
@@ -104,16 +104,17 @@ export default async function ProductPage(
                 ) : (
                   <div style={{
                     position: 'absolute', inset: 0,
+                    background: 'linear-gradient(135deg, var(--nv-haze-400) 0%, var(--nv-haze-600) 100%)',
                     display: 'flex', flexDirection: 'column',
                     alignItems: 'center', justifyContent: 'center', gap: 12,
                   }}>
                     <span style={{
-                      fontFamily: 'var(--font-head)', fontSize: 28, fontWeight: 800,
-                      color: product.tone[0] === '#101010' ? '#FDEA0A' : '#fff', opacity: 0.7,
+                      fontFamily: 'var(--font-head)', fontSize: 28, fontWeight: 600,
+                      color: 'var(--text-tertiary)',
                     }}>{brand || 'NVT'}</span>
                     <span style={{
-                      fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700,
-                      textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,.45)',
+                      fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 600,
+                      textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--text-muted, var(--nv-slate-300))',
                     }}>{itemCode(product.id)}</span>
                   </div>
                 )}
@@ -147,8 +148,8 @@ export default async function ProductPage(
                     fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700,
                     textTransform: 'uppercase', letterSpacing: '0.15em',
                     padding: '3px 10px', borderRadius: 'var(--pill)',
-                    background: product.badge === 'Trending' ? 'var(--ink)' : product.badge === 'Featured' ? 'var(--yellow)' : 'var(--surface-2)',
-                    color: product.badge === 'Trending' ? 'var(--yellow)' : 'var(--ink)',
+                    background: product.badge === 'Featured' ? 'var(--accent-success)' : product.badge === 'Trending' ? 'var(--surface-ink)' : 'var(--surface-control)',
+                    color: product.badge === 'New' ? 'var(--ink-2)' : '#fff',
                   }}>{product.badge}</span>
                 )}
               </div>
@@ -165,11 +166,11 @@ export default async function ProductPage(
               <p style={{ fontSize: 15, color: 'var(--ink-2)', lineHeight: 1.7, marginBottom: 24, paddingBottom: 24, borderBottom: '1px solid var(--line)' }}>{product.short}</p>
 
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: savings ? 10 : 24, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 38, fontFamily: 'var(--font-head)', fontWeight: 800, letterSpacing: '-0.02em' }}>{money(product.price)}</span>
+                <span style={{ fontSize: 38, fontFamily: 'var(--font-head)', fontWeight: 600, letterSpacing: '-0.01em' }}>{money(product.price)}</span>
                 {product.oldPrice && <span style={{ fontSize: 17, color: 'var(--muted)', textDecoration: 'line-through' }}>{money(product.oldPrice)}</span>}
               </div>
               {savings > 0 && (
-                <div style={{ display: 'inline-flex', background: 'var(--yellow)', borderRadius: 'var(--pill)', padding: '5px 14px', fontSize: 13, fontWeight: 700, marginBottom: 24 }}>
+                <div style={{ display: 'inline-flex', background: 'var(--accent-success-surface, var(--nv-green-50))', color: 'var(--accent-success)', borderRadius: 'var(--pill)', padding: '5px 14px', fontSize: 13, fontWeight: 600, marginBottom: 24 }}>
                   Save {money(savings)} · {pct}% off
                 </div>
               )}

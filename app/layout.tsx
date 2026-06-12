@@ -1,25 +1,20 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Manrope, Space_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+// Funnel Display — display / headings (variable, 300–800)
+const funnelDisplay = localFont({
+  src: './fonts/FunnelDisplay-VariableFont_wght.ttf',
+  weight: '300 800',
   variable: '--font-head',
   display: 'swap',
 });
 
-const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+// Stack Sans Text — UI labels, body, prices, captions (variable, 200–700)
+const stackSans = localFont({
+  src: './fonts/StackSansText-VariableFont_wght.ttf',
+  weight: '200 700',
   variable: '--font-body',
-  display: 'swap',
-});
-
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--mono',
   display: 'swap',
 });
 
@@ -36,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${funnelDisplay.variable} ${stackSans.variable}`}>
       <body>{children}</body>
     </html>
   );

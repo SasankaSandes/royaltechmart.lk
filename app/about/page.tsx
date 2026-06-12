@@ -52,7 +52,7 @@ export default function AboutPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
                 {WHY.map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                    <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--yellow)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-control)', color: 'var(--text-strong)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       {item.icon}
                     </span>
                     <div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   href
                     ? <a key={i} href={href as string} target={(href as string).startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
                         style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'rgba(255,255,255,.75)', fontSize: 14 }}>
-                        <span style={{ flexShrink: 0, color: 'var(--yellow)' }}>{icon as React.ReactNode}</span>
+                        <span style={{ flexShrink: 0, color: 'var(--accent-mist)' }}>{icon as React.ReactNode}</span>
                         {text as string}
                       </a>
                     : <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'rgba(255,255,255,.55)', fontSize: 14 }}>
@@ -130,25 +130,24 @@ export default function AboutPage() {
         </section>
 
         {/* CTA band */}
-        <section style={{ background: 'var(--yellow)', paddingBlock: 72 }}>
+        <section style={{ background: 'var(--surface-raised)', paddingBlock: 72 }}>
           <div className="wrap" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(28px,4vw,44px)', marginBottom: 16 }}>Ready to order?</h2>
-            <p style={{ fontSize: 17, color: 'var(--ink-2)', marginBottom: 36, maxWidth: 480, marginInline: 'auto' }}>
+            <h2 style={{ fontSize: 'clamp(28px,4vw,48px)', marginBottom: 16 }}>Ready to order?</h2>
+            <p style={{ fontSize: 19, color: 'var(--text-secondary)', marginBottom: 36, maxWidth: 480, marginInline: 'auto' }}>
               Browse the catalogue or chat directly on WhatsApp — we&apos;ll get you sorted.
             </p>
-            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/shop" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: 'var(--ink)', color: '#fff',
-                padding: '13px 28px', borderRadius: 'var(--pill)', fontWeight: 700, fontSize: 15,
+                background: 'var(--surface-ink)', color: '#fff',
+                padding: '14px 32px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
               }}>
                 Browse the shop {Icons.arrow}
               </Link>
               <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: 'transparent', color: 'var(--ink)',
-                padding: '13px 28px', borderRadius: 'var(--pill)', fontWeight: 700, fontSize: 15,
-                border: '2px solid var(--ink)',
+                background: 'var(--wa)', color: '#fff',
+                padding: '14px 32px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
               }}>
                 {Icons.whatsapp} Chat to order
               </a>

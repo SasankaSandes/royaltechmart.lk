@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
@@ -31,50 +32,48 @@ export default async function Home() {
             {/* Left */}
             <div>
               <p className="eyebrow" style={{ marginBottom: 20 }}>Sri Lanka&apos;s mobile accessories store</p>
-              <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontFamily: 'var(--font-head)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.02, marginBottom: 24 }}>
-                Tech accessories,{' '}
-                <span style={{ background: 'var(--yellow)', padding: '0 6px', borderRadius: 6 }}>delivered across Sri Lanka</span>
+              <h1 style={{ fontSize: 'clamp(40px,6vw,69px)', fontFamily: 'var(--font-head)', fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1, marginBottom: 24, color: 'var(--text-strong)' }}>
+                Tech accessories, delivered across Sri Lanka
               </h1>
-              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 36, maxWidth: 480 }}>
+              <p style={{ fontSize: 19, color: 'var(--text-secondary)', lineHeight: 1.45, marginBottom: 36, maxWidth: 480 }}>
                 Pay on delivery, order on WhatsApp.
               </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Link href="/shop" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'var(--ink)', color: '#fff',
-                  padding: '13px 26px', borderRadius: 'var(--pill)', fontWeight: 700, fontSize: 15,
+                  background: 'var(--surface-ink)', color: '#fff',
+                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
                 }}>
                   Browse the shop {Icons.arrow}
                 </Link>
                 <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                   background: 'var(--wa)', color: '#fff',
-                  padding: '13px 26px', borderRadius: 'var(--pill)', fontWeight: 700, fontSize: 15,
+                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
                 }}>
                   {Icons.whatsapp} Chat to order
                 </a>
               </div>
             </div>
 
-            {/* Right — hero art */}
+            {/* Right — hero art (haze panel) */}
             <div style={{
               aspectRatio: '4/4.2', borderRadius: 'var(--radius-lg)',
-              background: 'linear-gradient(135deg, #FDEA0A 0%, #1b1b1b 100%)',
+              background: 'var(--surface-raised)', boxShadow: 'var(--shadow-sm)',
               position: 'relative', overflow: 'hidden',
             }}>
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8 }}>
-                <span style={{ fontFamily: 'var(--mono)', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,.6)' }}>Novatek</span>
-                <span style={{ fontFamily: 'var(--font-head)', fontSize: 48, fontWeight: 800, color: '#fff' }}>NVT</span>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Image src="/novatek-logo.svg" alt="Novatek" width={260} height={71} style={{ width: '52%', height: 'auto', opacity: 0.9 }} />
               </div>
               <div style={{
                 position: 'absolute', top: 24, right: 24,
-                background: '#111110', borderRadius: 12, padding: '10px 16px',
-                boxShadow: 'var(--shadow)', color: '#fff', display: 'flex', alignItems: 'center', gap: 10,
+                background: 'var(--surface-card)', borderRadius: 16, padding: '10px 16px',
+                boxShadow: 'var(--shadow)', color: 'var(--text-default)', display: 'flex', alignItems: 'center', gap: 10,
               }}>
-                <span style={{ color: 'var(--yellow)' }}>{Icons.truck}</span>
+                <span style={{ color: 'var(--text-strong)' }}>{Icons.truck}</span>
                 <div>
-                  <p style={{ fontSize: 12, fontWeight: 700 }}>Island-wide</p>
-                  <p style={{ fontSize: 11, color: 'rgba(255,255,255,.55)' }}>COD available</p>
+                  <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-strong)' }}>Island-wide</p>
+                  <p style={{ fontSize: 11, color: 'var(--text-secondary)' }}>COD available</p>
                 </div>
               </div>
             </div>
@@ -99,17 +98,17 @@ export default async function Home() {
               {CATEGORIES.map((cat, i) => (
                 <Link key={cat.id} href={`/shop?cat=${cat.id}`} className="cat-card"
                   style={{
-                    background: '#fff', border: '1px solid var(--line)',
-                    borderRadius: 'var(--radius)', padding: '24px 20px',
+                    background: 'var(--surface-card)', boxShadow: 'var(--shadow-sm)',
+                    borderRadius: 'var(--radius-lg)', padding: '28px 24px',
                     display: 'flex', flexDirection: 'column', gap: 12,
                   }}
                 >
-                  <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: '0.1em' }}>{CAT_NUMS[i]}</span>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text-tertiary)', letterSpacing: '0.1em' }}>{CAT_NUMS[i]}</span>
                   <div>
-                    <p style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{cat.label}</p>
-                    <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.5 }}>{cat.blurb}</p>
+                    <p style={{ fontFamily: 'var(--font-head)', fontWeight: 500, fontSize: 16, marginBottom: 6 }}>{cat.label}</p>
+                    <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5 }}>{cat.blurb}</p>
                   </div>
-                  <span style={{ color: 'var(--muted)', marginTop: 'auto', display: 'flex' }}>{Icons.arrow}</span>
+                  <span style={{ color: 'var(--text-tertiary)', marginTop: 'auto', display: 'flex' }}>{Icons.arrow}</span>
                 </Link>
               ))}
             </div>
@@ -134,41 +133,40 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Facebook band */}
-        <section style={{ paddingBlock: 84, background: 'var(--yellow)', position: 'relative', overflow: 'hidden' }}>
+        {/* Facebook band — single dark feature panel */}
+        <section style={{ paddingBlock: 84, background: 'var(--surface-ink)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ maxWidth: 680 }}>
-              <p className="eyebrow" style={{ marginBottom: 16, color: 'var(--ink)' }}>How it works</p>
-              <h2 style={{ fontSize: 'clamp(28px,4vw,40px)', marginBottom: 20 }}>
+              <p className="eyebrow" style={{ marginBottom: 16, color: 'rgba(255,255,255,.5)' }}>How it works</p>
+              <h2 style={{ fontSize: 'clamp(28px,4vw,48px)', marginBottom: 20, color: '#fff' }}>
                 See it on Facebook.<br />Order on WhatsApp.
               </h2>
-              <p style={{ fontSize: 17, color: 'var(--ink-2)', lineHeight: 1.65, marginBottom: 36, maxWidth: 520 }}>
+              <p style={{ fontSize: 19, color: 'rgba(255,255,255,.72)', lineHeight: 1.45, marginBottom: 36, maxWidth: 520 }}>
                 We post every new arrival on our Facebook page. Click the link to see the full spec & price, then tap &ldquo;Order on WhatsApp&rdquo; to place your order in seconds — no account, no checkout, no hassle.
               </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <a href={FB_PAGE} target="_blank" rel="noopener noreferrer" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'var(--ink)', color: '#fff',
-                  padding: '13px 26px', borderRadius: 'var(--pill)', fontWeight: 700, fontSize: 15,
+                  background: 'var(--surface-card)', color: 'var(--text-strong)',
+                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
                 }}>
                   {Icons.facebook} Follow on Facebook
                 </a>
                 <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'transparent', color: 'var(--ink)',
-                  padding: '13px 26px', borderRadius: 'var(--pill)', fontWeight: 700, fontSize: 15,
-                  border: '2px solid var(--ink)',
+                  background: 'var(--wa)', color: '#fff',
+                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
                 }}>
                   {Icons.whatsapp} Chat to order
                 </a>
               </div>
             </div>
           </div>
-          {/* Watermark */}
-          <span style={{
-            position: 'absolute', right: -20, top: -20, fontSize: 200, fontFamily: 'var(--font-head)',
-            fontWeight: 800, color: 'rgba(17,17,16,.06)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none',
-          }}>NVT</span>
+          {/* Watermark wordmark */}
+          <Image src="/novatek-logo.svg" alt="" aria-hidden width={520} height={143} style={{
+            position: 'absolute', right: -30, bottom: -20, width: 420, height: 'auto',
+            opacity: 0.06, filter: 'invert(1)', userSelect: 'none', pointerEvents: 'none',
+          }} />
         </section>
 
         {/* Fresh arrivals */}

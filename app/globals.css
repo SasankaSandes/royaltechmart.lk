@@ -1,32 +1,86 @@
 @import "tailwindcss";
 
-/* ---- RTM Design Tokens ---- */
+/* ═══════════════════════════════════════════════════════════════
+   Novatek Design System — near-monochrome, quiet-premium.
+   Canonical tokens (colors / type / spacing) + a compatibility
+   layer mapping legacy var names so existing inline styles inherit.
+   ═══════════════════════════════════════════════════════════════ */
 :root {
-  --yellow: #FDEA0A;
-  --yellow-deep: #E9D400;
-  --yellow-soft: #FEF6A8;
-  --ink: #111110;
-  --ink-2: #45453f;
-  --muted: #74746d;
-  --bg: #ffffff;
-  --surface: #f7f7f3;
-  --surface-2: #efefe9;
-  --line: #e9e9e2;
-  --line-2: #dcdcd3;
+  /* ── Canonical Novatek palette ───────────────────────────── */
+  --nv-black: #000000;
+  --nv-white: #ffffff;
+  /* Slate — primary neutral ramp */
+  --nv-slate-950: #19191a;
+  --nv-slate-900: #2d2e2f;
+  --nv-slate-700: #555658;
+  --nv-slate-500: #7d7f82;
+  --nv-slate-400: #929396;
+  --nv-slate-300: #a7a8aa;
+  /* Black Haze — off-white canvas ramp */
+  --nv-haze-600: #eaedf2;   /* chip / control fill */
+  --nv-haze-400: #f7f8fa;   /* page surface */
+  --nv-haze-300: #fefefe;   /* base canvas */
+  --nv-line: #e3e3e3;
+  --nv-line-cool: #dee2ea;
+  /* Accents (sparing) */
+  --nv-green-500: #17b069;
+  --nv-green-50: #ebfff5;
+  --nv-mist-500: #b8c1d3;
+  --nv-sisal-500: #d3cab8;
+
+  /* ── Semantic aliases ────────────────────────────────────── */
+  --text-strong: var(--nv-black);
+  --text-default: var(--nv-slate-900);
+  --text-secondary: #6b737d;
+  --text-tertiary: var(--nv-slate-400);
+  --surface-page: var(--nv-haze-300);
+  --surface-raised: var(--nv-haze-400);
+  --surface-card: var(--nv-white);
+  --surface-control: var(--nv-haze-600);
+  --surface-ink: var(--nv-slate-900);
+  --accent-success: var(--nv-green-500);
+  --accent-mist: var(--nv-mist-500);
+  --accent-sand: var(--nv-sisal-500);
+
+  /* ── Legacy compatibility layer (existing inline styles) ─── */
+  --ink: var(--nv-slate-950);
+  --ink-2: var(--nv-slate-700);
+  --muted: var(--nv-slate-500);
+  --bg: var(--surface-page);
+  --surface: var(--surface-raised);
+  --surface-2: var(--surface-control);
+  --line: var(--nv-line);
+  --line-2: var(--nv-line-cool);
+  /* Yellow is retired → neutralised so any stray usage de-yellows */
+  --yellow: var(--surface-control);
+  --yellow-deep: var(--nv-slate-400);
+  --yellow-soft: var(--nv-haze-400);
+  /* WhatsApp stays green (functional brand recognition) */
   --wa: #25D366;
   --wa-deep: #1da851;
+
+  /* Radii */
   --radius: 16px;
-  --radius-sm: 11px;
-  --radius-lg: 26px;
-  --pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(17,17,16,.05);
-  --shadow: 0 6px 24px -12px rgba(17,17,16,.18);
-  --shadow-lg: 0 24px 60px -24px rgba(17,17,16,.28);
-  --container: 1200px;
-  --font-head: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Manrope', system-ui, sans-serif;
-  --mono: 'Space Mono', ui-monospace, monospace;
-  --head-bg: rgba(255,255,255,.82);
+  --radius-sm: 8px;
+  --radius-lg: 32px;
+  --radius-xl: 48px;
+  --pill: 9999px;
+
+  /* Feather-light shadows */
+  --shadow-sm: 0 2px 2px 0 rgba(0,0,0,.05);
+  --shadow: 0 4px 4px 0 rgba(0,0,0,.08);
+  --shadow-lg: 0 12px 32px -8px rgba(0,0,0,.18);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+
+  --container: 1224px;
+  /* --font-head (Funnel Display) and --font-body (Stack Sans Text) are
+     provided by next/font/local on <html>. Mono reuses the text font. */
+  --mono: var(--font-body);
+  --head-bg: rgba(247,248,250,.82);
 }
 
 /* ---- Reset ---- */
@@ -35,9 +89,9 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font-body);
-  color: var(--ink);
+  color: var(--text-default);
   background: var(--bg);
-  line-height: 1.55;
+  line-height: 1.45;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -47,11 +101,12 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 h1, h2, h3, h4 {
   font-family: var(--font-head);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--text-strong);
 }
-::selection { background: var(--yellow); color: var(--ink); }
+::selection { background: var(--surface-control); color: var(--text-strong); }
 
 /* ---- Layout helpers ---- */
 .wrap {
@@ -72,15 +127,15 @@ h1, h2, h3, h4 {
   color: var(--muted);
 }
 
-/* ---- Stars ---- */
-.stars { color: var(--yellow-deep); font-size: 13px; letter-spacing: 1px; }
+/* ---- Stars (quiet slate, not gold) ---- */
+.stars { color: var(--nv-slate-400); font-size: 13px; letter-spacing: 1px; }
 
-/* Stock badge colours */
-.stock-in   { background: #d1fae5; color: #1B8A4B; }
-.stock-low  { background: #fef3c7; color: #B4791B; }
-.stock-out  { background: #fee2e2; color: #B43B3B; }
+/* Stock badge colours — quiet tints */
+.stock-in   { background: var(--nv-green-50); color: var(--nv-green-500); }
+.stock-low  { background: #f3f0e8; color: #8f7d59; }
+.stock-out  { background: #f4eaea; color: #a35b5b; }
 
-.cat-card { transition: transform .2s, box-shadow .2s; }
+.cat-card { transition: transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard); }
 .cat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 
 @media (max-width: 720px) {

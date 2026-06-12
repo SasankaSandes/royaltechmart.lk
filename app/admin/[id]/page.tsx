@@ -19,7 +19,7 @@ export default async function EditProductPage({ params }: { params: Promise<{ id
         background: '#111110', color: '#fff', height: 60,
         display: 'flex', alignItems: 'center', paddingInline: 28, gap: 16,
       }}>
-        <span style={{ fontFamily: 'var(--font-head)', fontWeight: 800, color: '#FDEA0A', fontSize: 16 }}>Novatek Admin</span>
+        <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, color: 'var(--accent-mist)', fontSize: 16 }}>Novatek Admin</span>
         <span style={{ color: 'rgba(255,255,255,.3)' }}>›</span>
         <span style={{ color: 'rgba(255,255,255,.7)', fontSize: 14 }}>Edit product</span>
         <div style={{ flex: 1 }} />

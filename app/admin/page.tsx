@@ -27,7 +27,7 @@ export default async function AdminPage() {
             <span style={{
               background: '#111110', borderRadius: 8, width: 36, height: 36,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: 'var(--font-head)', fontWeight: 800, color: '#FDEA0A', fontSize: 14,
+              fontFamily: 'var(--font-head)', fontWeight: 800, color: 'var(--accent-mist)', fontSize: 14,
             }}>N</span>
             <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Novatek Admin</span>
           </div>
@@ -63,7 +63,7 @@ export default async function AdminPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{
             fontFamily: 'var(--font-head)', fontWeight: 800,
-            color: '#FDEA0A', fontSize: 16,
+            color: 'var(--accent-mist)', fontSize: 16,
           }}>Novatek Admin</span>
           <span style={{ color: 'rgba(255,255,255,.3)', fontSize: 13 }}>Product Catalog</span>
         </div>

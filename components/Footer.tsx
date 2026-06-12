@@ -10,11 +10,8 @@ export default function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
           {/* Brand */}
           <div>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-              <span style={{ background: '#111110', border: '1px solid #333', borderRadius: 10, width: 46, height: 46, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Image src="/rtm-logo.png" alt="Novatek" width={32} height={32} style={{ objectFit: 'contain' }} />
-              </span>
-              <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Novatek</span>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', marginBottom: 16 }} aria-label="Novatek home">
+              <Image src="/novatek-logo.svg" alt="Novatek" width={120} height={33} style={{ height: 24, width: 'auto', filter: 'invert(1)' }} />
             </Link>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.65, marginBottom: 20 }}>
               Tech accessories, delivered island-wide. Pay on delivery, order on WhatsApp.
