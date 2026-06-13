@@ -36,18 +36,34 @@ const SLIDES: Slide[] = [
   },
 ];
 
-export default function HeroBanner() {
-  const [i, setI] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const n = SLIDES.length;
+const DURATION = 600; // ms — must match the CSS transition below
 
-  const go = useCallback((next: number) => setI(((next % n) + n) % n), [n]);
+export default function HeroBanner() {
+  const n = SLIDES.length;
+  // Extended track: [lastClone, ...SLIDES, firstClone] for a seamless loop.
+  const extended = [SLIDES[n - 1], ...SLIDES, SLIDES[0]];
+  const [pos, setPos] = useState(1); // start on the first real slide
+  const [transitionOn, setTransitionOn] = useState(true);
+  const [paused, setPaused] = useState(false);
+
+  // Cap at the clone boundaries (0 = last clone, n+1 = first clone) so rapid
+  // clicks / auto-advance can never overshoot.
+  const next = useCallback(() => { setTransitionOn(true); setPos(p => Math.min(p + 1, n + 1)); }, [n]);
+  const prev = useCallback(() => { setTransitionOn(true); setPos(p => Math.max(p - 1, 0)); }, [n]);
+
+  // When we land on a clone, snap to the matching real slide after the slide
+  // animation finishes (timer-based — transitionend is unreliable here).
+  useEffect(() => {
+    if (pos !== 0 && pos !== n + 1) return;
+    const t = setTimeout(() => { setTransitionOn(false); setPos(pos === 0 ? n : 1); }, DURATION);
+    return () => clearTimeout(t);
+  }, [pos, n]);
 
   useEffect(() => {
     if (paused) return;
-    const t = setInterval(() => setI(p => (p + 1) % n), 6000);
+    const t = setInterval(next, 6000);
     return () => clearInterval(t);
-  }, [paused, n]);
+  }, [paused, next]);
 
   return (
     <section
@@ -61,8 +77,8 @@ export default function HeroBanner() {
       }}
     >
       {/* Slides track */}
-      <div style={{ display: 'flex', height: '100%', transform: `translateX(-${i * 100}%)`, transition: 'transform 600ms var(--ease-standard)' }}>
-        {SLIDES.map((s, idx) => (
+      <div style={{ display: 'flex', height: '100%', transform: `translateX(-${pos * 100}%)`, transition: transitionOn ? `transform ${DURATION}ms var(--ease-standard)` : 'none' }}>
+        {extended.map((s, idx) => (
           <div key={idx} style={{ flex: '0 0 100%', height: '100%', position: 'relative', background: s.background, overflow: 'hidden' }}>
             {/* Wordmark watermark */}
             <Image src="/novatek-logo.svg" alt="" aria-hidden width={520} height={143}
@@ -82,23 +98,12 @@ export default function HeroBanner() {
       </div>
 
       {/* Prev / Next arrows */}
-      <button aria-label="Previous slide" onClick={() => go(i - 1)} className="hero-arrow" style={arrowStyle('left')}>
+      <button aria-label="Previous slide" onClick={prev} className="hero-arrow" style={arrowStyle('left')}>
         <Chevron dir="left" />
       </button>
-      <button aria-label="Next slide" onClick={() => go(i + 1)} className="hero-arrow" style={arrowStyle('right')}>
+      <button aria-label="Next slide" onClick={next} className="hero-arrow" style={arrowStyle('right')}>
         <Chevron dir="right" />
       </button>
-
-      {/* Dots */}
-      <div style={{ position: 'absolute', bottom: 92, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 8, zIndex: 3 }}>
-        {SLIDES.map((_, idx) => (
-          <button key={idx} aria-label={`Go to slide ${idx + 1}`} onClick={() => go(idx)}
-            style={{
-              width: idx === i ? 22 : 8, height: 8, borderRadius: 'var(--pill)', border: 'none', cursor: 'pointer',
-              background: idx === i ? '#fff' : 'rgba(255,255,255,.4)', transition: 'width .25s, background .25s',
-            }} />
-        ))}
-      </div>
 
       {/* Search overlay — fixed over the bottom of the banner */}
       <div style={{ position: 'absolute', bottom: 28, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 24px', zIndex: 3 }}>
