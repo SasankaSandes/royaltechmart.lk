@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
 import ProductCard from '@/components/ProductCard';
+import HomeSearch from '@/components/HomeSearch';
 import { CATEGORIES, FB_PAGE } from '@/lib/catalog';
 import { getAllProducts } from '@/lib/db';
 import { Icons } from '@/components/Icons';
@@ -32,16 +33,14 @@ export default async function Home() {
           <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: 48, alignItems: 'center' }}>
             {/* Left */}
             <div>
-              <p className="eyebrow" style={{ marginBottom: 20 }}>Sri Lanka&apos;s mobile accessories store</p>
+              <p className="eyebrow" style={{ marginBottom: 20 }}>Sri Lanka&apos;s tech accessories store</p>
               <h1 style={{ fontSize: 'clamp(40px,6vw,69px)', fontFamily: 'var(--font-head)', fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1, marginBottom: 24, color: 'var(--text-strong)' }}>
                 Tech accessories, delivered across Sri Lanka
               </h1>
               <p style={{ fontSize: 19, color: 'var(--text-secondary)', lineHeight: 1.45, marginBottom: 36, maxWidth: 480 }}>
                 Pay on delivery, order on WhatsApp.
               </p>
-              <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Button href="/shop" variant="primary" icon={Icons.arrow}>Browse the shop</Button>
-              </div>
+              <HomeSearch />
             </div>
 
             {/* Right — hero art (haze panel) */}
@@ -111,11 +110,10 @@ export default async function Home() {
             <div style={{ maxWidth: 680 }}>
               <p className="eyebrow" style={{ marginBottom: 16, color: 'rgba(255,255,255,.5)' }}>How it works</p>
               <h2 style={{ fontSize: 'clamp(28px,4vw,48px)', marginBottom: 20, color: '#fff' }}>
-                See it on Facebook.<br />Order on WhatsApp.
+                See it on FB or Insta.<br />Order on WhatsApp.
               </h2>
               <p style={{ fontSize: 19, color: 'rgba(255,255,255,.72)', lineHeight: 1.45, marginBottom: 36, maxWidth: 520 }}>
-                We post every new arrival on our Facebook page. Click the link to see the full spec & price, then tap &ldquo;Order on WhatsApp&rdquo; to place your order in seconds — no account, no checkout, no hassle.
-              </p>
+                Follow our Facebook and Instagram page and be the first to know about new arrivals and exclusive offers. Message us on WhatsApp to place your order directly through our social media channels.</p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Button href={FB_PAGE} variant="secondary" icon={Icons.facebook} iconPosition="left"
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>

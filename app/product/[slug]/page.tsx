@@ -180,9 +180,9 @@ export default async function ProductPage(
                 <Button href={waLink(product)} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth>
                   Order now
                 </Button>
-                <Button href={`tel:${PHONE}`} variant="ghost" icon={Icons.phone} iconPosition="left" fullWidth>
+                {/* <Button href={`tel:${PHONE}`} variant="ghost" icon={Icons.phone} iconPosition="left" fullWidth>
                   Call us
-                </Button>
+                </Button> */}
               </div>
 
               <p style={{ fontSize: 12, color: 'var(--muted)', textAlign: 'center', marginBottom: 32 }}>

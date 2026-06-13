@@ -50,8 +50,10 @@ function ShopContent({ products, categories }: { products: Product[]; categories
   useEffect(() => {
     const c = params.get('cat') as Category | null;
     const s = params.get('sort') as SortKey | null;
+    const query = params.get('q');
     if (c && categories.find(x => x.id === c)) setCat(c);
     if (s) setSort(s);
+    if (query) setQ(query);
   }, [params, categories]);
 
   function handleCat(val: Category | 'all') {
