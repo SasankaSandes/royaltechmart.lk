@@ -5,6 +5,7 @@ export type StockStatus = 'in' | 'low' | 'out';
 export interface Product {
   id: number;
   name: string;
+  slug?: string;
   category: Category;
   price: number;
   oldPrice?: number;
@@ -16,8 +17,7 @@ export interface Product {
   short: string;
   tone: [string, string];
   specs: [string, string][];
-  image?: string; // /products/<id>.jpg once imported
-  slug?: string;  // URL-friendly name, auto-derived if absent
+  image?: string;
 }
 
 export interface CategoryInfo {
@@ -27,3 +27,26 @@ export interface CategoryInfo {
 }
 
 export type SortKey = 'popular' | 'new' | 'low' | 'high' | 'rating';
+
+export type AdminRole = 'owner' | 'staff';
+
+export interface AdminUser {
+  id: number;
+  name: string;
+  username: string;
+  role: AdminRole;
+  createdAt: Date;
+}
+
+export interface Banner {
+  id: number;
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  ctaText: string;
+  ctaUrl: string;
+  bgFrom: string;
+  bgTo: string;
+  active: boolean;
+  sortOrder: number;
+}

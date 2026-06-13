@@ -1,122 +1,114 @@
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 import Link from 'next/link';
-import { getAllProducts } from '@/lib/db';
-import { money, itemCode } from '@/lib/catalog';
-import { loginAction } from './actions';
+import { requireAdmin } from '@/lib/admin-auth';
+import { getProductCount, getStockCounts, getAllBanners } from '@/lib/db';
+import AdminShell from '@/components/AdminShell';
 
-const STOCK_LABEL = { in: 'In stock', low: 'Low stock', out: 'Out of stock' } as const;
-const STOCK_COLOR = { in: '#1B8A4B', low: '#B4791B', out: '#B43B3B' } as const;
-
-export default async function AdminPage() {
-  const jar = await cookies();
-  const authed = jar.get('admin_auth')?.value === process.env.ADMIN_PASSWORD;
-
-  if (!authed) {
-    return (
-      <div style={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        background: 'var(--surface)', fontFamily: 'var(--font-body)',
-      }}>
-        <div style={{
-          background: '#fff', border: '1px solid var(--line)',
-          borderRadius: 'var(--radius)', padding: 40, width: 360,
-          boxShadow: 'var(--shadow)',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 28 }}>
-            <span style={{
-              background: '#111110', borderRadius: 8, width: 36, height: 36,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: 'var(--font-head)', fontWeight: 800, color: 'var(--accent-mist)', fontSize: 14,
-            }}>N</span>
-            <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Novatek Admin</span>
-          </div>
-          <form action={loginAction}>
-            <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8 }}>Password</label>
-            <input name="password" type="password" autoFocus required
-              style={{
-                width: '100%', height: 44, padding: '0 14px',
-                border: '1.5px solid var(--line)', borderRadius: 'var(--radius-sm)',
-                fontSize: 15, fontFamily: 'var(--font-body)', marginBottom: 16, outline: 'none',
-              }} />
-            <button type="submit" style={{
-              width: '100%', height: 44, background: '#111110', color: '#fff',
-              border: 'none', borderRadius: 'var(--radius-sm)',
-              fontWeight: 700, fontSize: 15, cursor: 'pointer',
-            }}>Sign in</button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  const products = await getAllProducts();
+export default async function AdminDashboard() {
+  const session = await requireAdmin();
+  const [total, stock, banners] = await Promise.all([
+    getProductCount(),
+    getStockCounts(),
+    getAllBanners(),
+  ]);
+  const activeBanners = banners.filter(b => b.active).length;
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--surface)', fontFamily: 'var(--font-body)' }}>
-      {/* Admin header */}
-      <header style={{
-        background: '#111110', color: '#fff', height: 60,
-        display: 'flex', alignItems: 'center', paddingInline: 28,
-        justifyContent: 'space-between',
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <span style={{
-            fontFamily: 'var(--font-head)', fontWeight: 800,
-            color: 'var(--accent-mist)', fontSize: 16,
-          }}>Novatek Admin</span>
-          <span style={{ color: 'rgba(255,255,255,.3)', fontSize: 13 }}>Product Catalog</span>
-        </div>
-        <Link href="/" style={{ color: 'rgba(255,255,255,.5)', fontSize: 13 }}>← Back to site</Link>
-      </header>
-
-      <div style={{ maxWidth: 1100, marginInline: 'auto', padding: 32 }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
-          <h1 style={{ fontFamily: 'var(--font-head)', fontSize: 24, fontWeight: 700 }}>
-            Products <span style={{ color: 'var(--muted)', fontWeight: 400, fontSize: 16 }}>({products.length})</span>
+    <AdminShell session={session} active="/admin">
+      <div style={{ padding: 32 }}>
+        <div style={{ marginBottom: 28 }}>
+          <h1 style={{ fontFamily: 'var(--font-head)', fontSize: 24, fontWeight: 700, color: '#111110' }}>
+            Welcome back, {session.name.split(' ')[0]}
           </h1>
+          <p style={{ color: '#888', fontSize: 14, marginTop: 4 }}>Here&apos;s what&apos;s happening with your store.</p>
         </div>
 
-        <div style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--line)', background: 'var(--surface)' }}>
-                {['Code', 'Product', 'Category', 'Price', 'Stock', 'Badge', ''].map(h => (
-                  <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontSize: 12, fontWeight: 600, color: 'var(--muted)', whiteSpace: 'nowrap' }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {products.map(p => (
-                <tr key={p.id} style={{ borderBottom: '1px solid var(--line)' }}>
-                  <td style={{ padding: '14px 16px', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)' }}>{itemCode(p.id)}</td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <div style={{ fontWeight: 600, fontSize: 14 }}>{p.name}</div>
-                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{p.short.slice(0, 60)}…</div>
-                  </td>
-                  <td style={{ padding: '14px 16px', fontSize: 13, color: 'var(--muted)', textTransform: 'capitalize' }}>{p.category}</td>
-                  <td style={{ padding: '14px 16px', fontSize: 14, fontWeight: 700, whiteSpace: 'nowrap' }}>{money(p.price)}</td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <span style={{
-                      fontSize: 12, fontWeight: 600, padding: '3px 10px', borderRadius: 'var(--pill)',
-                      color: STOCK_COLOR[p.stock],
-                      background: p.stock === 'in' ? '#d1fae5' : p.stock === 'low' ? '#fef3c7' : '#fee2e2',
-                    }}>{STOCK_LABEL[p.stock]}</span>
-                  </td>
-                  <td style={{ padding: '14px 16px', fontSize: 12, color: 'var(--muted)' }}>{p.badge ?? '—'}</td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <Link href={`/admin/${p.id}`} style={{
-                      fontSize: 13, fontWeight: 600, color: '#111110',
-                      padding: '6px 14px', border: '1.5px solid var(--line)',
-                      borderRadius: 'var(--radius-sm)', display: 'inline-block',
-                    }}>Edit</Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Summary cards */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 32 }}>
+          <StatCard label="Total products" value={total} sub="in catalog" color="#111110" />
+          <StatCard label="In stock" value={stock.in} sub="products available" color="#1B8A4B" />
+          <StatCard label="Low stock" value={stock.low} sub={stock.low > 0 ? 'reorder soon' : 'all good'} color={stock.low > 0 ? '#B4791B' : '#888'} />
+          <StatCard label="Out of stock" value={stock.out} sub={stock.out > 0 ? 'needs attention' : 'all good'} color={stock.out > 0 ? '#B43B3B' : '#888'} />
+        </div>
+
+        {/* Alerts */}
+        {(stock.out > 0 || stock.low > 0) && (
+          <div style={{
+            background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 12,
+            padding: '14px 18px', marginBottom: 28, display: 'flex', alignItems: 'center', gap: 12,
+          }}>
+            <span style={{ fontSize: 18 }}>⚠️</span>
+            <div>
+              <span style={{ fontSize: 14, fontWeight: 600, color: '#92400e' }}>
+                {stock.out > 0 && `${stock.out} product${stock.out > 1 ? 's' : ''} out of stock`}
+                {stock.out > 0 && stock.low > 0 && ' · '}
+                {stock.low > 0 && `${stock.low} product${stock.low > 1 ? 's' : ''} low on stock`}
+              </span>
+              <p style={{ fontSize: 13, color: '#92400e', marginTop: 2, opacity: 0.8 }}>Update stock status in Products.</p>
+            </div>
+            <Link href="/admin/products" style={{ marginLeft: 'auto', fontSize: 13, fontWeight: 600, color: '#92400e', textDecoration: 'none' }}>
+              View products →
+            </Link>
+          </div>
+        )}
+
+        {/* Quick actions */}
+        <h2 style={{ fontFamily: 'var(--font-head)', fontSize: 16, fontWeight: 600, marginBottom: 14, color: '#111110' }}>
+          Quick actions
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+          <QuickLink href="/admin/products/new" label="Add new product" sub="Add to the catalog" icon="+" />
+          <QuickLink href="/admin/products" label="Manage products" sub={`${total} products · ${stock.out} out of stock`} icon="≡" />
+          <QuickLink href="/admin/banners" label="Edit banners" sub={`${activeBanners} of ${banners.length} active`} icon="🖼" />
+        </div>
+
+        {/* Coming soon */}
+        <h2 style={{ fontFamily: 'var(--font-head)', fontSize: 16, fontWeight: 600, marginTop: 32, marginBottom: 14, color: '#111110' }}>
+          Coming in Sprint 2
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+          <LockedLink label="Log order" sub="Track WhatsApp orders" />
+          <LockedLink label="Print invoice" sub="Receipt + delivery slip" />
+          <LockedLink label="COD tracking" sub="Track cash collections" />
         </div>
       </div>
+    </AdminShell>
+  );
+}
+
+function StatCard({ label, value, sub, color }: { label: string; value: number; sub: string; color: string }) {
+  return (
+    <div style={{
+      background: '#fff', border: '1px solid #e5e5e3', borderRadius: 12, padding: '18px 20px',
+    }}>
+      <div style={{ fontSize: 12, color: '#888', fontWeight: 500, marginBottom: 8 }}>{label}</div>
+      <div style={{ fontSize: 32, fontFamily: 'var(--font-head)', fontWeight: 700, color, lineHeight: 1 }}>{value}</div>
+      <div style={{ fontSize: 12, color: '#aaa', marginTop: 6 }}>{sub}</div>
+    </div>
+  );
+}
+
+function QuickLink({ href, label, sub, icon }: { href: string; label: string; sub: string; icon: string }) {
+  return (
+    <Link href={href} style={{
+      display: 'block', background: '#fff', border: '1px solid #e5e5e3',
+      borderRadius: 12, padding: '16px 18px', textDecoration: 'none',
+    }}>
+      <div style={{ fontSize: 20, marginBottom: 8 }}>{icon}</div>
+      <div style={{ fontSize: 14, fontWeight: 600, color: '#111110', marginBottom: 3 }}>{label}</div>
+      <div style={{ fontSize: 12, color: '#888' }}>{sub}</div>
+    </Link>
+  );
+}
+
+function LockedLink({ label, sub }: { label: string; sub: string }) {
+  return (
+    <div style={{
+      background: '#fafafa', border: '1px solid #e5e5e3',
+      borderRadius: 12, padding: '16px 18px', opacity: 0.5,
+    }}>
+      <div style={{ fontSize: 20, marginBottom: 8 }}>🔒</div>
+      <div style={{ fontSize: 14, fontWeight: 600, color: '#111110', marginBottom: 3 }}>{label}</div>
+      <div style={{ fontSize: 12, color: '#888' }}>{sub}</div>
     </div>
   );
 }

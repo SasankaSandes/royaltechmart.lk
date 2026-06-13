@@ -8,7 +8,7 @@ import TrustStrip from '@/components/TrustStrip';
 import ProductCard from '@/components/ProductCard';
 import HeroBanner from '@/components/HeroBanner';
 import { CATEGORIES, FB_PAGE, INSTAGRAM } from '@/lib/catalog';
-import { getAllProducts } from '@/lib/db';
+import { getAllProducts, getActiveBanners } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 import type { Product } from '@/lib/types';
 
@@ -17,7 +17,7 @@ export const revalidate = 3600;
 const CAT_NUMS = ['01', '02', '03', '04', '05'];
 
 export default async function Home() {
-  const allProducts = await getAllProducts();
+  const [allProducts, banners] = await Promise.all([getAllProducts(), getActiveBanners()]);
   const trending: Product[] = allProducts.filter(p => p.badge === 'Trending').length
     ? allProducts.filter(p => p.badge === 'Trending').slice(0, 4)
     : allProducts.slice(0, 4);
@@ -29,7 +29,7 @@ export default async function Home() {
       <Header />
       <main>
         {/* 1 — Hero banner */}
-        <HeroBanner />
+        <HeroBanner banners={banners} />
 
         {/* 2 — Trending products */}
         <section className="section">
