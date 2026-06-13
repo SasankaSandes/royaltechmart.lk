@@ -6,6 +6,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import WhatsAppFAB from '@/components/WhatsAppFAB';
+import { Button } from '@/components/ui/Button';
+import { Badge, PRODUCT_BADGE_TONE } from '@/components/ui/Badge';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CATEGORIES, money, waLink, itemCode, productUrl, PHONE } from '@/lib/catalog';
 import { getProductBySlug as bySlug, getRelatedProducts as related, getAllSlugs } from '@/lib/db';
 import { Icons } from '@/components/Icons';
@@ -144,13 +147,7 @@ export default async function ProductPage(
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                 <p style={{ fontFamily: 'var(--mono)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--muted)' }}>{catLabel}</p>
                 {product.badge && (
-                  <span style={{
-                    fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700,
-                    textTransform: 'uppercase', letterSpacing: '0.15em',
-                    padding: '3px 10px', borderRadius: 'var(--pill)',
-                    background: product.badge === 'Featured' ? 'var(--accent-success)' : product.badge === 'Trending' ? 'var(--surface-ink)' : 'var(--surface-control)',
-                    color: product.badge === 'New' ? 'var(--ink-2)' : '#fff',
-                  }}>{product.badge}</span>
+                  <Badge tone={PRODUCT_BADGE_TONE[product.badge] ?? 'neutral'} size="sm">{product.badge}</Badge>
                 )}
               </div>
 
@@ -181,20 +178,12 @@ export default async function ProductPage(
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
-                <a href={waLink(product)} target="_blank" rel="noopener noreferrer" style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
-                  background: 'var(--wa)', color: '#fff', fontWeight: 700, fontSize: 16,
-                  padding: '15px 24px', borderRadius: 'var(--radius-sm)',
-                }}>
-                  {Icons.whatsapp} Order on WhatsApp
-                </a>
-                <a href={`tel:${PHONE}`} style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
-                  background: 'transparent', color: 'var(--ink)', fontWeight: 600, fontSize: 15,
-                  padding: '13px 24px', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--line)',
-                }}>
-                  {Icons.phone} Call us
-                </a>
+                <Button href={waLink(product)} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth>
+                  Order on WhatsApp
+                </Button>
+                <Button href={`tel:${PHONE}`} variant="ghost" icon={Icons.phone} iconPosition="left" fullWidth>
+                  Call us
+                </Button>
               </div>
 
               <p style={{ fontSize: 12, color: 'var(--muted)', textAlign: 'center', marginBottom: 32 }}>
@@ -255,12 +244,10 @@ export default async function ProductPage(
         {relatedProducts.length > 0 && (
           <section className="section">
             <div className="wrap">
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 12 }}>
-                <h2 style={{ fontSize: 'clamp(22px,3vw,32px)' }}>You may also like</h2>
-                <Link href={`/shop?cat=${product.category}`} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: 'var(--ink-2)' }}>
-                  View all {catLabel} {Icons.arrow}
-                </Link>
-              </div>
+              <SectionHeader title="You may also like" align="center"
+                titleStyle={{ fontSize: 'clamp(22px,3vw,32px)' }}
+                actionLabel={`View all ${catLabel}`} actionHref={`/shop?cat=${product.category}`}
+                style={{ marginBottom: 32 }} />
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
                 {relatedProducts.map(p => <ProductCard key={p.id} product={p} />)}
               </div>

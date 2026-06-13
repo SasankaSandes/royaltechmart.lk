@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
@@ -39,20 +41,8 @@ export default async function Home() {
                 Pay on delivery, order on WhatsApp.
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Link href="/shop" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'var(--surface-ink)', color: '#fff',
-                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
-                }}>
-                  Browse the shop {Icons.arrow}
-                </Link>
-                <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'var(--wa)', color: '#fff',
-                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
-                }}>
-                  {Icons.whatsapp} Chat to order
-                </a>
+                <Button href="/shop" variant="primary" icon={Icons.arrow}>Browse the shop</Button>
+                <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left">Chat to order</Button>
               </div>
             </div>
 
@@ -85,15 +75,7 @@ export default async function Home() {
         {/* Categories */}
         <section className="section" style={{ background: 'var(--surface)' }}>
           <div className="wrap">
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 40, flexWrap: 'wrap', gap: 16 }}>
-              <div>
-                <p className="eyebrow" style={{ marginBottom: 10 }}>What we carry</p>
-                <h2 style={{ fontSize: 'clamp(28px,4vw,40px)' }}>Shop by category</h2>
-              </div>
-              <Link href="/shop" style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: 'var(--ink-2)' }}>
-                View all {Icons.arrow}
-              </Link>
-            </div>
+            <SectionHeader eyebrow="What we carry" title="Shop by category" actionLabel="View all" actionHref="/shop" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
               {CATEGORIES.map((cat, i) => (
                 <Link key={cat.id} href={`/shop?cat=${cat.id}`} className="cat-card"
@@ -118,15 +100,7 @@ export default async function Home() {
         {/* Trending */}
         <section className="section">
           <div className="wrap">
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 40, flexWrap: 'wrap', gap: 16 }}>
-              <div>
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Hot right now</p>
-                <h2 style={{ fontSize: 'clamp(28px,4vw,40px)' }}>Trending products</h2>
-              </div>
-              <Link href="/shop?sort=popular" style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: 'var(--ink-2)' }}>
-                View all {Icons.arrow}
-              </Link>
-            </div>
+            <SectionHeader eyebrow="Hot right now" title="Trending products" actionLabel="View all" actionHref="/shop?sort=popular" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
               {trending.map(p => <ProductCard key={p.id} product={p} />)}
             </div>
@@ -145,20 +119,11 @@ export default async function Home() {
                 We post every new arrival on our Facebook page. Click the link to see the full spec & price, then tap &ldquo;Order on WhatsApp&rdquo; to place your order in seconds — no account, no checkout, no hassle.
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <a href={FB_PAGE} target="_blank" rel="noopener noreferrer" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'var(--surface-card)', color: 'var(--text-strong)',
-                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
-                }}>
-                  {Icons.facebook} Follow on Facebook
-                </a>
-                <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'var(--wa)', color: '#fff',
-                  padding: '14px 30px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
-                }}>
-                  {Icons.whatsapp} Chat to order
-                </a>
+                <Button href={FB_PAGE} variant="secondary" icon={Icons.facebook} iconPosition="left"
+                  style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
+                  Follow on Facebook
+                </Button>
+                <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left">Chat to order</Button>
               </div>
             </div>
           </div>
@@ -172,15 +137,7 @@ export default async function Home() {
         {/* Fresh arrivals */}
         <section className="section" style={{ background: 'var(--surface)' }}>
           <div className="wrap">
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 40, flexWrap: 'wrap', gap: 16 }}>
-              <div>
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Just in</p>
-                <h2 style={{ fontSize: 'clamp(28px,4vw,40px)' }}>Fresh arrivals</h2>
-              </div>
-              <Link href="/shop?sort=new" style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: 'var(--ink-2)' }}>
-                View all {Icons.arrow}
-              </Link>
-            </div>
+            <SectionHeader eyebrow="Just in" title="Fresh arrivals" actionLabel="View all" actionHref="/shop?sort=new" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
               {fresh.map(p => <ProductCard key={p.id} product={p} />)}
             </div>

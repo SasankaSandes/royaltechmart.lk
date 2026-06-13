@@ -26,6 +26,12 @@ _Last updated: 2026-06-13_
   category cards/Facebook band/About. New 16-icon set in `public/icons/` + `components/Icons.tsx`
   (converted to `currentColor`; `headset` dropped).
 - **Infra:** Vercel CLI updated; project renamed `rtm-app` → `novatek`; Git→Vercel integration wired.
+- **Shared component library** — ported the design system's primitives into the app under
+  `components/ui/`: `Button` (primary/secondary/ghost/mist/whatsapp, polymorphic Link/anchor/button),
+  `Badge`, `Pill`, `SearchField`, `SectionHeader`. Migrated all inline buttons, badges, shop
+  filter chips, search box, and section headers to use them. Pure refactor — pixel-identical.
+  (Deliberately kept the app's own `Icons.tsx` and feature-rich `ProductCard`; skipped DS
+  `Icon`/`IconButton`/simple `ProductCard`.)
 
 ## Open / TODO
 **Still a placeholder:**
@@ -35,7 +41,6 @@ _Last updated: 2026-06-13_
 **Cleanups / nice-to-have:**
 - Footer kept dark (vs. design system's light footer-with-watermark) — switch if desired.
 - Real product photos for items currently showing neutral haze placeholders.
-- Optionally extract a reusable `Button` component (styles currently inline).
 
 **Resolved this session:** custom domain `novatek.lk` live in Vercel; Facebook set to
 `facebook.com/novateksl`; unused `public/rtm-logo.png` deleted.

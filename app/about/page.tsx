@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
 import WhatsAppFAB from '@/components/WhatsAppFAB';
 import { waLink, FB_PAGE, EMAIL, PHONE } from '@/lib/catalog';
 import { Icons } from '@/components/Icons';
+import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'About — Novatek',
@@ -72,14 +72,9 @@ export default function AboutPage() {
                 The fastest way to reach us is WhatsApp — we typically reply within minutes during business hours.
               </p>
 
-              <a href={waLink()} target="_blank" rel="noopener noreferrer"
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
-                  background: 'var(--wa)', color: '#fff', fontWeight: 700, fontSize: 15,
-                  padding: '14px 24px', borderRadius: 'var(--radius-sm)', marginBottom: 20,
-                }}>
-                {Icons.whatsapp} Chat on WhatsApp
-              </a>
+              <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth style={{ marginBottom: 20 }}>
+                Chat on WhatsApp
+              </Button>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {[
@@ -137,20 +132,8 @@ export default function AboutPage() {
               Browse the catalogue or chat directly on WhatsApp — we&apos;ll get you sorted.
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/shop" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: 'var(--surface-ink)', color: '#fff',
-                padding: '14px 32px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
-              }}>
-                Browse the shop {Icons.arrow}
-              </Link>
-              <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: 'var(--wa)', color: '#fff',
-                padding: '14px 32px', borderRadius: 'var(--pill)', fontWeight: 500, fontSize: 16,
-              }}>
-                {Icons.whatsapp} Chat to order
-              </a>
+              <Button href="/shop" variant="primary" icon={Icons.arrow}>Browse the shop</Button>
+              <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left">Chat to order</Button>
             </div>
           </div>
         </section>

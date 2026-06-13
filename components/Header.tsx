@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { waLink } from '@/lib/catalog';
 import { Icons } from './Icons';
+import { Button } from './ui/Button';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -39,17 +40,9 @@ export default function Header() {
         <div style={{ flex: 1 }} />
 
         {/* WhatsApp CTA */}
-        <a href={waLink()} target="_blank" rel="noopener noreferrer"
-          className="wa-btn"
-          style={{
-            display: 'flex', alignItems: 'center', gap: 8,
-            background: 'var(--wa)', color: '#fff',
-            padding: '9px 18px', borderRadius: 'var(--pill)',
-            fontWeight: 600, fontSize: 14, flexShrink: 0,
-          }}>
-          <span style={{ display: 'flex' }}>{Icons.whatsapp}</span>
+        <Button href={waLink()} variant="whatsapp" size="sm" icon={Icons.whatsapp} iconPosition="left" style={{ flexShrink: 0 }}>
           <span className="hide-mobile">Chat to order</span>
-        </a>
+        </Button>
 
         {/* Hamburger */}
         <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Menu"

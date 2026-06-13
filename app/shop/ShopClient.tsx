@@ -6,9 +6,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import WhatsAppFAB from '@/components/WhatsAppFAB';
+import { Pill } from '@/components/ui/Pill';
+import { SearchField } from '@/components/ui/SearchField';
 import type { Category, SortKey, Product } from '@/lib/types';
 import type { CategoryInfo } from '@/lib/types';
-import { Icons } from '@/components/Icons';
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'popular', label: 'Most popular' },
@@ -79,17 +80,7 @@ function ShopContent({ products, categories }: { products: Product[]; categories
           <div className="wrap">
             <p className="eyebrow" style={{ marginBottom: 12 }}>Catalogue</p>
             <h1 style={{ fontSize: 'clamp(28px,4vw,40px)', marginBottom: 20 }}>Shop all products</h1>
-            <div style={{ position: 'relative', maxWidth: 480 }}>
-              <span style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)', color: 'var(--muted)', display: 'flex' }}>
-                {Icons.search}
-              </span>
-              <input type="search" placeholder="Search products…" value={q} onChange={e => setQ(e.target.value)}
-                style={{
-                  width: '100%', height: 48, paddingLeft: 48, paddingRight: 20,
-                  border: '1.5px solid var(--line)', borderRadius: 'var(--pill)',
-                  fontSize: 15, fontFamily: 'var(--font-body)', background: '#fff', outline: 'none',
-                }} />
-            </div>
+            <SearchField value={q} onChange={setQ} style={{ maxWidth: 480 }} />
           </div>
         </section>
 
@@ -98,16 +89,9 @@ function ShopContent({ products, categories }: { products: Product[]; categories
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24, flexWrap: 'wrap', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {([{ id: 'all' as const, label: 'All' }, ...categories]).map(c => (
-                  <button key={c.id} onClick={() => handleCat(c.id as Category | 'all')}
-                    style={{
-                      padding: '7px 16px', borderRadius: 'var(--pill)', fontSize: 13, fontWeight: 600,
-                      cursor: 'pointer', border: 'none',
-                      background: cat === c.id ? 'var(--ink)' : 'var(--surface)',
-                      color: cat === c.id ? '#fff' : 'var(--ink-2)',
-                      transition: 'background .15s, color .15s',
-                    }}>
+                  <Pill key={c.id} active={cat === c.id} onClick={() => handleCat(c.id as Category | 'all')}>
                     {c.label}
-                  </button>
+                  </Pill>
                 ))}
               </div>
               <select value={sort} onChange={e => setSort(e.target.value as SortKey)}

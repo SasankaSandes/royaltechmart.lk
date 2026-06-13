@@ -5,12 +5,8 @@ import Image from 'next/image';
 import type { Product } from '@/lib/types';
 import { money, waLink, itemCode, productUrl } from '@/lib/catalog';
 import { Icons } from './Icons';
-
-const BADGE_STYLE: Record<string, { background: string; color: string }> = {
-  Trending: { background: 'var(--surface-ink)', color: '#fff' },
-  Featured: { background: 'var(--accent-success)', color: '#fff' },
-  New: { background: 'var(--surface-control)', color: 'var(--ink-2)' },
-};
+import { Button } from './ui/Button';
+import { Badge, PRODUCT_BADGE_TONE } from './ui/Badge';
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -71,13 +67,10 @@ export default function ProductCard({ product }: { product: Product }) {
       <Link href={productUrl(product)} style={{ position: 'relative', aspectRatio: '1', display: 'block', overflow: 'hidden' }}>
         <ProductImage product={product} />
         {product.badge && (
-          <span style={{
-            position: 'absolute', top: 12, left: 12,
-            ...BADGE_STYLE[product.badge],
-            fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700,
-            textTransform: 'uppercase', letterSpacing: '0.15em',
-            padding: '4px 10px', borderRadius: 'var(--pill)',
-          }}>{product.badge}</span>
+          <Badge tone={PRODUCT_BADGE_TONE[product.badge] ?? 'neutral'} size="sm"
+            style={{ position: 'absolute', top: 12, left: 12 }}>
+            {product.badge}
+          </Badge>
         )}
         {product.stock === 'out' && (
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -114,18 +107,9 @@ export default function ProductCard({ product }: { product: Product }) {
             <span style={{ fontSize: 13, color: 'var(--muted)', textDecoration: 'line-through' }}>{money(product.oldPrice)}</span>
           )}
         </div>
-        <a href={waLink(product)} target="_blank" rel="noopener noreferrer"
-          style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-            width: '100%', padding: '10px 16px', borderRadius: 'var(--radius-sm)',
-            background: 'var(--wa)', color: '#fff', fontWeight: 700, fontSize: 14,
-            transition: 'background .15s',
-          }}
-          onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'var(--wa-deep)'}
-          onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'var(--wa)'}
-        >
-          {Icons.whatsapp} Order on WhatsApp
-        </a>
+        <Button href={waLink(product)} variant="whatsapp" size="sm" icon={Icons.whatsapp} iconPosition="left" fullWidth>
+          Order on WhatsApp
+        </Button>
       </div>
     </article>
   );
