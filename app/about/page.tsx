@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
-import WhatsAppFAB from '@/components/WhatsAppFAB';
 import { waLink, FB_PAGE, EMAIL, PHONE } from '@/lib/catalog';
 import { Icons } from '@/components/Icons';
 import { Button } from '@/components/ui/Button';
@@ -133,13 +132,11 @@ export default function AboutPage() {
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Button href="/shop" variant="primary" icon={Icons.arrow}>Browse the shop</Button>
-              <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left">Chat to order</Button>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-      <WhatsAppFAB />
     </>
   );
 }

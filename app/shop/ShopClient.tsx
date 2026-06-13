@@ -5,7 +5,6 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
-import WhatsAppFAB from '@/components/WhatsAppFAB';
 import { Pill } from '@/components/ui/Pill';
 import { SearchField } from '@/components/ui/SearchField';
 import type { Category, SortKey, Product } from '@/lib/types';
@@ -124,7 +123,6 @@ function ShopContent({ products, categories }: { products: Product[]; categories
         </section>
       </main>
       <Footer />
-      <WhatsAppFAB />
     </>
   );
 }

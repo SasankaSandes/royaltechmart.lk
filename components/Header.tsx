@@ -3,9 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { waLink } from '@/lib/catalog';
 import { Icons } from './Icons';
-import { Button } from './ui/Button';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -20,7 +18,7 @@ export default function Header() {
       <div className="wrap" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
         {/* Wordmark */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }} aria-label="Novatek home">
-          <Image src="/novatek-logo.svg" alt="Novatek" width={120} height={33} priority style={{ height: 22, width: 'auto' }} />
+          <Image src="/novatek-logo.svg" alt="Novatek" width={120} height={33} priority style={{ height: 30, width: 'auto' }} />
         </Link>
 
         {/* Nav */}
@@ -38,11 +36,6 @@ export default function Header() {
         </nav>
 
         <div style={{ flex: 1 }} />
-
-        {/* WhatsApp CTA */}
-        <Button href={waLink()} variant="whatsapp" size="sm" icon={Icons.whatsapp} iconPosition="left" style={{ flexShrink: 0 }}>
-          <span className="hide-mobile">Chat to order</span>
-        </Button>
 
         {/* Hamburger */}
         <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Menu"

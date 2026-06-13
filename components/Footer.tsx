@@ -45,7 +45,7 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <a href={waLink()} target="_blank" rel="noopener noreferrer"
                 style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--wa)', fontSize: 14, fontWeight: 600 }}>
-                {Icons.whatsapp} Order on WhatsApp
+                {Icons.whatsapp} WhatsApp
               </a>
               <a href={`tel:${PHONE}`} style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,.7)', fontSize: 14 }}>
                 {Icons.phone} {PHONE}

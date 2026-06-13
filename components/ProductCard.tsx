@@ -108,7 +108,7 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
         </div>
         <Button href={waLink(product)} variant="whatsapp" size="sm" icon={Icons.whatsapp} iconPosition="left" fullWidth>
-          Order on WhatsApp
+          Order now
         </Button>
       </div>
     </article>

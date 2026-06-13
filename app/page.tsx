@@ -6,8 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
 import ProductCard from '@/components/ProductCard';
-import WhatsAppFAB from '@/components/WhatsAppFAB';
-import { CATEGORIES, waLink, FB_PAGE } from '@/lib/catalog';
+import { CATEGORIES, FB_PAGE } from '@/lib/catalog';
 import { getAllProducts } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 import type { Product } from '@/lib/types';
@@ -42,7 +41,6 @@ export default async function Home() {
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Button href="/shop" variant="primary" icon={Icons.arrow}>Browse the shop</Button>
-                <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left">Chat to order</Button>
               </div>
             </div>
 
@@ -123,7 +121,6 @@ export default async function Home() {
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
                   Follow on Facebook
                 </Button>
-                <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left">Chat to order</Button>
               </div>
             </div>
           </div>
@@ -145,7 +142,6 @@ export default async function Home() {
         </section>
       </main>
       <Footer />
-      <WhatsAppFAB />
 
       <style>{`
         @media (max-width: 980px) {

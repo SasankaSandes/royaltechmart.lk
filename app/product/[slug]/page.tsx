@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
-import WhatsAppFAB from '@/components/WhatsAppFAB';
 import { Button } from '@/components/ui/Button';
 import { Badge, PRODUCT_BADGE_TONE } from '@/components/ui/Badge';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -179,7 +178,7 @@ export default async function ProductPage(
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
                 <Button href={waLink(product)} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth>
-                  Order on WhatsApp
+                  Order now
                 </Button>
                 <Button href={`tel:${PHONE}`} variant="ghost" icon={Icons.phone} iconPosition="left" fullWidth>
                   Call us
@@ -256,7 +255,6 @@ export default async function ProductPage(
         )}
       </main>
       <Footer />
-      <WhatsAppFAB />
       <style>{`
         .pdp-grid { display: grid; }
         @media (max-width: 980px) { .pdp-grid { grid-template-columns: 1fr !important; gap: 32px !important; } }
