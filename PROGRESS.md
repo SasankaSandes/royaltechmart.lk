@@ -25,6 +25,9 @@ _Last updated: 2026-06-13_
   **WhatsApp green** for order CTAs; restyled Header/Footer/TrustStrip/ProductCard/hero/
   category cards/Facebook band/About. New 16-icon set in `public/icons/` + `components/Icons.tsx`
   (converted to `currentColor`; `headset` dropped).
+- **Favicons** — full set in `public/` (`.ico`, `.svg`, apple-touch, android-chrome 192/512,
+  `site.webmanifest`), wired via Next `metadata.icons` + `manifest` and `viewport.themeColor`
+  (#F7F8FA). Removed the leftover create-next-app `app/favicon.ico`.
 - **Infra:** Vercel CLI updated; project renamed `rtm-app` → `novatek`; Git→Vercel integration wired.
 - **Shared component library** — ported the design system's primitives into the app under
   `components/ui/`: `Button` (primary/secondary/ghost/mist/whatsapp, polymorphic Link/anchor/button),

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -22,11 +22,23 @@ export const metadata: Metadata = {
   title: 'Novatek — Tech accessories in Sri Lanka',
   description: 'Tech accessories in Sri Lanka — earbuds, chargers, power banks, holders and cables. Pay on delivery, order on WhatsApp.',
   metadataBase: new URL('https://novatek.lk'),
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     siteName: 'Novatek',
     locale: 'en_LK',
     type: 'website',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#F7F8FA',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
