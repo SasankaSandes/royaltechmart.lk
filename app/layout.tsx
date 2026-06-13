@@ -21,7 +21,7 @@ const stackSans = localFont({
 export const metadata: Metadata = {
   title: 'Novatek — Tech accessories in Sri Lanka',
   description: 'Tech accessories in Sri Lanka — earbuds, chargers, power banks, holders and cables. Pay on delivery, order on WhatsApp.',
-  metadataBase: new URL('https://novatek.lk'), // TODO: confirm real domain
+  metadataBase: new URL('https://novatek.lk'),
   openGraph: {
     siteName: 'Novatek',
     locale: 'en_LK',

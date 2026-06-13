@@ -10,7 +10,7 @@ import { CATEGORIES, money, waLink, itemCode, productUrl, PHONE } from '@/lib/ca
 import { getProductBySlug as bySlug, getRelatedProducts as related, getAllSlugs } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 
-const SITE_URL = 'https://novatek.lk'; // TODO: confirm real domain
+const SITE_URL = 'https://novatek.lk';
 
 // ISR — revalidate product pages every hour so price/stock edits go live quickly
 export const revalidate = 3600;

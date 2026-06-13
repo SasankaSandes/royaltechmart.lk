@@ -6,7 +6,7 @@
 _Last updated: 2026-06-13_
 
 ## Production
-- **Live URL:** https://rtm-app-one.vercel.app (no custom domain attached yet)
+- **Live URL:** https://novatek.lk (custom domain connected in Vercel) — also reachable at rtm-app-one.vercel.app
 - **Vercel project:** `novatek` (team `sasankasandes-projects`)
 - **Deploys:** auto-deploy on push to `main` via GitHub integration
   (`SasankaSandes/royaltechmart.lk` → Vercel). No manual `vercel --prod` needed.
@@ -28,18 +28,17 @@ _Last updated: 2026-06-13_
 - **Infra:** Vercel CLI updated; project renamed `rtm-app` → `novatek`; Git→Vercel integration wired.
 
 ## Open / TODO
-**Needs real values (currently placeholders, marked `// TODO` in code):**
-- Facebook page URL — placeholder `facebook.com/novatek` (`lib/catalog.ts` `FB_PAGE`)
-- Email — placeholder `hello@novatek.lk` (`lib/catalog.ts` `EMAIL`)
-- Domain — placeholder `novatek.lk` (`app/layout.tsx` metadataBase, `product/[slug]` SITE_URL)
-- Attach a **custom domain** in Vercel (currently on `rtm-app-one.vercel.app`).
-  Owned domains: `glomo.lk`, `betterdesigners.club`; no `novatek.lk` registered yet.
+**Still a placeholder:**
+- Email — `hello@novatek.lk` is not a real mailbox yet (`lib/catalog.ts` `EMAIL`). Set up a
+  domain mailbox or repoint to a working address.
 
 **Cleanups / nice-to-have:**
-- Delete unused `public/rtm-logo.png` (replaced by the wordmark).
 - Footer kept dark (vs. design system's light footer-with-watermark) — switch if desired.
 - Real product photos for items currently showing neutral haze placeholders.
 - Optionally extract a reusable `Button` component (styles currently inline).
+
+**Resolved this session:** custom domain `novatek.lk` live in Vercel; Facebook set to
+`facebook.com/novateksl`; unused `public/rtm-logo.png` deleted.
 
 ## Untouched (working, out of scope so far)
 Product catalog data, DB schema, admin panel logic, WhatsApp-as-checkout flow.

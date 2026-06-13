@@ -85,7 +85,7 @@ export default function AboutPage() {
                 {[
                   [Icons.phone, PHONE, `tel:${PHONE}`],
                   [Icons.mail, EMAIL, `mailto:${EMAIL}`],
-                  [Icons.facebook, 'facebook.com/novatek', FB_PAGE],
+                  [Icons.facebook, 'facebook.com/novateksl', FB_PAGE],
                   [Icons.clock, 'Mon–Sat · 9am – 7pm', null],
                   [Icons.pin, 'Island-wide delivery · Sri Lanka', null],
                 ].map(([icon, text, href], i) => (
