@@ -1,12 +1,19 @@
 'use client';
 
 import { useState } from 'react';
+import type { CSSProperties } from 'react';
 import { useRouter } from 'next/navigation';
 import { SearchField } from './ui/SearchField';
 
 /* Home hero search — submits the query to the shop page, where the real
    filtering lives. */
-export default function HomeSearch() {
+export default function HomeSearch({
+  maxWidth = 440,
+  fieldStyle,
+}: {
+  maxWidth?: number;
+  fieldStyle?: CSSProperties;
+}) {
   const router = useRouter();
   const [q, setQ] = useState('');
 
@@ -17,8 +24,8 @@ export default function HomeSearch() {
   }
 
   return (
-    <form onSubmit={onSubmit} style={{ width: '100%', maxWidth: 440 }}>
-      <SearchField value={q} onChange={setQ} />
+    <form onSubmit={onSubmit} style={{ width: '100%', maxWidth }}>
+      <SearchField value={q} onChange={setQ} style={fieldStyle} />
     </form>
   );
 }

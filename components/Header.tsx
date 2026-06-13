@@ -4,6 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Icons } from './Icons';
+import { waLink, FB_PAGE, INSTAGRAM } from '@/lib/catalog';
+
+const SOCIALS: { label: string; href: string; icon: React.ReactNode }[] = [
+  { label: 'WhatsApp', href: waLink(), icon: Icons.whatsapp },
+  { label: 'Facebook', href: FB_PAGE, icon: Icons.facebook },
+  { label: 'Instagram', href: INSTAGRAM, icon: Icons.instagram },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -37,6 +44,22 @@ export default function Header() {
 
         <div style={{ flex: 1 }} />
 
+        {/* Social icons */}
+        <div className="header-socials" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+          {SOCIALS.map(s => (
+            <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+              title={s.label}
+              style={{
+                width: 38, height: 38, borderRadius: 'var(--pill)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--ink-2)', transition: 'background .15s, color .15s',
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-control)'; (e.currentTarget as HTMLElement).style.color = 'var(--ink)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ''; (e.currentTarget as HTMLElement).style.color = 'var(--ink-2)'; }}
+            >{s.icon}</a>
+          ))}
+        </div>
+
         {/* Hamburger */}
         <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Menu"
           style={{ display: 'none', background: 'none', border: 'none', padding: 4, color: 'var(--ink)' }}>
@@ -57,6 +80,14 @@ export default function Header() {
               {label}
             </Link>
           ))}
+          <div style={{ display: 'flex', gap: 8, paddingTop: 16 }}>
+            {SOCIALS.map(s => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                style={{ width: 42, height: 42, borderRadius: 'var(--pill)', background: 'var(--surface-control)', color: 'var(--ink)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {s.icon}
+              </a>
+            ))}
+          </div>
         </div>
       )}
 
@@ -64,6 +95,7 @@ export default function Header() {
         @media (max-width: 720px) {
           .desktop-nav { display: none !important; }
           .hide-mobile { display: none; }
+          .header-socials { display: none !important; }
           .hamburger { display: flex !important; }
         }
       `}</style>

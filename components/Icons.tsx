@@ -85,6 +85,13 @@ export const Icons = {
       <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" />
     </svg>
   ),
+  instagram: (
+    <svg viewBox="0 0 24 24" width="20" height="20" {...outline}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
   menu: (
     <svg viewBox="0 0 24 24" width="22" height="22" {...outline} strokeWidth={2}>
       <path d="M3 12H21" />

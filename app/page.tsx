@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
 import ProductCard from '@/components/ProductCard';
-import HomeSearch from '@/components/HomeSearch';
-import { CATEGORIES, FB_PAGE } from '@/lib/catalog';
+import HeroBanner from '@/components/HeroBanner';
+import { CATEGORIES, FB_PAGE, INSTAGRAM } from '@/lib/catalog';
 import { getAllProducts } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 import type { Product } from '@/lib/types';
@@ -28,52 +28,27 @@ export default async function Home() {
     <>
       <Header />
       <main>
-        {/* Hero */}
-        <section className="section">
-          <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: 48, alignItems: 'center' }}>
-            {/* Left */}
-            <div>
-              <p className="eyebrow" style={{ marginBottom: 20 }}>Sri Lanka&apos;s tech accessories store</p>
-              <h1 style={{ fontSize: 'clamp(40px,6vw,69px)', fontFamily: 'var(--font-head)', fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1, marginBottom: 24, color: 'var(--text-strong)' }}>
-                Tech accessories, delivered across Sri Lanka
-              </h1>
-              <p style={{ fontSize: 19, color: 'var(--text-secondary)', lineHeight: 1.45, marginBottom: 36, maxWidth: 480 }}>
-                Pay on delivery, order on WhatsApp.
-              </p>
-              <HomeSearch />
-            </div>
+        {/* 1 — Hero banner */}
+        <HeroBanner />
 
-            {/* Right — hero art (haze panel) */}
-            <div style={{
-              aspectRatio: '4/4.2', borderRadius: 'var(--radius-lg)',
-              background: 'var(--surface-raised)', boxShadow: 'var(--shadow-sm)',
-              position: 'relative', overflow: 'hidden',
-            }}>
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Image src="/novatek-logo.svg" alt="Novatek" width={260} height={71} style={{ width: '52%', height: 'auto', opacity: 0.9 }} />
-              </div>
-              <div style={{
-                position: 'absolute', top: 24, right: 24,
-                background: 'var(--surface-card)', borderRadius: 16, padding: '10px 16px',
-                boxShadow: 'var(--shadow)', color: 'var(--text-default)', display: 'flex', alignItems: 'center', gap: 10,
-              }}>
-                <span style={{ color: 'var(--text-strong)' }}>{Icons.truck}</span>
-                <div>
-                  <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-strong)' }}>Island-wide</p>
-                  <p style={{ fontSize: 11, color: 'var(--text-secondary)' }}>COD available</p>
-                </div>
-              </div>
+        {/* 2 — Trending products */}
+        <section className="section">
+          <div className="wrap">
+            <SectionHeader eyebrow="Hot right now" title="Trending products" actionLabel="View all" actionHref="/shop?sort=popular" />
+            <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
+              {trending.map(p => <ProductCard key={p.id} product={p} />)}
             </div>
           </div>
         </section>
 
+        {/* 3 — Offerings strip */}
         <TrustStrip />
 
-        {/* Categories */}
+        {/* 4 — Shop by category */}
         <section className="section" style={{ background: 'var(--surface)' }}>
           <div className="wrap">
             <SectionHeader eyebrow="What we carry" title="Shop by category" actionLabel="View all" actionHref="/shop" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+            <div className="cat-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
               {CATEGORIES.map((cat, i) => (
                 <Link key={cat.id} href={`/shop?cat=${cat.id}`} className="cat-card"
                   style={{
@@ -94,17 +69,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Trending */}
-        <section className="section">
-          <div className="wrap">
-            <SectionHeader eyebrow="Hot right now" title="Trending products" actionLabel="View all" actionHref="/shop?sort=popular" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
-              {trending.map(p => <ProductCard key={p.id} product={p} />)}
-            </div>
-          </div>
-        </section>
-
-        {/* Facebook band — single dark feature panel */}
+        {/* 5 — Social media strip */}
         <section style={{ paddingBlock: 84, background: 'var(--surface-ink)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ maxWidth: 680 }}>
@@ -119,6 +84,10 @@ export default async function Home() {
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
                   Follow on Facebook
                 </Button>
+                <Button href={INSTAGRAM} variant="secondary" icon={Icons.instagram} iconPosition="left"
+                  style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
+                  Follow on Instagram
+                </Button>
               </div>
             </div>
           </div>
@@ -129,11 +98,11 @@ export default async function Home() {
           }} />
         </section>
 
-        {/* Fresh arrivals */}
+        {/* 6 — Fresh arrivals */}
         <section className="section" style={{ background: 'var(--surface)' }}>
           <div className="wrap">
             <SectionHeader eyebrow="Just in" title="Fresh arrivals" actionLabel="View all" actionHref="/shop?sort=new" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
+            <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
               {fresh.map(p => <ProductCard key={p.id} product={p} />)}
             </div>
           </div>

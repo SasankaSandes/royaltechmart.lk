@@ -2,6 +2,7 @@ import type { Product, CategoryInfo, Category } from './types';
 
 export const WHATSAPP = '94764834970';
 export const FB_PAGE = 'https://facebook.com/novateksl';
+export const INSTAGRAM = 'https://instagram.com/novatek.lk';
 export const EMAIL = 'hello@novatek.lk'; // TODO: set up domain mailbox (still a placeholder)
 export const PHONE = '+94 76 483 4970';
 

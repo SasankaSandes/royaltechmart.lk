@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { waLink, FB_PAGE, EMAIL, PHONE, CATEGORIES } from '@/lib/catalog';
+import { waLink, FB_PAGE, INSTAGRAM, EMAIL, PHONE, CATEGORIES } from '@/lib/catalog';
 import { Icons } from './Icons';
 
 export default function Footer() {
@@ -17,11 +17,15 @@ export default function Footer() {
               Tech accessories, delivered island-wide. Pay on delivery, order on WhatsApp.
             </p>
             <div style={{ display: 'flex', gap: 10 }}>
-              <a href={FB_PAGE} target="_blank" rel="noopener noreferrer"
+              <a href={FB_PAGE} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
                 style={{ width: 36, height: 36, borderRadius: 8, background: 'rgba(255,255,255,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
                 {Icons.facebook}
               </a>
-              <a href={waLink()} target="_blank" rel="noopener noreferrer"
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                style={{ width: 36, height: 36, borderRadius: 8, background: 'rgba(255,255,255,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                {Icons.instagram}
+              </a>
+              <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
                 style={{ width: 36, height: 36, borderRadius: 8, background: 'rgba(37,211,102,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--wa)' }}>
                 {Icons.whatsapp}
               </a>

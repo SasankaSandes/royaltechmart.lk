@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
-import { waLink, FB_PAGE, EMAIL, PHONE } from '@/lib/catalog';
+import { waLink, FB_PAGE, INSTAGRAM, EMAIL, PHONE } from '@/lib/catalog';
 import { Icons } from '@/components/Icons';
 import { Button } from '@/components/ui/Button';
 
@@ -80,6 +80,7 @@ export default function AboutPage() {
                   [Icons.phone, PHONE, `tel:${PHONE}`],
                   [Icons.mail, EMAIL, `mailto:${EMAIL}`],
                   [Icons.facebook, 'facebook.com/novateksl', FB_PAGE],
+                  [Icons.instagram, 'instagram.com/novatek.lk', INSTAGRAM],
                   [Icons.clock, 'Mon–Sat · 9am – 7pm', null],
                   [Icons.pin, 'Island-wide delivery · Sri Lanka', null],
                 ].map(([icon, text, href], i) => (
