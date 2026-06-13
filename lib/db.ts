@@ -248,6 +248,16 @@ export async function getAdminUserByUsername(username: string): Promise<(AdminUs
   return { ...rowToAdminUser(rows[0]), passwordHash: rows[0].password_hash as string };
 }
 
+export async function getAdminUserById(id: number): Promise<(AdminUser & { passwordHash: string }) | null> {
+  const rows = await sql`SELECT * FROM admin_users WHERE id = ${id} LIMIT 1`;
+  if (!rows[0]) return null;
+  return { ...rowToAdminUser(rows[0]), passwordHash: rows[0].password_hash as string };
+}
+
+export async function updateAdminPassword(id: number, passwordHash: string): Promise<void> {
+  await sql`UPDATE admin_users SET password_hash = ${passwordHash} WHERE id = ${id}`;
+}
+
 export async function getAllAdminUsers(): Promise<AdminUser[]> {
   const rows = await sql`SELECT * FROM admin_users ORDER BY created_at`;
   return rows.map(rowToAdminUser);

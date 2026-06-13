@@ -21,11 +21,13 @@ function ImageIcon({ active }: { active: boolean }) { return icon('M21 15a2 2 0 
 function ListIcon({ active }: { active: boolean })  { return icon('M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 12h6M9 16h4')({ active }); }
 function TruckIcon({ active }: { active: boolean }) { return icon('M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z')({ active }); }
 function ChartIcon({ active }: { active: boolean }) { return icon('M18 20V10M12 20V4M6 20v-6')({ active }); }
+function UserIcon({ active }: { active: boolean })  { return icon('M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z')({ active }); }
 
 const NAV = [
   { href: '/admin',           label: 'Dashboard',  icon: GridIcon,   phase: 1 },
   { href: '/admin/products',  label: 'Products',   icon: BoxIcon,    phase: 1 },
   { href: '/admin/banners',   label: 'Banners',    icon: ImageIcon,  phase: 1 },
+  { href: '/admin/account',   label: 'Account',    icon: UserIcon,   phase: 1 },
   { href: '/admin/orders',    label: 'Orders',     icon: ListIcon,   phase: 2 },
   { href: '/admin/suppliers', label: 'Suppliers',  icon: TruckIcon,  phase: 3 },
   { href: '/admin/sales',     label: 'Sales',      icon: ChartIcon,  phase: 3 },

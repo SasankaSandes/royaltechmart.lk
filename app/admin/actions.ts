@@ -4,8 +4,8 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import bcrypt from 'bcryptjs';
-import { getAdminUserByUsername, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner } from '@/lib/db';
-import { serializeSession, SESSION_COOKIE, SESSION_MAX_AGE } from '@/lib/admin-auth';
+import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner } from '@/lib/db';
+import { serializeSession, SESSION_COOKIE, SESSION_MAX_AGE, getAdminSession } from '@/lib/admin-auth';
 import type { StockStatus, Badge, Category } from '@/lib/types';
 
 // ─── Auth ─────────────────────────────────────────────────────────────────────
@@ -34,6 +34,30 @@ export async function logoutAction() {
   const jar = await cookies();
   jar.delete(SESSION_COOKIE);
   redirect('/admin/login');
+}
+
+export async function changePasswordAction(formData: FormData) {
+  const session = await getAdminSession();
+  if (!session) redirect('/admin/login');
+
+  const current = formData.get('current') as string;
+  const next = formData.get('next') as string;
+  const confirm = formData.get('confirm') as string;
+
+  if (!current || !next || !confirm) redirect('/admin/account?error=missing');
+  if (next.length < 8) redirect('/admin/account?error=short');
+  if (next !== confirm) redirect('/admin/account?error=mismatch');
+
+  const user = await getAdminUserById(session.userId);
+  if (!user) redirect('/admin/login');
+
+  const valid = await bcrypt.compare(current, user.passwordHash);
+  if (!valid) redirect('/admin/account?error=current');
+
+  const hash = await bcrypt.hash(next, 12);
+  await updateAdminPassword(session.userId, hash);
+
+  redirect('/admin/account?ok=1');
 }
 
 // ─── Products ─────────────────────────────────────────────────────────────────

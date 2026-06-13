@@ -49,7 +49,8 @@ _Last updated: 2026-06-13_
 
 ### Admin portal — Sprint 1 (2026-06-13)
 - **Auth:** Named users with bcrypt passwords + roles (`owner`/`staff`)
-- **Login:** `/admin/login` (username + password, 8h session cookie)
+- **Login:** `/admin/login` (username + password, 8h **HMAC-signed** session cookie — signed with `SESSION_SECRET`, falls back to `DATABASE_URL`)
+- **Account:** `/admin/account` — self-service change-password (verifies current, min 8 chars)
 - **Dashboard:** `/admin` — stock summary cards, alerts, quick actions
 - **Products list:** `/admin/products` — full table with stock badges
 - **Add product:** `/admin/products/new` — all fields including specs, image, tone colours
@@ -58,7 +59,7 @@ _Last updated: 2026-06-13_
 - **HeroBanner:** now DB-driven; falls back to static slides if no banners in DB
 - **New components:** `AdminShell`, `SpecsEditor`
 - **New DB tables:** `admin_users`, `banners` — migration applied to Neon ✅
-- **Admin credentials:** `sasa` / `novatek2024`
+- **Admin login:** user `sasa` (change the password via `/admin/account` after first login)
 
 ---
 
@@ -71,7 +72,10 @@ _Last updated: 2026-06-13_
 Admin product/banner image field is URL/path only. For real file uploads → Vercel Blob Storage (future sprint).
 
 **Admin password:**  
-Change from default `novatek2024` after first login. Run `tsx scripts/seed-admin.ts` to update.
+Change the default password after first login via **`/admin/account`** (or `tsx scripts/seed-admin.ts`).
+
+**`SESSION_SECRET`:**  
+Set a dedicated `SESSION_SECRET` env var in Vercel for admin session signing (currently falls back to `DATABASE_URL` if unset).
 
 **Logo:**  
 App uses the existing RTM-era wordmark SVG. A Novatek-specific logo redesign is pending.
