@@ -1,6 +1,7 @@
 import { requireAdmin } from '@/lib/admin-auth';
 import { getAllBanners } from '@/lib/db';
 import AdminShell from '@/components/AdminShell';
+import ConfirmButton from '@/components/ConfirmButton';
 import {
   addBannerAction, editBannerAction, toggleBannerAction,
   deleteBannerAction, moveBannerAction,
@@ -108,28 +109,23 @@ export default async function BannersPage() {
                       </div>
                     </Field>
                   </Row>
+                  {/* Toggle uses this current-state value; edit ignores it */}
+                  <input type="hidden" name="active" value={String(b.active)} />
                   <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
                     <button type="submit" style={{
                       height: 40, padding: '0 20px', background: '#111110', color: '#fff',
                       border: 'none', borderRadius: 8, fontWeight: 600, fontSize: 13, cursor: 'pointer',
                     }}>Save changes</button>
-                    <form action={toggleBannerAction}>
-                      <input type="hidden" name="id" value={b.id} />
-                      <input type="hidden" name="active" value={String(b.active)} />
-                      <button type="submit" style={{
-                        height: 40, padding: '0 20px', background: '#fff',
-                        border: '1.5px solid #e5e5e3', borderRadius: 8,
-                        fontWeight: 600, fontSize: 13, cursor: 'pointer', color: '#555',
-                      }}>{b.active ? 'Hide banner' : 'Show banner'}</button>
-                    </form>
-                    <form action={deleteBannerAction} onSubmit={e => { if (!confirm('Delete this banner?')) e.preventDefault(); }}>
-                      <input type="hidden" name="id" value={b.id} />
-                      <button type="submit" style={{
-                        height: 40, padding: '0 16px', background: '#fff',
-                        border: '1.5px solid #fee2e2', borderRadius: 8,
-                        fontWeight: 600, fontSize: 13, cursor: 'pointer', color: '#B43B3B',
-                      }}>Delete</button>
-                    </form>
+                    <button type="submit" formAction={toggleBannerAction} formNoValidate style={{
+                      height: 40, padding: '0 20px', background: '#fff',
+                      border: '1.5px solid #e5e5e3', borderRadius: 8,
+                      fontWeight: 600, fontSize: 13, cursor: 'pointer', color: '#555',
+                    }}>{b.active ? 'Hide banner' : 'Show banner'}</button>
+                    <ConfirmButton message="Delete this banner?" formAction={deleteBannerAction} style={{
+                      height: 40, padding: '0 16px', background: '#fff',
+                      border: '1.5px solid #fee2e2', borderRadius: 8,
+                      fontWeight: 600, fontSize: 13, cursor: 'pointer', color: '#B43B3B',
+                    }}>Delete</ConfirmButton>
                   </div>
                 </div>
               </form>
