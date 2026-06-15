@@ -4,9 +4,9 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import bcrypt from 'bcryptjs';
-import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner } from '@/lib/db';
+import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery } from '@/lib/db';
 import { serializeSession, SESSION_COOKIE, SESSION_MAX_AGE, getAdminSession } from '@/lib/admin-auth';
-import type { StockStatus, Badge, Category } from '@/lib/types';
+import type { StockStatus, Badge, Category, DeliveryMethod, PaymentType, OrderStatus } from '@/lib/types';
 
 // ─── Auth ─────────────────────────────────────────────────────────────────────
 
@@ -190,4 +190,77 @@ export async function moveBannerAction(formData: FormData) {
   await moveBanner(id, direction);
   revalidatePath('/');
   revalidatePath('/admin/banners');
+}
+
+// ─── Orders ─────────────────────────────────────────────────────────────────
+
+export async function createOrderAction(formData: FormData) {
+  const customerName = (formData.get('customer_name') as string).trim();
+  const customerPhone = (formData.get('customer_phone') as string).trim();
+  const deliveryMethod = (formData.get('delivery_method') as DeliveryMethod) || 'courier';
+  const isCourier = deliveryMethod === 'courier';
+  const courierName = isCourier ? ((formData.get('courier_name') as string)?.trim() || null) : null;
+  const trackingNumber = isCourier ? ((formData.get('tracking_number') as string)?.trim() || null) : null;
+  const address = isCourier ? ((formData.get('address') as string)?.trim() || null) : null;
+  const city = isCourier ? ((formData.get('city') as string)?.trim() || null) : null;
+  const postalCode = isCourier ? ((formData.get('postal_code') as string)?.trim() || null) : null;
+  const paymentType = (formData.get('payment_type') as PaymentType) || 'cod';
+  const notes = (formData.get('notes') as string)?.trim() || null;
+
+  // Catalog price is the fallback; an explicit per-line price entered by the admin wins.
+  const products = await getAllProducts();
+  const priceById = new Map(products.map(p => [p.id, p.price]));
+
+  const items: { productId: number; qty: number; unitPrice: number }[] = [];
+  let i = 0;
+  while (formData.has(`item_product_${i}`)) {
+    const productId = Number(formData.get(`item_product_${i}`));
+    const qty = Number(formData.get(`item_qty_${i}`)) || 1;
+    const catalogPrice = priceById.get(productId);
+    const enteredRaw = formData.get(`item_price_${i}`) as string | null;
+    const entered = enteredRaw != null && enteredRaw !== '' ? Number(enteredRaw) : NaN;
+    const unitPrice = Number.isFinite(entered) && entered >= 0 ? entered : catalogPrice;
+    if (productId && qty > 0 && unitPrice !== undefined) {
+      items.push({ productId, qty, unitPrice });
+    }
+    i++;
+  }
+
+  if (!customerName || !customerPhone || items.length === 0) {
+    redirect('/admin/orders/new?error=invalid');
+  }
+
+  const order = await createOrder({
+    customerName, customerPhone, address, city, postalCode,
+    deliveryMethod, courierName, trackingNumber, paymentType, notes, items,
+  });
+
+  revalidatePath('/admin/orders');
+  revalidatePath('/admin');
+  redirect(`/admin/orders/${order.ref}`);
+}
+
+export async function updateOrderStatusAction(formData: FormData) {
+  const ref = formData.get('ref') as string;
+  const status = formData.get('status') as OrderStatus;
+  const redirectTo = (formData.get('redirect_to') as string) || '/admin/orders';
+
+  await updateOrderStatus(ref, status);
+
+  revalidatePath('/admin/orders');
+  revalidatePath(`/admin/orders/${ref}`);
+  revalidatePath('/admin');
+  redirect(redirectTo);
+}
+
+export async function updateOrderDeliveryAction(formData: FormData) {
+  const ref = formData.get('ref') as string;
+  const courierName = (formData.get('courier_name') as string)?.trim() || null;
+  const trackingNumber = (formData.get('tracking_number') as string)?.trim() || null;
+
+  await updateOrderDelivery(ref, { courierName, trackingNumber });
+
+  revalidatePath('/admin/orders');
+  revalidatePath(`/admin/orders/${ref}`);
+  redirect(`/admin/orders/${ref}`);
 }

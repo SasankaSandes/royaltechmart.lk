@@ -50,3 +50,40 @@ export interface Banner {
   active: boolean;
   sortOrder: number;
 }
+
+// ─── Orders ─────────────────────────────────────────────────────────────────
+
+export type OrderStatus =
+  | 'pending' | 'confirmed' | 'processing' | 'shipped'
+  | 'delivered' | 'cancelled' | 'returned';
+export type DeliveryMethod = 'self' | 'courier';
+export type PaymentType = 'cod' | 'paid';
+
+export interface OrderItem {
+  id: number;
+  orderId: number;
+  productId: number;
+  name: string;       // joined from products for display
+  qty: number;
+  unitPrice: number;
+}
+
+export interface Order {
+  id: number;
+  ref: string;
+  customerName: string;
+  customerPhone: string;
+  address?: string;
+  city?: string;
+  postalCode?: string;
+  deliveryMethod: DeliveryMethod;
+  courierName?: string;
+  trackingNumber?: string;
+  paymentType: PaymentType;
+  status: OrderStatus;
+  notes?: string;
+  createdAt: Date;
+  updatedAt: Date;
+  items: OrderItem[];
+  total: number;       // sum(qty * unitPrice)
+}

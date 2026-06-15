@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "import-catalog": "tsx scripts/import-catalog.ts"
+    "import-catalog": "tsx scripts/import-catalog.ts",
+    "migrate-orders": "tsx scripts/migrate-orders.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

@@ -113,22 +113,6 @@ export default function HeroBanner({ banners = [] }: { banners?: Banner[] }) {
         <Chevron dir="right" />
       </button>
 
-      {/* Dots */}
-      {n > 1 && (
-        <div style={{ position: 'absolute', bottom: 80, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 6, zIndex: 3 }}>
-          {slides.map((_, i) => (
-            <button key={i} onClick={() => { setTransitionOn(true); setPos(i + 1); }}
-              aria-label={`Slide ${i + 1}`}
-              style={{
-                width: i === realPos ? 20 : 6, height: 6, borderRadius: 999,
-                background: i === realPos ? '#FDEA0A' : 'rgba(255,255,255,.4)',
-                border: 'none', cursor: 'pointer', padding: 0,
-                transition: 'width .3s, background .3s',
-              }} />
-          ))}
-        </div>
-      )}
-
       {/* Search */}
       <div style={{ position: 'absolute', bottom: 28, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 24px', zIndex: 3 }}>
         <HomeSearch maxWidth={520} fieldStyle={{ background: '#fff', border: 'none', height: 54, boxShadow: 'var(--shadow-lg)' }} />

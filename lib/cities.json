@@ -1,0 +1,9262 @@
+[
+  {
+    "code": "00100",
+    "city": "Pettah Bus Stand"
+  },
+  {
+    "code": "00110",
+    "city": "Colombo Sec."
+  },
+  {
+    "code": "00200",
+    "city": "Colombo 02"
+  },
+  {
+    "code": "00210",
+    "city": "Inland Revenue Dep."
+  },
+  {
+    "code": "00276",
+    "city": "Melle Street"
+  },
+  {
+    "code": "00279",
+    "city": "Rifel Street"
+  },
+  {
+    "code": "00300",
+    "city": "Colombo 03"
+  },
+  {
+    "code": "00370",
+    "city": "Gem & Jewelly"
+  },
+  {
+    "code": "00376",
+    "city": "Torrington Square"
+  },
+  {
+    "code": "00377",
+    "city": "Colombo National Museum"
+  },
+  {
+    "code": "00400",
+    "city": "Colombo 04"
+  },
+  {
+    "code": "00500",
+    "city": "Colombo 05"
+  },
+  {
+    "code": "00576",
+    "city": "Polhengoda"
+  },
+  {
+    "code": "00577",
+    "city": "Anderson Patumaga"
+  },
+  {
+    "code": "00579",
+    "city": "Keppetipola Mawatha"
+  },
+  {
+    "code": "00582",
+    "city": "Narahenpita"
+  },
+  {
+    "code": "00600",
+    "city": "Wellawatta"
+  },
+  {
+    "code": "00677",
+    "city": "Kirillapone"
+  },
+  {
+    "code": "00700",
+    "city": "Colombo 07"
+  },
+  {
+    "code": "00776",
+    "city": "Hyde Park Corner"
+  },
+  {
+    "code": "00779",
+    "city": "Colombo General Hospital"
+  },
+  {
+    "code": "00800",
+    "city": "Colombo 08"
+  },
+  {
+    "code": "00876",
+    "city": "Gothami Road"
+  },
+  {
+    "code": "00877",
+    "city": "Wanathamulla"
+  },
+  {
+    "code": "00878",
+    "city": "Baseline Road"
+  },
+  {
+    "code": "00879",
+    "city": "Kopiyawatta"
+  },
+  {
+    "code": "00900",
+    "city": "Colombo 09"
+  },
+  {
+    "code": "01000",
+    "city": "Colombo 10"
+  },
+  {
+    "code": "01070",
+    "city": "Maligawatta"
+  },
+  {
+    "code": "01078",
+    "city": "Panchikawatta"
+  },
+  {
+    "code": "01079",
+    "city": "Sarasavipaya"
+  },
+  {
+    "code": "01081",
+    "city": "Maligakanda"
+  },
+  {
+    "code": "01082",
+    "city": "Dematagoda"
+  },
+  {
+    "code": "01100",
+    "city": "Colombo 11"
+  },
+  {
+    "code": "01200",
+    "city": "Colombo 12"
+  },
+  {
+    "code": "01300",
+    "city": "Colombo 13"
+  },
+  {
+    "code": "01400",
+    "city": "Colombo 14"
+  },
+  {
+    "code": "01478",
+    "city": "Aluthmawatha Road"
+  },
+  {
+    "code": "01500",
+    "city": "Colombo 15"
+  },
+  {
+    "code": "01600",
+    "city": "Kolonnawa"
+  },
+  {
+    "code": "10100",
+    "city": "Sri Jayawardenapura"
+  },
+  {
+    "code": "10101",
+    "city": "Beddegana"
+  },
+  {
+    "code": "10102",
+    "city": "Madiwela"
+  },
+  {
+    "code": "10103",
+    "city": "Siriperakumpura"
+  },
+  {
+    "code": "10104",
+    "city": "Mirihana North"
+  },
+  {
+    "code": "10105",
+    "city": "Nawala - Koswatta"
+  },
+  {
+    "code": "10106",
+    "city": "Nawala"
+  },
+  {
+    "code": "10107",
+    "city": "Rajagiriya"
+  },
+  {
+    "code": "10109",
+    "city": "Moragasmulla"
+  },
+  {
+    "code": "10110",
+    "city": "Parliament Post Office"
+  },
+  {
+    "code": "10111",
+    "city": "Obeysekarapura"
+  },
+  {
+    "code": "10112",
+    "city": "Kalapaluwawa"
+  },
+  {
+    "code": "10113",
+    "city": "Talangama North"
+  },
+  {
+    "code": "10114",
+    "city": "Talangama South"
+  },
+  {
+    "code": "10115",
+    "city": "Malabe"
+  },
+  {
+    "code": "10116",
+    "city": "Talawatugoda"
+  },
+  {
+    "code": "10117",
+    "city": "Jayawadanagama"
+  },
+  {
+    "code": "10118",
+    "city": "Hokandara"
+  },
+  {
+    "code": "10120",
+    "city": "Battaramulla"
+  },
+  {
+    "code": "10130",
+    "city": "Isurupaya"
+  },
+  {
+    "code": "10140",
+    "city": "Sethsiripaya"
+  },
+  {
+    "code": "10150",
+    "city": "Athurugiriya"
+  },
+  {
+    "code": "10200",
+    "city": "Homagama"
+  },
+  {
+    "code": "10201",
+    "city": "Oruwala"
+  },
+  {
+    "code": "10202",
+    "city": "Mullegama"
+  },
+  {
+    "code": "10203",
+    "city": "Panagoda Army Camp "
+  },
+  {
+    "code": "10204",
+    "city": "Habarakada"
+  },
+  {
+    "code": "10206",
+    "city": "Pitipana Homagama"
+  },
+  {
+    "code": "10207",
+    "city": "Magammana-Dolekade"
+  },
+  {
+    "code": "10208",
+    "city": "Kiriwattuduwa"
+  },
+  {
+    "code": "10209",
+    "city": "Homagama-Town"
+  },
+  {
+    "code": "10211",
+    "city": "Godagama Junction"
+  },
+  {
+    "code": "10213",
+    "city": "Panagoda"
+  },
+  {
+    "code": "10217",
+    "city": "Galawilawatta"
+  },
+  {
+    "code": "10220",
+    "city": "Kottawa"
+  },
+  {
+    "code": "10230",
+    "city": "Pannipitiya"
+  },
+  {
+    "code": "10231",
+    "city": "Pelenwatta"
+  },
+  {
+    "code": "10232",
+    "city": "Hiripitiya"
+  },
+  {
+    "code": "10233",
+    "city": "Arawwala-west"
+  },
+  {
+    "code": "10235",
+    "city": "Kottawa-North"
+  },
+  {
+    "code": "10237",
+    "city": "Rukmale-Pannipitiya"
+  },
+  {
+    "code": "10239",
+    "city": "Malapalla"
+  },
+  {
+    "code": "10240",
+    "city": "Mattegoda"
+  },
+  {
+    "code": "10250",
+    "city": "Nugegoda"
+  },
+  {
+    "code": "10251",
+    "city": "Mirihana"
+  },
+  {
+    "code": "10252",
+    "city": "Udahamulla"
+  },
+  {
+    "code": "10253",
+    "city": "Gangodawila"
+  },
+  {
+    "code": "10254",
+    "city": "Talapathpitiya"
+  },
+  {
+    "code": "10255",
+    "city": "Kohuwala"
+  },
+  {
+    "code": "10256",
+    "city": "Nawala Open University"
+  },
+  {
+    "code": "10280",
+    "city": "Maharagama"
+  },
+  {
+    "code": "10281",
+    "city": "Pamunuwa Patiragoda"
+  },
+  {
+    "code": "10282",
+    "city": "Maharagama Sudanapura"
+  },
+  {
+    "code": "10283",
+    "city": "Nawinna"
+  },
+  {
+    "code": "10284",
+    "city": "Vidyodaya University"
+  },
+  {
+    "code": "10290",
+    "city": "Boralesgamuwa"
+  },
+  {
+    "code": "10291",
+    "city": "Pepiliyana"
+  },
+  {
+    "code": "10292",
+    "city": "Katuwawala"
+  },
+  {
+    "code": "10300",
+    "city": "Piliyandala"
+  },
+  {
+    "code": "10301",
+    "city": "Suwarapola"
+  },
+  {
+    "code": "10302",
+    "city": "Deltara"
+  },
+  {
+    "code": "10303",
+    "city": "Gorakapitiya"
+  },
+  {
+    "code": "10304",
+    "city": "Siddamulla"
+  },
+  {
+    "code": "10305",
+    "city": "Makandana"
+  },
+  {
+    "code": "10306",
+    "city": "Madapatha"
+  },
+  {
+    "code": "10307",
+    "city": "Kesbewa"
+  },
+  {
+    "code": "10309",
+    "city": "Bokundara"
+  },
+  {
+    "code": "10320",
+    "city": "Polgasowita"
+  },
+  {
+    "code": "10321",
+    "city": "Kahathuduwa"
+  },
+  {
+    "code": "10350",
+    "city": "Dehiwala"
+  },
+  {
+    "code": "10352",
+    "city": "Dehiwalal Municipal Council"
+  },
+  {
+    "code": "10353",
+    "city": "Sri Saranankara Road"
+  },
+  {
+    "code": "10354",
+    "city": "Kalubowila West"
+  },
+  {
+    "code": "10355",
+    "city": "Galvihara Road"
+  },
+  {
+    "code": "10356",
+    "city": "Attidiya"
+  },
+  {
+    "code": "10357",
+    "city": "Bellanvila"
+  },
+  {
+    "code": "10358",
+    "city": "Nedimala"
+  },
+  {
+    "code": "10359",
+    "city": "Kawdana"
+  },
+  {
+    "code": "10370",
+    "city": "Mount Lavinia"
+  },
+  {
+    "code": "10372",
+    "city": "Ratmalana North"
+  },
+  {
+    "code": "10373",
+    "city": "Sirimal Uyana"
+  },
+  {
+    "code": "10374",
+    "city": "Ratmalana Air Port"
+  },
+  {
+    "code": "10375",
+    "city": "Borupan Vijayapura"
+  },
+  {
+    "code": "10376",
+    "city": "Telewala"
+  },
+  {
+    "code": "10390",
+    "city": "Rathmalana"
+  },
+  {
+    "code": "10400",
+    "city": "Moratuwa"
+  },
+  {
+    "code": "10401",
+    "city": "Koralawella"
+  },
+  {
+    "code": "10402",
+    "city": "Egoda Uyana North"
+  },
+  {
+    "code": "10403",
+    "city": "Egoda Uyana South"
+  },
+  {
+    "code": "10404",
+    "city": "Indibedda"
+  },
+  {
+    "code": "10405",
+    "city": "Moratumulla"
+  },
+  {
+    "code": "10406",
+    "city": "Rawatawatta"
+  },
+  {
+    "code": "10407",
+    "city": "Willorawatta"
+  },
+  {
+    "code": "10408",
+    "city": "Lunawa"
+  },
+  {
+    "code": "10409",
+    "city": "Laksapatiya"
+  },
+  {
+    "code": "10411",
+    "city": "Angulana"
+  },
+  {
+    "code": "10413",
+    "city": "Kaldemulla"
+  },
+  {
+    "code": "10414",
+    "city": "Katubedda"
+  },
+  {
+    "code": "10500",
+    "city": "Padukka"
+  },
+  {
+    "code": "10501",
+    "city": "Liyanwala (WP) "
+  },
+  {
+    "code": "10502",
+    "city": "Horagala"
+  },
+  {
+    "code": "10503",
+    "city": "Poregedara"
+  },
+  {
+    "code": "10504",
+    "city": "Meegoda"
+  },
+  {
+    "code": "10505",
+    "city": "Dampe"
+  },
+  {
+    "code": "10507",
+    "city": "Malagala"
+  },
+  {
+    "code": "10508",
+    "city": "Kahawala"
+  },
+  {
+    "code": "10509",
+    "city": "Meepe Junction"
+  },
+  {
+    "code": "10511",
+    "city": "Watareka"
+  },
+  {
+    "code": "10513",
+    "city": "Batawala"
+  },
+  {
+    "code": "10515",
+    "city": "Pinnawala Waga"
+  },
+  {
+    "code": "10517",
+    "city": "Angampitiya"
+  },
+  {
+    "code": "10519",
+    "city": "Arukwatupura"
+  },
+  {
+    "code": "10522",
+    "city": "Bope"
+  },
+  {
+    "code": "10523",
+    "city": "Kandanapitiya"
+  },
+  {
+    "code": "10524",
+    "city": "Handapangoda"
+  },
+  {
+    "code": "10526",
+    "city": "Batugampola"
+  },
+  {
+    "code": "10527",
+    "city": "Gurulana "
+  },
+  {
+    "code": "10529",
+    "city": "Udagamkanda"
+  },
+  {
+    "code": "10600",
+    "city": "Kolonnawa"
+  },
+  {
+    "code": "10601",
+    "city": "Wennawatta"
+  },
+  {
+    "code": "10602",
+    "city": "Orugodawatta"
+  },
+  {
+    "code": "10603",
+    "city": "Kotuwila"
+  },
+  {
+    "code": "10604",
+    "city": "Meetotamulla"
+  },
+  {
+    "code": "10605",
+    "city": "Kolonnawa Urban Council"
+  },
+  {
+    "code": "10606",
+    "city": "Salamulla"
+  },
+  {
+    "code": "10620",
+    "city": "Mulleriyawa New Town"
+  },
+  {
+    "code": "10621",
+    "city": "Himbutana Udumulla"
+  },
+  {
+    "code": "10622",
+    "city": "Mulleriyawa Ranabima"
+  },
+  {
+    "code": "10623",
+    "city": "Madinnagoda"
+  },
+  {
+    "code": "10624",
+    "city": "Kudabuthgamuwa"
+  },
+  {
+    "code": "10625",
+    "city": "Gothatuwa New Town"
+  },
+  {
+    "code": "10626",
+    "city": "Gothatuwa"
+  },
+  {
+    "code": "10640",
+    "city": "Kaduwela"
+  },
+  {
+    "code": "10641",
+    "city": "Koratota"
+  },
+  {
+    "code": "10642",
+    "city": "Nawagamuwa Pattinipura"
+  },
+  {
+    "code": "10643",
+    "city": "Bomiriya"
+  },
+  {
+    "code": "10644",
+    "city": "Weliwita"
+  },
+  {
+    "code": "10650",
+    "city": "Hanwella"
+  },
+  {
+    "code": "10651",
+    "city": "Niripola"
+  },
+  {
+    "code": "10652",
+    "city": "Diddeniya-Hanwella"
+  },
+  {
+    "code": "10654",
+    "city": "Ranala"
+  },
+  {
+    "code": "10656",
+    "city": "Dedigamuwa"
+  },
+  {
+    "code": "10657",
+    "city": "Pahala Kaluaggala"
+  },
+  {
+    "code": "10658",
+    "city": "Atigala"
+  },
+  {
+    "code": "10659",
+    "city": "Jaltara-Henpita"
+  },
+  {
+    "code": "10660",
+    "city": "Pugoda"
+  },
+  {
+    "code": "10662",
+    "city": "Kapugoda"
+  },
+  {
+    "code": "10664",
+    "city": "Tittapattara"
+  },
+  {
+    "code": "10680",
+    "city": "Waga"
+  },
+  {
+    "code": "10681",
+    "city": "Waga Iridapola"
+  },
+  {
+    "code": "10682",
+    "city": "Tummodara"
+  },
+  {
+    "code": "10700",
+    "city": "Avissawella"
+  },
+  {
+    "code": "10701",
+    "city": "Avissawella Bazaar"
+  },
+  {
+    "code": "10703",
+    "city": "Talduwa"
+  },
+  {
+    "code": "10704",
+    "city": "Napawela"
+  },
+  {
+    "code": "10705",
+    "city": "Daigala"
+  },
+  {
+    "code": "10707",
+    "city": "Maniyangama"
+  },
+  {
+    "code": "10709",
+    "city": "Eswatta"
+  },
+  {
+    "code": "10712",
+    "city": "Puwakpitiya"
+  },
+  {
+    "code": "10713",
+    "city": "Kaluandura"
+  },
+  {
+    "code": "10714",
+    "city": "Hewainna"
+  },
+  {
+    "code": "10715",
+    "city": "Marambekanda"
+  },
+  {
+    "code": "10717",
+    "city": "Uduwaka"
+  },
+  {
+    "code": "10718",
+    "city": "Kalatuwawa"
+  },
+  {
+    "code": "10719",
+    "city": "Nugadanda"
+  },
+  {
+    "code": "10730",
+    "city": "Kosgama"
+  },
+  {
+    "code": "10731",
+    "city": "Bollatawa"
+  },
+  {
+    "code": "10732",
+    "city": "Akarawita"
+  },
+  {
+    "code": "10733",
+    "city": "Salawa"
+  },
+  {
+    "code": "10737",
+    "city": "Kadugoda"
+  },
+  {
+    "code": "11000",
+    "city": "Gampaha"
+  },
+  {
+    "code": "11010",
+    "city": "Ragama"
+  },
+  {
+    "code": "11011",
+    "city": "Batuwatte"
+  },
+  {
+    "code": "11012",
+    "city": "Walpola"
+  },
+  {
+    "code": "11020",
+    "city": "Ganemulla"
+  },
+  {
+    "code": "11024",
+    "city": "Bollete"
+  },
+  {
+    "code": "11030",
+    "city": "Udugampola"
+  },
+  {
+    "code": "11033",
+    "city": "Madelgamuwa"
+  },
+  {
+    "code": "11034",
+    "city": "Uggalboda"
+  },
+  {
+    "code": "11040",
+    "city": "Bemmulla"
+  },
+  {
+    "code": "11043",
+    "city": "Pethiyagoda"
+  },
+  {
+    "code": "11052",
+    "city": "Ambagaspitiya"
+  },
+  {
+    "code": "11054",
+    "city": "Udathuthiripitiya"
+  },
+  {
+    "code": "11056",
+    "city": "Mudungoda"
+  },
+  {
+    "code": "11061",
+    "city": "Mandawala"
+  },
+  {
+    "code": "11062",
+    "city": "Lunugama"
+  },
+  {
+    "code": "11063",
+    "city": "Naranwala"
+  },
+  {
+    "code": "11066",
+    "city": "Nedungamuwa"
+  },
+  {
+    "code": "11068",
+    "city": "Wanaluwewa"
+  },
+  {
+    "code": "11100",
+    "city": "Veyangoda"
+  },
+  {
+    "code": "11102",
+    "city": "Dewalapola"
+  },
+  {
+    "code": "11104",
+    "city": "Watinapaha"
+  },
+  {
+    "code": "11105",
+    "city": "Kumbalolowa"
+  },
+  {
+    "code": "11108",
+    "city": "Assella"
+  },
+  {
+    "code": "11112",
+    "city": "Muddaragama"
+  },
+  {
+    "code": "11114",
+    "city": "Mabodale"
+  },
+  {
+    "code": "11116",
+    "city": "Ellakkala"
+  },
+  {
+    "code": "11120",
+    "city": "Attanagalle"
+  },
+  {
+    "code": "11122",
+    "city": "Alawala"
+  },
+  {
+    "code": "11126",
+    "city": "Urapola"
+  },
+  {
+    "code": "11128",
+    "city": "Nikahetikanda"
+  },
+  {
+    "code": "11129",
+    "city": "Rukmale"
+  },
+  {
+    "code": "11134",
+    "city": "Bopagama"
+  },
+  {
+    "code": "11142",
+    "city": "Ruggahawila"
+  },
+  {
+    "code": "11144",
+    "city": "Kahatowita"
+  },
+  {
+    "code": "11146",
+    "city": "Walgammulla"
+  },
+  {
+    "code": "11150",
+    "city": "Pallewela"
+  },
+  {
+    "code": "11160",
+    "city": "Kaleliya"
+  },
+  {
+    "code": "11200",
+    "city": "Mirigama"
+  },
+  {
+    "code": "11204",
+    "city": "Loluwagoda"
+  },
+  {
+    "code": "11206",
+    "city": "Kitalawalana"
+  },
+  {
+    "code": "11208",
+    "city": "Divuldeniya"
+  },
+  {
+    "code": "11212",
+    "city": "Ambepussa"
+  },
+  {
+    "code": "11214",
+    "city": "Pamunuwatta"
+  },
+  {
+    "code": "11216",
+    "city": "Bokalagama"
+  },
+  {
+    "code": "11222",
+    "city": "Nawana"
+  },
+  {
+    "code": "11224",
+    "city": "Kaluaggala"
+  },
+  {
+    "code": "11226",
+    "city": "Walpita"
+  },
+  {
+    "code": "11228",
+    "city": "Delwagura"
+  },
+  {
+    "code": "11232",
+    "city": "Kotadeniyawa"
+  },
+  {
+    "code": "11234",
+    "city": "Mellawagedara"
+  },
+  {
+    "code": "11242",
+    "city": "Kitulwala"
+  },
+  {
+    "code": "11244",
+    "city": "Banduragoda"
+  },
+  {
+    "code": "11250",
+    "city": "Divulapitiya"
+  },
+  {
+    "code": "11260",
+    "city": "Marandagahamulla"
+  },
+  {
+    "code": "11262",
+    "city": "Hunumulla"
+  },
+  {
+    "code": "11264",
+    "city": "Dunagaha"
+  },
+  {
+    "code": "11265",
+    "city": "Ihala Madampella"
+  },
+  {
+    "code": "11270",
+    "city": "Demanhandiya"
+  },
+  {
+    "code": "11300",
+    "city": "Wattala"
+  },
+  {
+    "code": "11320",
+    "city": "Kandana"
+  },
+  {
+    "code": "11324",
+    "city": "Polpithimukulana"
+  },
+  {
+    "code": "11328",
+    "city": "Uswetekeiyawa"
+  },
+  {
+    "code": "11350",
+    "city": "Ja-Ela"
+  },
+  {
+    "code": "11354",
+    "city": "Niwandama"
+  },
+  {
+    "code": "11358",
+    "city": "Makewita"
+  },
+  {
+    "code": "11370",
+    "city": "Pamunugama"
+  },
+  {
+    "code": "11380",
+    "city": "Ekala"
+  },
+  {
+    "code": "11390",
+    "city": "Kotugoda"
+  },
+  {
+    "code": "11400",
+    "city": "Raddolugama"
+  },
+  {
+    "code": "11410",
+    "city": "Seeduwa"
+  },
+  {
+    "code": "11420",
+    "city": "Katunayaka"
+  },
+  {
+    "code": "11440",
+    "city": "Katunayaka Airforce Camp"
+  },
+  {
+    "code": "11450",
+    "city": "Katunayaka"
+  },
+  {
+    "code": "11500",
+    "city": "Negombo"
+  },
+  {
+    "code": "11504",
+    "city": "Talahena"
+  },
+  {
+    "code": "11522",
+    "city": "Kimbulapitiya"
+  },
+  {
+    "code": "11524",
+    "city": "Dagonna"
+  },
+  {
+    "code": "11526",
+    "city": "Katuwellegama"
+  },
+  {
+    "code": "11532",
+    "city": "Thimbirigaskatuwa"
+  },
+  {
+    "code": "11534",
+    "city": "Katana"
+  },
+  {
+    "code": "11536",
+    "city": "Akaragama"
+  },
+  {
+    "code": "11538",
+    "city": "Badalgama"
+  },
+  {
+    "code": "11540",
+    "city": "Kochchikade"
+  },
+  {
+    "code": "11550",
+    "city": "Minuwangoda"
+  },
+  {
+    "code": "11558",
+    "city": "Andiambalama"
+  },
+  {
+    "code": "11562",
+    "city": "Wegowwa"
+  },
+  {
+    "code": "11564",
+    "city": "Horampella"
+  },
+  {
+    "code": "11566",
+    "city": "Yatiyana"
+  },
+  {
+    "code": "11568",
+    "city": "Hinatiyana Madawala"
+  },
+  {
+    "code": "11600",
+    "city": "Kelaniya"
+  },
+  {
+    "code": "11607",
+    "city": "Siyambalape"
+  },
+  {
+    "code": "11618",
+    "city": "Heiyanthuduwa"
+  },
+  {
+    "code": "11630",
+    "city": "Gonawala "
+  },
+  {
+    "code": "11640",
+    "city": "Makola"
+  },
+  {
+    "code": "11650",
+    "city": "Biyagama"
+  },
+  {
+    "code": "11670",
+    "city": "Malwana"
+  },
+  {
+    "code": "11672",
+    "city": "Biyagama Ipz"
+  },
+  {
+    "code": "11680",
+    "city": "Dompe"
+  },
+  {
+    "code": "11690",
+    "city": "Dekatana"
+  },
+  {
+    "code": "11692",
+    "city": "Demalagama"
+  },
+  {
+    "code": "11700",
+    "city": "Delgoda"
+  },
+  {
+    "code": "11710",
+    "city": "Weliweriya"
+  },
+  {
+    "code": "11715",
+    "city": "Henegama"
+  },
+  {
+    "code": "11720",
+    "city": "Buthpitiya"
+  },
+  {
+    "code": "11724",
+    "city": "Wathurugama"
+  },
+  {
+    "code": "11725",
+    "city": "Radawana"
+  },
+  {
+    "code": "11730",
+    "city": "Kirindiwela"
+  },
+  {
+    "code": "11734",
+    "city": "Hiswella"
+  },
+  {
+    "code": "11741",
+    "city": "Pepiliyawela"
+  },
+  {
+    "code": "11742",
+    "city": "Mithirigala"
+  },
+  {
+    "code": "1178",
+    "city": "Wolfendal Street"
+  },
+  {
+    "code": "1181",
+    "city": "Colombo Kachcheri"
+  },
+  {
+    "code": "1182",
+    "city": "Armour Street "
+  },
+  {
+    "code": "1183",
+    "city": "St. Anthony's"
+  },
+  {
+    "code": "11830",
+    "city": "Peliyagoda"
+  },
+  {
+    "code": "11850",
+    "city": "Kadawatha"
+  },
+  {
+    "code": "11856",
+    "city": "Imbulgoda"
+  },
+  {
+    "code": "11858",
+    "city": "Weboda"
+  },
+  {
+    "code": "11870",
+    "city": "Yakkala"
+  },
+  {
+    "code": "11875",
+    "city": "Kalagedihena"
+  },
+  {
+    "code": "11880",
+    "city": "Nittambuwa"
+  },
+  {
+    "code": "11889",
+    "city": "Debahera"
+  },
+  {
+    "code": "11890",
+    "city": "Pasyala"
+  },
+  {
+    "code": "11892",
+    "city": "Radawadunna"
+  },
+  {
+    "code": "11894",
+    "city": "Weweldeniya"
+  },
+  {
+    "code": "11896",
+    "city": "Danowita"
+  },
+  {
+    "code": "12000",
+    "city": "Kalutara"
+  },
+  {
+    "code": "12005",
+    "city": "Galpatha"
+  },
+  {
+    "code": "12006",
+    "city": "Yatawara Junction"
+  },
+  {
+    "code": "12007",
+    "city": "Koholana"
+  },
+  {
+    "code": "12008",
+    "city": "Bolossagama"
+  },
+  {
+    "code": "12009",
+    "city": "Remunagoda"
+  },
+  {
+    "code": "12016",
+    "city": "Gamagoda"
+  },
+  {
+    "code": "12020",
+    "city": "Dodangoda"
+  },
+  {
+    "code": "12024",
+    "city": "Bombuwela"
+  },
+  {
+    "code": "12025",
+    "city": "Tebuwana"
+  },
+  {
+    "code": "12030",
+    "city": "Neboda"
+  },
+  {
+    "code": "12050",
+    "city": "Paiyagala"
+  },
+  {
+    "code": "12055",
+    "city": "Halkandawila"
+  },
+  {
+    "code": "12060",
+    "city": "Maggona"
+  },
+  {
+    "code": "12070",
+    "city": "Beruwala"
+  },
+  {
+    "code": "12074",
+    "city": "Padagoda"
+  },
+  {
+    "code": "12078",
+    "city": "Kalawila Kiranthidiya"
+  },
+  {
+    "code": "12080",
+    "city": "Aluthgama"
+  },
+  {
+    "code": "12082",
+    "city": "Alutgama"
+  },
+  {
+    "code": "12090",
+    "city": "Dharga Town"
+  },
+  {
+    "code": "12094",
+    "city": "Meegama"
+  },
+  {
+    "code": "12100",
+    "city": "Matugama"
+  },
+  {
+    "code": "12104",
+    "city": "Yatadolawatta"
+  },
+  {
+    "code": "12106",
+    "city": "Nawattuduwa"
+  },
+  {
+    "code": "12108",
+    "city": "Welipenna"
+  },
+  {
+    "code": "12110",
+    "city": "Ittepana"
+  },
+  {
+    "code": "12112",
+    "city": "Walagedara"
+  },
+  {
+    "code": "12114",
+    "city": "Pannila"
+  },
+  {
+    "code": "12116",
+    "city": "Ittapana"
+  },
+  {
+    "code": "12118",
+    "city": "Halwala"
+  },
+  {
+    "code": "12122",
+    "city": "Paraigama"
+  },
+  {
+    "code": "12124",
+    "city": "Yagirala"
+  },
+  {
+    "code": "12126",
+    "city": "Mahakalupahana"
+  },
+  {
+    "code": "12127",
+    "city": "Utumgama"
+  },
+  {
+    "code": "12130",
+    "city": "Meegahatenna"
+  },
+  {
+    "code": "12134",
+    "city": "Walallawita"
+  },
+  {
+    "code": "12136",
+    "city": "Polgampola"
+  },
+  {
+    "code": "12138",
+    "city": "Pelawatta"
+  },
+  {
+    "code": "12142",
+    "city": "Boralugoda"
+  },
+  {
+    "code": "12144",
+    "city": "Pahalhewessa"
+  },
+  {
+    "code": "12148",
+    "city": "Danawala Thiniyawala"
+  },
+  {
+    "code": "12200",
+    "city": "Agalawatte"
+  },
+  {
+    "code": "12204",
+    "city": "Veyangalla"
+  },
+  {
+    "code": "12210",
+    "city": "Mahagama "
+  },
+  {
+    "code": "12214",
+    "city": "Pelanda"
+  },
+  {
+    "code": "12216",
+    "city": "Molkawa"
+  },
+  {
+    "code": "12218",
+    "city": "Kelinkanda"
+  },
+  {
+    "code": "12222",
+    "city": "Kitulgoda"
+  },
+  {
+    "code": "12224",
+    "city": "Bellana"
+  },
+  {
+    "code": "12230",
+    "city": "Baduraliya"
+  },
+  {
+    "code": "12232",
+    "city": "Morapitiya"
+  },
+  {
+    "code": "12234",
+    "city": "Hedigalla Colony"
+  },
+  {
+    "code": "12236",
+    "city": "Gurulubadda"
+  },
+  {
+    "code": "12300",
+    "city": "Bulathsinhala"
+  },
+  {
+    "code": "12302",
+    "city": "Paragoda"
+  },
+  {
+    "code": "12304",
+    "city": "Delmella"
+  },
+  {
+    "code": "12306",
+    "city": "Halwatura"
+  },
+  {
+    "code": "12308",
+    "city": "Diwalakada"
+  },
+  {
+    "code": "12310",
+    "city": "Govinna"
+  },
+  {
+    "code": "12320",
+    "city": "Anguruwatota"
+  },
+  {
+    "code": "12322",
+    "city": "Uduwara"
+  },
+  {
+    "code": "12400",
+    "city": "Horana"
+  },
+  {
+    "code": "12404",
+    "city": "Pokunuwita"
+  },
+  {
+    "code": "12410",
+    "city": "Gonapola Junction"
+  },
+  {
+    "code": "12412",
+    "city": "Millaniya"
+  },
+  {
+    "code": "12414",
+    "city": "Paragastota"
+  },
+  {
+    "code": "12416",
+    "city": "Dombagoda"
+  },
+  {
+    "code": "12418",
+    "city": "Kananwila"
+  },
+  {
+    "code": "12422",
+    "city": "Millewa"
+  },
+  {
+    "code": "12424",
+    "city": "Miwanapalana"
+  },
+  {
+    "code": "12426",
+    "city": "Kuda Uduwa"
+  },
+  {
+    "code": "12428",
+    "city": "Kandanagama"
+  },
+  {
+    "code": "12432",
+    "city": "Poruwedanda"
+  },
+  {
+    "code": "12440",
+    "city": "Ingiriya"
+  },
+  {
+    "code": "12500",
+    "city": "Panadura"
+  },
+  {
+    "code": "12524",
+    "city": "Alubomulla"
+  },
+  {
+    "code": "12530",
+    "city": "Bandaragama"
+  },
+  {
+    "code": "12534",
+    "city": "Welmilla Junction"
+  },
+  {
+    "code": "12538",
+    "city": "Haltota"
+  },
+  {
+    "code": "12550",
+    "city": "Kehelwatta"
+  },
+  {
+    "code": "12560",
+    "city": "Wadduwa"
+  },
+  {
+    "code": "12564",
+    "city": "Morontuduwa"
+  },
+  {
+    "code": "12580",
+    "city": "Waskaduwa"
+  },
+  {
+    "code": "12660",
+    "city": "Maggona"
+  },
+  {
+    "code": "12760",
+    "city": "Miraniya Street "
+  },
+  {
+    "code": "13770",
+    "city": "Wasala Road"
+  },
+  {
+    "code": "14760",
+    "city": "Nagalagam Street"
+  },
+  {
+    "code": "14790",
+    "city": "Mutwal South"
+  },
+  {
+    "code": "200",
+    "city": "Slave Island"
+  },
+  {
+    "code": "20000",
+    "city": "Kandy"
+  },
+  {
+    "code": "20032",
+    "city": "Halloluwa"
+  },
+  {
+    "code": "20034",
+    "city": "Yatigalahala"
+  },
+  {
+    "code": "20042",
+    "city": "Ihala Kobbekaduwa"
+  },
+  {
+    "code": "20044",
+    "city": "Sangarajapura"
+  },
+  {
+    "code": "20048",
+    "city": "Kulugammana"
+  },
+  {
+    "code": "20052",
+    "city": "Uduwa"
+  },
+  {
+    "code": "20060",
+    "city": "Hataraliyadda"
+  },
+  {
+    "code": "20062",
+    "city": "Aludeniya"
+  },
+  {
+    "code": "20068",
+    "city": "Dedunupitiya"
+  },
+  {
+    "code": "20072",
+    "city": "Nugawela"
+  },
+  {
+    "code": "20080",
+    "city": "Werellagama"
+  },
+  {
+    "code": "20084",
+    "city": "Pallekotuwa"
+  },
+  {
+    "code": "20086",
+    "city": "Kumburegama"
+  },
+  {
+    "code": "20092",
+    "city": "Harankahawa"
+  },
+  {
+    "code": "20094",
+    "city": "Udahingulwala"
+  },
+  {
+    "code": "20095",
+    "city": "Gallellagama"
+  },
+  {
+    "code": "20100",
+    "city": "Galagedara"
+  },
+  {
+    "code": "20106",
+    "city": "Poholiyadda"
+  },
+  {
+    "code": "20108",
+    "city": "Wettawa"
+  },
+  {
+    "code": "20109",
+    "city": "Minigamuwa"
+  },
+  {
+    "code": "20112",
+    "city": "Pujapitiya"
+  },
+  {
+    "code": "20118",
+    "city": "Pattiya Watta"
+  },
+  {
+    "code": "20120",
+    "city": "Medawala Harispattuwa"
+  },
+  {
+    "code": "20126",
+    "city": "Dolapihilla"
+  },
+  {
+    "code": "20128",
+    "city": "Rambukwella"
+  },
+  {
+    "code": "20132",
+    "city": "Batugoda"
+  },
+  {
+    "code": "20134",
+    "city": "Watagoda Harispattuva"
+  },
+  {
+    "code": "20136",
+    "city": "Ambattenna"
+  },
+  {
+    "code": "20140",
+    "city": "Alawatugoda"
+  },
+  {
+    "code": "20142",
+    "city": "Wilangama"
+  },
+  {
+    "code": "20150",
+    "city": "Ankumbura"
+  },
+  {
+    "code": "20152",
+    "city": "Galhinna"
+  },
+  {
+    "code": "20154",
+    "city": "Batagolladeniya"
+  },
+  {
+    "code": "20160",
+    "city": "Ampitiya"
+  },
+  {
+    "code": "20164",
+    "city": "Uduwela"
+  },
+  {
+    "code": "20166",
+    "city": "Tennekumbura"
+  },
+  {
+    "code": "20168",
+    "city": "Kundasale"
+  },
+  {
+    "code": "20170",
+    "city": "Menikhinna"
+  },
+  {
+    "code": "20172",
+    "city": "Lunuketiya Maditta"
+  },
+  {
+    "code": "20176",
+    "city": "Naranpanawa"
+  },
+  {
+    "code": "20180",
+    "city": "Rajawella"
+  },
+  {
+    "code": "20184",
+    "city": "Gomagoda"
+  },
+  {
+    "code": "20186",
+    "city": "Kengalla"
+  },
+  {
+    "code": "20189",
+    "city": "Gurudeniya"
+  },
+  {
+    "code": "20194",
+    "city": "Nattarampotha"
+  },
+  {
+    "code": "20196",
+    "city": "Pilawala"
+  },
+  {
+    "code": "20198",
+    "city": "Ketawala Leula"
+  },
+  {
+    "code": "20200",
+    "city": "Talatuoya"
+  },
+  {
+    "code": "20202",
+    "city": "Etulgama"
+  },
+  {
+    "code": "20204",
+    "city": "Nugaliyadda"
+  },
+  {
+    "code": "20206",
+    "city": "Kapuliyadde"
+  },
+  {
+    "code": "20210",
+    "city": "Marassana"
+  },
+  {
+    "code": "20212",
+    "city": "Kolabissa"
+  },
+  {
+    "code": "20214",
+    "city": "Godamunna"
+  },
+  {
+    "code": "20216",
+    "city": "Mahamedagama"
+  },
+  {
+    "code": "20218",
+    "city": "Bawlana"
+  },
+  {
+    "code": "20232",
+    "city": "Murutalawa"
+  },
+  {
+    "code": "20234",
+    "city": "Yahalatenna"
+  },
+  {
+    "code": "20250",
+    "city": "Polgolla"
+  },
+  {
+    "code": "20260",
+    "city": "Madawala Bazaar"
+  },
+  {
+    "code": "20270",
+    "city": "Gunnepana"
+  },
+  {
+    "code": "20300",
+    "city": "Kadugannawa"
+  },
+  {
+    "code": "20306",
+    "city": "Ketakumbura"
+  },
+  {
+    "code": "20308",
+    "city": "Balana"
+  },
+  {
+    "code": "20400",
+    "city": "Peradeniya"
+  },
+  {
+    "code": "20404",
+    "city": "Uda Peradeniya"
+  },
+  {
+    "code": "20409",
+    "city": "Megoda Kalugamuwa"
+  },
+  {
+    "code": "20414",
+    "city": "Hindagala"
+  },
+  {
+    "code": "20418",
+    "city": "Nilambe"
+  },
+  {
+    "code": "20420",
+    "city": "Galaha"
+  },
+  {
+    "code": "20430",
+    "city": "Deltota"
+  },
+  {
+    "code": "20438",
+    "city": "Handawalapitiya"
+  },
+  {
+    "code": "20440",
+    "city": "Hewaheta"
+  },
+  {
+    "code": "20442",
+    "city": "Kiribathkumbura"
+  },
+  {
+    "code": "20450",
+    "city": "Pilimattalawa"
+  },
+  {
+    "code": "20454",
+    "city": "Wattapola"
+  },
+  {
+    "code": "20456",
+    "city": "Danture"
+  },
+  {
+    "code": "20465",
+    "city": "Danture"
+  },
+  {
+    "code": "20470",
+    "city": "Menikdiwela"
+  },
+  {
+    "code": "20480",
+    "city": "Handessa"
+  },
+  {
+    "code": "20482",
+    "city": "Leemagahakotuwa"
+  },
+  {
+    "code": "20500",
+    "city": "Gampola"
+  },
+  {
+    "code": "20506",
+    "city": "Udahatenna"
+  },
+  {
+    "code": "20509",
+    "city": "Kurunduwatta Bazzar"
+  },
+  {
+    "code": "20510",
+    "city": "Dolosbage"
+  },
+  {
+    "code": "20511",
+    "city": "Padiyathalawa"
+  },
+  {
+    "code": "20512",
+    "city": "Meetalawa"
+  },
+  {
+    "code": "20524",
+    "city": "Hondiyadeniya"
+  },
+  {
+    "code": "20526",
+    "city": "Muruthagahamula"
+  },
+  {
+    "code": "20532",
+    "city": "Doluwa"
+  },
+  {
+    "code": "20544",
+    "city": "Panwilatenna"
+  },
+  {
+    "code": "20546",
+    "city": "Pupuressa"
+  },
+  {
+    "code": "20560",
+    "city": "Kotmale"
+  },
+  {
+    "code": "20562",
+    "city": "Ulapane"
+  },
+  {
+    "code": "20564",
+    "city": "Mawatura"
+  },
+  {
+    "code": "20566",
+    "city": "Maswela"
+  },
+  {
+    "code": "20567",
+    "city": "Doragala"
+  },
+  {
+    "code": "20568",
+    "city": "Nayapana Janapadaya"
+  },
+  {
+    "code": "20574",
+    "city": "Atabage"
+  },
+  {
+    "code": "20578",
+    "city": "Paradeka"
+  },
+  {
+    "code": "20580",
+    "city": "Pussellawa"
+  },
+  {
+    "code": "20588",
+    "city": "Katukitula"
+  },
+  {
+    "code": "20590",
+    "city": "Ramboda"
+  },
+  {
+    "code": "20592",
+    "city": "Labukele"
+  },
+  {
+    "code": "20610",
+    "city": "Wekligalla"
+  },
+  {
+    "code": "20620",
+    "city": "Gelioya"
+  },
+  {
+    "code": "20640",
+    "city": "Velamboda"
+  },
+  {
+    "code": "20644",
+    "city": "Bambaragahaela"
+  },
+  {
+    "code": "20650",
+    "city": "Nawalapitiya"
+  },
+  {
+    "code": "20654",
+    "city": "Pasbage"
+  },
+  {
+    "code": "20656",
+    "city": "Gonawalapatana"
+  },
+  {
+    "code": "20658",
+    "city": "Dekinda"
+  },
+  {
+    "code": "20660",
+    "city": "Ketaboola"
+  },
+  {
+    "code": "20662",
+    "city": "Mapaknda"
+  },
+  {
+    "code": "20664",
+    "city": "Galaboda"
+  },
+  {
+    "code": "20666",
+    "city": "Weligampola"
+  },
+  {
+    "code": "20668",
+    "city": "Hapugastalawa"
+  },
+  {
+    "code": "20669",
+    "city": "Harangalagama"
+  },
+  {
+    "code": "20670",
+    "city": "Nawathispane"
+  },
+  {
+    "code": "20676",
+    "city": "Rambukpitiya"
+  },
+  {
+    "code": "20678",
+    "city": "Ambagamuva Udabulathgamuva"
+  },
+  {
+    "code": "20680",
+    "city": "Ginigathena"
+  },
+  {
+    "code": "20682",
+    "city": "Pitawala"
+  },
+  {
+    "code": "20684",
+    "city": "Dagampitiya"
+  },
+  {
+    "code": "20686",
+    "city": "Ambatalawa"
+  },
+  {
+    "code": "20688",
+    "city": "Kelanigama"
+  },
+  {
+    "code": "20702",
+    "city": "Mailapitiya"
+  },
+  {
+    "code": "20708",
+    "city": "Unuwinna"
+  },
+  {
+    "code": "20710",
+    "city": "Hanguranketha"
+  },
+  {
+    "code": "20712",
+    "city": "Gonagattenna"
+  },
+  {
+    "code": "20714",
+    "city": "Marymount Colony"
+  },
+  {
+    "code": "20722",
+    "city": "Udawatte"
+  },
+  {
+    "code": "20724",
+    "city": "Illagolla"
+  },
+  {
+    "code": "20730",
+    "city": "Rikiligaskada"
+  },
+  {
+    "code": "20732",
+    "city": "Ekiriya"
+  },
+  {
+    "code": "20734",
+    "city": "Pallebowala"
+  },
+  {
+    "code": "20738",
+    "city": "Karandagolla"
+  },
+  {
+    "code": "20742",
+    "city": "Elamulla"
+  },
+  {
+    "code": "20744",
+    "city": "Mandaram Nuwara"
+  },
+  {
+    "code": "20748",
+    "city": "Maturata"
+  },
+  {
+    "code": "20750",
+    "city": "Padiyapelella"
+  },
+  {
+    "code": "20752",
+    "city": "Munwatta"
+  },
+  {
+    "code": "20800",
+    "city": "Katugastota"
+  },
+  {
+    "code": "20802",
+    "city": "Udatalawinna"
+  },
+  {
+    "code": "20810",
+    "city": "Wattegama"
+  },
+  {
+    "code": "20816",
+    "city": "Doragamuwa"
+  },
+  {
+    "code": "20818",
+    "city": "Rathukohodigala"
+  },
+  {
+    "code": "20822",
+    "city": "Jambugahapitiya"
+  },
+  {
+    "code": "20824",
+    "city": "Dunuwila"
+  },
+  {
+    "code": "20828",
+    "city": "Makkanigama"
+  },
+  {
+    "code": "20830",
+    "city": "Panwila"
+  },
+  {
+    "code": "20838",
+    "city": "Tawalantenna"
+  },
+  {
+    "code": "20840",
+    "city": "Madulkele"
+  },
+  {
+    "code": "20850",
+    "city": "Akurana"
+  },
+  {
+    "code": "20900",
+    "city": "Teldeniya"
+  },
+  {
+    "code": "20902",
+    "city": "Kumbukkandura"
+  },
+  {
+    "code": "20904",
+    "city": "Senarathwela"
+  },
+  {
+    "code": "20906",
+    "city": "Putuhapuwa"
+  },
+  {
+    "code": "20908",
+    "city": "Werapitiya"
+  },
+  {
+    "code": "20914",
+    "city": "Wendaruwa"
+  },
+  {
+    "code": "20916",
+    "city": "Udispattuwa"
+  },
+  {
+    "code": "20921",
+    "city": "Makuldeniya"
+  },
+  {
+    "code": "20922",
+    "city": "Rangala"
+  },
+  {
+    "code": "20923",
+    "city": "Mimure"
+  },
+  {
+    "code": "20924",
+    "city": "Kahataliyadda"
+  },
+  {
+    "code": "20926",
+    "city": "Kalugala"
+  },
+  {
+    "code": "20928",
+    "city": "Kobonilla"
+  },
+  {
+    "code": "20932",
+    "city": "Bopana"
+  },
+  {
+    "code": "20934",
+    "city": "Uduwahinna"
+  },
+  {
+    "code": "20938",
+    "city": "Madugalla"
+  },
+  {
+    "code": "20940",
+    "city": "Medamahanuwara"
+  },
+  {
+    "code": "20945",
+    "city": "Mahadorailyadda"
+  },
+  {
+    "code": "20948",
+    "city": "Hunnasgiriya"
+  },
+  {
+    "code": "20950",
+    "city": "Ududumbara"
+  },
+  {
+    "code": "20960",
+    "city": "Hasalaka"
+  },
+  {
+    "code": "20965",
+    "city": "Ulpothagama"
+  },
+  {
+    "code": "20966",
+    "city": "Batumulla"
+  },
+  {
+    "code": "20967",
+    "city": "Barawardhana Oya"
+  },
+  {
+    "code": "20971",
+    "city": "Kolongoda"
+  },
+  {
+    "code": "20982",
+    "city": "Weragantota"
+  },
+  {
+    "code": "20983",
+    "city": "Minipe"
+  },
+  {
+    "code": "20984",
+    "city": "Handaganawa"
+  },
+  {
+    "code": "20986",
+    "city": "Ambagahapelessa"
+  },
+  {
+    "code": "20990",
+    "city": "Rantembe"
+  },
+  {
+    "code": "21000",
+    "city": "Matale"
+  },
+  {
+    "code": "21004",
+    "city": "Alwatta"
+  },
+  {
+    "code": "21006",
+    "city": "Udatenna"
+  },
+  {
+    "code": "21008",
+    "city": "Leliyambe"
+  },
+  {
+    "code": "21009",
+    "city": "Wehigala"
+  },
+  {
+    "code": "21012",
+    "city": "Elkaduwa"
+  },
+  {
+    "code": "21014",
+    "city": "Karagahinna"
+  },
+  {
+    "code": "21016",
+    "city": "Katudeniya"
+  },
+  {
+    "code": "21020",
+    "city": "Ovilikanda"
+  },
+  {
+    "code": "21032",
+    "city": "Dankanda"
+  },
+  {
+    "code": "21042",
+    "city": "Kiwula"
+  },
+  {
+    "code": "21044",
+    "city": "Muwandeniya"
+  },
+  {
+    "code": "21046",
+    "city": "Dunkolawatta"
+  },
+  {
+    "code": "21048",
+    "city": "Walawela"
+  },
+  {
+    "code": "21051",
+    "city": "Udasgiriya"
+  },
+  {
+    "code": "21054",
+    "city": "Dullewa"
+  },
+  {
+    "code": "21055",
+    "city": "Melipitiya"
+  },
+  {
+    "code": "21056",
+    "city": "Yatawatta"
+  },
+  {
+    "code": "21058",
+    "city": "Selagama"
+  },
+  {
+    "code": "21062",
+    "city": "Metihakka"
+  },
+  {
+    "code": "21064",
+    "city": "Imbulgolla"
+  },
+  {
+    "code": "21066",
+    "city": "Kaikawala"
+  },
+  {
+    "code": "21068",
+    "city": "Gammaduwa"
+  },
+  {
+    "code": "21070",
+    "city": "Palapathwela"
+  },
+  {
+    "code": "21072",
+    "city": "Kavudupelella"
+  },
+  {
+    "code": "21074",
+    "city": "Madawala Ulpotha"
+  },
+  {
+    "code": "21076",
+    "city": "Opalgala"
+  },
+  {
+    "code": "21082",
+    "city": "Nalanda"
+  },
+  {
+    "code": "21090",
+    "city": "Naula"
+  },
+  {
+    "code": "21094",
+    "city": "Lenadora"
+  },
+  {
+    "code": "21100",
+    "city": "Dambulla"
+  },
+  {
+    "code": "21106",
+    "city": "Kandalama"
+  },
+  {
+    "code": "21108",
+    "city": "Eravula Junction"
+  },
+  {
+    "code": "21112",
+    "city": "Kalundawa"
+  },
+  {
+    "code": "21114",
+    "city": "Wewalawewa"
+  },
+  {
+    "code": "21116",
+    "city": "Talakiriyagama"
+  },
+  {
+    "code": "21120",
+    "city": "Sigiriya"
+  },
+  {
+    "code": "21122",
+    "city": "Kibissa"
+  },
+  {
+    "code": "21124",
+    "city": "Inamaluwa"
+  },
+  {
+    "code": "21140",
+    "city": "Mahawela "
+  },
+  {
+    "code": "21142",
+    "city": "Akuramboda"
+  },
+  {
+    "code": "21144",
+    "city": "Mananwatta"
+  },
+  {
+    "code": "21152",
+    "city": "Pallepola"
+  },
+  {
+    "code": "21154",
+    "city": "Millawana"
+  },
+  {
+    "code": "21156",
+    "city": "Madipola"
+  },
+  {
+    "code": "21160",
+    "city": "Wahacotte"
+  },
+  {
+    "code": "21200",
+    "city": "Galewela"
+  },
+  {
+    "code": "21206",
+    "city": "Dewahuwa"
+  },
+  {
+    "code": "21212",
+    "city": "Bambaragaswewa"
+  },
+  {
+    "code": "21214",
+    "city": "Beligamuwa"
+  },
+  {
+    "code": "21300",
+    "city": "Ukuwela"
+  },
+  {
+    "code": "21400",
+    "city": "Rattota"
+  },
+  {
+    "code": "21402",
+    "city": "Etanawala"
+  },
+  {
+    "code": "21404",
+    "city": "Gangala Puwakpitiya"
+  },
+  {
+    "code": "21406",
+    "city": "Illukumbura"
+  },
+  {
+    "code": "21408",
+    "city": "Welangahawatta"
+  },
+  {
+    "code": "21500",
+    "city": "Kongahawela"
+  },
+  {
+    "code": "21502",
+    "city": "Pubbiliya"
+  },
+  {
+    "code": "21504",
+    "city": "Ambana"
+  },
+  {
+    "code": "21506",
+    "city": "Talagoda Junction"
+  },
+  {
+    "code": "21512",
+    "city": "Ataragallewa"
+  },
+  {
+    "code": "21514",
+    "city": "Hattota Amuna"
+  },
+  {
+    "code": "21520",
+    "city": "Laggala Pallegama"
+  },
+  {
+    "code": "21524",
+    "city": "Ranamuregama"
+  },
+  {
+    "code": "21530",
+    "city": "Wilgamuwa"
+  },
+  {
+    "code": "21532",
+    "city": "Perakanatta"
+  },
+  {
+    "code": "21534",
+    "city": "Nugagolla"
+  },
+  {
+    "code": "21536",
+    "city": "Handungamuwa"
+  },
+  {
+    "code": "21538",
+    "city": "Dunuwilapitiya"
+  },
+  {
+    "code": "21552",
+    "city": "Devagiriya"
+  },
+  {
+    "code": "21554",
+    "city": "Maraka"
+  },
+  {
+    "code": "22000",
+    "city": "Hatton"
+  },
+  {
+    "code": "22002",
+    "city": "Dunukedeniya"
+  },
+  {
+    "code": "22008",
+    "city": "Rozella"
+  },
+  {
+    "code": "22010",
+    "city": "Watawala"
+  },
+  {
+    "code": "22012",
+    "city": "Patana"
+  },
+  {
+    "code": "22018",
+    "city": "Wijebahukanda"
+  },
+  {
+    "code": "22021",
+    "city": "Maldeniya"
+  },
+  {
+    "code": "22024",
+    "city": "Hedunuwewa"
+  },
+  {
+    "code": "22032",
+    "city": "Widulipura"
+  },
+  {
+    "code": "22034",
+    "city": "Laxapana"
+  },
+  {
+    "code": "22036",
+    "city": "Morahenegama"
+  },
+  {
+    "code": "22042",
+    "city": "Kottellena"
+  },
+  {
+    "code": "22044",
+    "city": "Hangarapitiya"
+  },
+  {
+    "code": "22046",
+    "city": "Hitigegama"
+  },
+  {
+    "code": "22050",
+    "city": "Dikoya"
+  },
+  {
+    "code": "22058",
+    "city": "Norwood"
+  },
+  {
+    "code": "22060",
+    "city": "Bogawantalawa"
+  },
+  {
+    "code": "22070",
+    "city": "Maskeliya"
+  },
+  {
+    "code": "22075",
+    "city": "Nissanka Uyana"
+  },
+  {
+    "code": "22080",
+    "city": "Kotagala"
+  },
+  {
+    "code": "22090",
+    "city": "Lindula"
+  },
+  {
+    "code": "22094",
+    "city": "Agarapathana"
+  },
+  {
+    "code": "22095",
+    "city": "Bopattalawa"
+  },
+  {
+    "code": "22096",
+    "city": "Dayagama Bazaar"
+  },
+  {
+    "code": "22100",
+    "city": "Talawakele"
+  },
+  {
+    "code": "22110",
+    "city": "Watagoda"
+  },
+  {
+    "code": "22120",
+    "city": "Pundaluoya"
+  },
+  {
+    "code": "22150",
+    "city": "Nanoya"
+  },
+  {
+    "code": "22200",
+    "city": "Nuwara Eliya"
+  },
+  {
+    "code": "22202",
+    "city": "Santhipura"
+  },
+  {
+    "code": "22208",
+    "city": "Haggala"
+  },
+  {
+    "code": "22212",
+    "city": "Ruwaneliya"
+  },
+  {
+    "code": "22214",
+    "city": "Mipilimana"
+  },
+  {
+    "code": "22216",
+    "city": "Ambewala"
+  },
+  {
+    "code": "22220",
+    "city": "Kandapola"
+  },
+  {
+    "code": "22226",
+    "city": "Gonakele"
+  },
+  {
+    "code": "22240",
+    "city": "Halgranoya"
+  },
+  {
+    "code": "22245",
+    "city": "Rupaha"
+  },
+  {
+    "code": "22246",
+    "city": "Kumbukwela"
+  },
+  {
+    "code": "22250",
+    "city": "Udapussallawa"
+  },
+  {
+    "code": "22252",
+    "city": "Kurupanawela"
+  },
+  {
+    "code": "22254",
+    "city": "Mipanawa"
+  },
+  {
+    "code": "22256",
+    "city": "Madulla"
+  },
+  {
+    "code": "22262",
+    "city": "Harasbedda"
+  },
+  {
+    "code": "22270",
+    "city": "Walapane"
+  },
+  {
+    "code": "22272",
+    "city": "Kumbalgamuwa"
+  },
+  {
+    "code": "22274",
+    "city": "Keerthi Bandarapura"
+  },
+  {
+    "code": "22280",
+    "city": "Nildandahinna"
+  },
+  {
+    "code": "22282",
+    "city": "Kalaganwatta"
+  },
+  {
+    "code": "22285",
+    "city": "Udamadura"
+  },
+  {
+    "code": "22287",
+    "city": "Tenpeha"
+  },
+  {
+    "code": "30000",
+    "city": "Batticaloa"
+  },
+  {
+    "code": "30016",
+    "city": "Kannankudah"
+  },
+  {
+    "code": "30018",
+    "city": "Navatkadu"
+  },
+  {
+    "code": "30022",
+    "city": "Maliyadda"
+  },
+  {
+    "code": "30024",
+    "city": "Thannamunai"
+  },
+  {
+    "code": "30100",
+    "city": "Kattankudy"
+  },
+  {
+    "code": "30150",
+    "city": "Araipattai"
+  },
+  {
+    "code": "30158",
+    "city": "Puthukudiyiruppu"
+  },
+  {
+    "code": "30159",
+    "city": "Kirankulam"
+  },
+  {
+    "code": "30160",
+    "city": "Kokkaddichcholai"
+  },
+  {
+    "code": "30162",
+    "city": "Ampilanthurai"
+  },
+  {
+    "code": "30192",
+    "city": "Kurukkalmadam"
+  },
+  {
+    "code": "30194",
+    "city": "Cheddipalayam"
+  },
+  {
+    "code": "30196",
+    "city": "Thettativu"
+  },
+  {
+    "code": "30200",
+    "city": "Kaluwanchikudy"
+  },
+  {
+    "code": "30204",
+    "city": "Vellavely"
+  },
+  {
+    "code": "30206",
+    "city": "Bakiella"
+  },
+  {
+    "code": "30220",
+    "city": "Mandur"
+  },
+  {
+    "code": "30230",
+    "city": "Periyaporativu"
+  },
+  {
+    "code": "30234",
+    "city": "Thirupalugamam"
+  },
+  {
+    "code": "30236",
+    "city": "Thikkodai"
+  },
+  {
+    "code": "30238",
+    "city": "Navagirinagar"
+  },
+  {
+    "code": "30249",
+    "city": "Koddaikallar"
+  },
+  {
+    "code": "30250",
+    "city": "Kallar"
+  },
+  {
+    "code": "30254",
+    "city": "Thuraineelavanai"
+  },
+  {
+    "code": "30300",
+    "city": "Eravur"
+  },
+  {
+    "code": "30350",
+    "city": "Chenkaladi"
+  },
+  {
+    "code": "30352",
+    "city": "Pankudaveli"
+  },
+  {
+    "code": "30354",
+    "city": "Karadiyanaru"
+  },
+  {
+    "code": "30358",
+    "city": "Periyapullumalai"
+  },
+  {
+    "code": "30362",
+    "city": "Ayithiyaamalai"
+  },
+  {
+    "code": "30364",
+    "city": "Unnichchai"
+  },
+  {
+    "code": "30372",
+    "city": "Kaluwankerny"
+  },
+  {
+    "code": "30376",
+    "city": "Vantharumoolai"
+  },
+  {
+    "code": "30392",
+    "city": "Murakottanchchenai"
+  },
+  {
+    "code": "30394",
+    "city": "Kiran"
+  },
+  {
+    "code": "30400",
+    "city": "Valaichenai"
+  },
+  {
+    "code": "30410",
+    "city": "Kalkudah"
+  },
+  {
+    "code": "30420",
+    "city": "Oddamavadi"
+  },
+  {
+    "code": "30424",
+    "city": "Vakaneri"
+  },
+  {
+    "code": "30426",
+    "city": "Miravodai"
+  },
+  {
+    "code": "30428",
+    "city": "Punanai"
+  },
+  {
+    "code": "30442",
+    "city": "Mankemi"
+  },
+  {
+    "code": "30444",
+    "city": "Paninchakerni"
+  },
+  {
+    "code": "30450",
+    "city": "Vakarai"
+  },
+  {
+    "code": "30456",
+    "city": "Kathiraveli"
+  },
+  {
+    "code": "31000",
+    "city": "Trincomalee"
+  },
+  {
+    "code": "31006",
+    "city": "Sampaltivu"
+  },
+  {
+    "code": "31010",
+    "city": "Nilaveli"
+  },
+  {
+    "code": "31012",
+    "city": "Kumburupiddy"
+  },
+  {
+    "code": "31014",
+    "city": "Kuchchaveli"
+  },
+  {
+    "code": "31016",
+    "city": "Tiriyayi"
+  },
+  {
+    "code": "31026",
+    "city": "Gomarakandawala"
+  },
+  {
+    "code": "31028",
+    "city": "Buckmigama"
+  },
+  {
+    "code": "31032",
+    "city": "Kanniya"
+  },
+  {
+    "code": "31034",
+    "city": "Pankulam"
+  },
+  {
+    "code": "31036",
+    "city": "Mahadiwulwewa"
+  },
+  {
+    "code": "31038",
+    "city": "Rottawewa"
+  },
+  {
+    "code": "31046",
+    "city": "Tampalakamam"
+  },
+  {
+    "code": "31050",
+    "city": "Chinabay"
+  },
+  {
+    "code": "31053",
+    "city": "Vellamanal"
+  },
+  {
+    "code": "31100",
+    "city": "Kinniya"
+  },
+  {
+    "code": "31106",
+    "city": "Maharugiramam"
+  },
+  {
+    "code": "31112",
+    "city": "Kurinchakerny"
+  },
+  {
+    "code": "31200",
+    "city": "Mutur"
+  },
+  {
+    "code": "31212",
+    "city": "Kaddaiparichan"
+  },
+  {
+    "code": "31216",
+    "city": "Sampur"
+  },
+  {
+    "code": "31220",
+    "city": "Kiliveddy"
+  },
+  {
+    "code": "31222",
+    "city": "Somapura"
+  },
+  {
+    "code": "31224",
+    "city": "Mallikativu"
+  },
+  {
+    "code": "31226",
+    "city": "Dehiwatte"
+  },
+  {
+    "code": "31228",
+    "city": "Neelapola"
+  },
+  {
+    "code": "31232",
+    "city": "Serunuwara"
+  },
+  {
+    "code": "31234",
+    "city": "Lankapatuna"
+  },
+  {
+    "code": "31236",
+    "city": "Echchilampattai"
+  },
+  {
+    "code": "31238",
+    "city": "Mawadichenai"
+  },
+  {
+    "code": "31250",
+    "city": "Toppur"
+  },
+  {
+    "code": "31260",
+    "city": "Seruwila"
+  },
+  {
+    "code": "31300",
+    "city": "Kantalaai"
+  },
+  {
+    "code": "31304",
+    "city": "Agbopura"
+  },
+  {
+    "code": "31306",
+    "city": "Kantalai Suger Factory"
+  },
+  {
+    "code": "31308",
+    "city": "Wanela"
+  },
+  {
+    "code": "31312",
+    "city": "Mullipothana"
+  },
+  {
+    "code": "31314",
+    "city": "Sirajnagar"
+  },
+  {
+    "code": "31318",
+    "city": "Galmetiyawa"
+  },
+  {
+    "code": "32000",
+    "city": "Ampara"
+  },
+  {
+    "code": "32006",
+    "city": "Deegawapiya"
+  },
+  {
+    "code": "32008",
+    "city": "Digamadulla Weeragoda"
+  },
+  {
+    "code": "32010",
+    "city": "Hingurana"
+  },
+  {
+    "code": "32012",
+    "city": "Moragahapallama"
+  },
+  {
+    "code": "32014",
+    "city": "Damana"
+  },
+  {
+    "code": "32016",
+    "city": "Madawalalanda"
+  },
+  {
+    "code": "32018",
+    "city": "Mahanagapura"
+  },
+  {
+    "code": "32022",
+    "city": "Pannalagama"
+  },
+  {
+    "code": "32024",
+    "city": "Bakmitiyawa"
+  },
+  {
+    "code": "32031",
+    "city": "Paragahakele"
+  },
+  {
+    "code": "32032",
+    "city": "Polwaga Janapadaya"
+  },
+  {
+    "code": "32034",
+    "city": "Pahalalanda"
+  },
+  {
+    "code": "32035",
+    "city": "Koknahara"
+  },
+  {
+    "code": "32037",
+    "city": "Namaloya"
+  },
+  {
+    "code": "32038",
+    "city": "Devalahinda"
+  },
+  {
+    "code": "32039",
+    "city": "Wadinagala"
+  },
+  {
+    "code": "32046",
+    "city": "Dadayamtalawa"
+  },
+  {
+    "code": "32048",
+    "city": "Siyambalawewa"
+  },
+  {
+    "code": "32050",
+    "city": "Central Camp"
+  },
+  {
+    "code": "32060",
+    "city": "Uhana"
+  },
+  {
+    "code": "32062",
+    "city": "Werunketagoda"
+  },
+  {
+    "code": "32064",
+    "city": "Gonagolla"
+  },
+  {
+    "code": "32066",
+    "city": "Galapitagala"
+  },
+  {
+    "code": "32068",
+    "city": "Rajagalatenna"
+  },
+  {
+    "code": "32069",
+    "city": "Mangalagama"
+  },
+  {
+    "code": "32070",
+    "city": "Mahaoya"
+  },
+  {
+    "code": "32072",
+    "city": "Tempitiya"
+  },
+  {
+    "code": "32074",
+    "city": "Kekirihena"
+  },
+  {
+    "code": "32100",
+    "city": "Padiyathalawa"
+  },
+  {
+    "code": "32101",
+    "city": "Serankanda"
+  },
+  {
+    "code": "32102",
+    "city": "Kolamanthalawa"
+  },
+  {
+    "code": "32104",
+    "city": "Dorakumbura"
+  },
+  {
+    "code": "32120",
+    "city": "Nawamedagama"
+  },
+  {
+    "code": "32126",
+    "city": "Damanawela"
+  },
+  {
+    "code": "32150",
+    "city": "Dehiatta Kandiya"
+  },
+  {
+    "code": "32155",
+    "city": "Siripura"
+  },
+  {
+    "code": "32158",
+    "city": "Mawanagama"
+  },
+  {
+    "code": "32198",
+    "city": "Malwatta"
+  },
+  {
+    "code": "32200",
+    "city": "Samanthurai"
+  },
+  {
+    "code": "32250",
+    "city": "Karaitivu"
+  },
+  {
+    "code": "32280",
+    "city": "Sainthamaruthu"
+  },
+  {
+    "code": "32300",
+    "city": "Kalmunai"
+  },
+  {
+    "code": "32308",
+    "city": "Navithanveli"
+  },
+  {
+    "code": "32314",
+    "city": "Marathamune"
+  },
+  {
+    "code": "32316",
+    "city": "Periyaneelaavanai"
+  },
+  {
+    "code": "32340",
+    "city": "Nintavur"
+  },
+  {
+    "code": "32350",
+    "city": "Addalaichenai"
+  },
+  {
+    "code": "32354",
+    "city": "Palamunai"
+  },
+  {
+    "code": "32360",
+    "city": "Oluvil"
+  },
+  {
+    "code": "32400",
+    "city": "Akkaraipattu"
+  },
+  {
+    "code": "32405",
+    "city": "Kannakipuram"
+  },
+  {
+    "code": "32415",
+    "city": "Thambiluvil"
+  },
+  {
+    "code": "32418",
+    "city": "Komari"
+  },
+  {
+    "code": "32420",
+    "city": "Tirukovil"
+  },
+  {
+    "code": "32450",
+    "city": "Irakkamam"
+  },
+  {
+    "code": "32454",
+    "city": "Wanagamuwa"
+  },
+  {
+    "code": "32500",
+    "city": "Pottuvil"
+  },
+  {
+    "code": "32508",
+    "city": "Panama"
+  },
+  {
+    "code": "32512",
+    "city": "Lahugala"
+  },
+  {
+    "code": "32514",
+    "city": "Hulannuge"
+  },
+  {
+    "code": "40000",
+    "city": "Jaffna"
+  },
+  {
+    "code": "40020",
+    "city": "Chundikkuly"
+  },
+  {
+    "code": "40045",
+    "city": "Mandaitivu"
+  },
+  {
+    "code": "40048",
+    "city": "Allaipiddy"
+  },
+  {
+    "code": "40060",
+    "city": "Kokuvil"
+  },
+  {
+    "code": "40062",
+    "city": "Kondavil"
+  },
+  {
+    "code": "40075",
+    "city": "Chunnakam"
+  },
+  {
+    "code": "40080",
+    "city": "Erlalai"
+  },
+  {
+    "code": "40098",
+    "city": "Sandilipay"
+  },
+  {
+    "code": "40100",
+    "city": "Pandatteruppu"
+  },
+  {
+    "code": "40108",
+    "city": "Ilavalai"
+  },
+  {
+    "code": "40110",
+    "city": "Mathagal"
+  },
+  {
+    "code": "40120",
+    "city": "Alaveddy"
+  },
+  {
+    "code": "40130",
+    "city": "Tellippalai"
+  },
+  {
+    "code": "40142",
+    "city": "Mallakam"
+  },
+  {
+    "code": "40145",
+    "city": "Vayavilan"
+  },
+  {
+    "code": "40150",
+    "city": "Atchuvely"
+  },
+  {
+    "code": "40158",
+    "city": "Puttur"
+  },
+  {
+    "code": "40165",
+    "city": "Neervely"
+  },
+  {
+    "code": "40170",
+    "city": "Kopay"
+  },
+  {
+    "code": "40180",
+    "city": "Urumpirai"
+  },
+  {
+    "code": "40190",
+    "city": "Kankesanthurai"
+  },
+  {
+    "code": "40198",
+    "city": "Anaicoddai"
+  },
+  {
+    "code": "40200",
+    "city": "Manipay"
+  },
+  {
+    "code": "40212",
+    "city": "Chankanai"
+  },
+  {
+    "code": "40220",
+    "city": "Vaddukoddai"
+  },
+  {
+    "code": "40221",
+    "city": "Araly"
+  },
+  {
+    "code": "40223",
+    "city": "Nagendramadam"
+  },
+  {
+    "code": "40225",
+    "city": "Sangarathai"
+  },
+  {
+    "code": "40227",
+    "city": "Sivankovilady"
+  },
+  {
+    "code": "40229",
+    "city": "Sythankerny"
+  },
+  {
+    "code": "40230",
+    "city": "Chulipuram"
+  },
+  {
+    "code": "40250",
+    "city": "Karainagar"
+  },
+  {
+    "code": "40270",
+    "city": "Kayta"
+  },
+  {
+    "code": "40275",
+    "city": "Eluvaitivu"
+  },
+  {
+    "code": "40280",
+    "city": "Analaitivu"
+  },
+  {
+    "code": "4030",
+    "city": "Nagarkovil"
+  },
+  {
+    "code": "40300",
+    "city": "Velanai"
+  },
+  {
+    "code": "40330",
+    "city": "Punguduthivu"
+  },
+  {
+    "code": "40360",
+    "city": "Nainativu"
+  },
+  {
+    "code": "40370",
+    "city": "Delft"
+  },
+  {
+    "code": "40378",
+    "city": "Delft West"
+  },
+  {
+    "code": "40400",
+    "city": "Kaitadi"
+  },
+  {
+    "code": "40478",
+    "city": "Sirisethagama"
+  },
+  {
+    "code": "40500",
+    "city": "Chavakacheri"
+  },
+  {
+    "code": "40510",
+    "city": "Meesalai"
+  },
+  {
+    "code": "40520",
+    "city": "Karaveddi"
+  },
+  {
+    "code": "40540",
+    "city": "Valvettithurai"
+  },
+  {
+    "code": "40545",
+    "city": "Thondamanaru"
+  },
+  {
+    "code": "40600",
+    "city": "Point Pedro"
+  },
+  {
+    "code": "40615",
+    "city": "Puloly"
+  },
+  {
+    "code": "40620",
+    "city": "Kudatanai"
+  },
+  {
+    "code": "40635",
+    "city": "Alvai"
+  },
+  {
+    "code": "40640",
+    "city": "Varany"
+  },
+  {
+    "code": "40700",
+    "city": "Kodikamam"
+  },
+  {
+    "code": "40750",
+    "city": "Mirusivil"
+  },
+  {
+    "code": "41000",
+    "city": "Mannar"
+  },
+  {
+    "code": "41010",
+    "city": "MadhuChurch"
+  },
+  {
+    "code": "41030",
+    "city": "Murunkan"
+  },
+  {
+    "code": "41100",
+    "city": "Vankalai"
+  },
+  {
+    "code": "41140",
+    "city": "Chilavathurai"
+  },
+  {
+    "code": "41200",
+    "city": "Erukkalampiddi"
+  },
+  {
+    "code": "41210",
+    "city": "Pesalai"
+  },
+  {
+    "code": "41220",
+    "city": "Talaimannar"
+  },
+  {
+    "code": "42000",
+    "city": "Mullaitivu"
+  },
+  {
+    "code": "42005",
+    "city": "Alampil"
+  },
+  {
+    "code": "42007",
+    "city": "Kumulamunai"
+  },
+  {
+    "code": "42010",
+    "city": "Kokkuthoduwai"
+  },
+  {
+    "code": "42020",
+    "city": "Kokkilai"
+  },
+  {
+    "code": "42100",
+    "city": "Mulliyawalai"
+  },
+  {
+    "code": "42200",
+    "city": "Odduchuddan"
+  },
+  {
+    "code": "42210",
+    "city": "Muththaiyankaddukulam"
+  },
+  {
+    "code": "42220",
+    "city": "Karipaddamurippu"
+  },
+  {
+    "code": "42250",
+    "city": "Nedunkerny"
+  },
+  {
+    "code": "42300",
+    "city": "Mankulam"
+  },
+  {
+    "code": "42305",
+    "city": "Vavunikulam"
+  },
+  {
+    "code": "42308",
+    "city": "Naddankandal"
+  },
+  {
+    "code": "42315",
+    "city": "Yogapuram"
+  },
+  {
+    "code": "42320",
+    "city": "Thunukkai"
+  },
+  {
+    "code": "42330",
+    "city": "Puthuvedduvan"
+  },
+  {
+    "code": "42335",
+    "city": "Murukandi"
+  },
+  {
+    "code": "42400",
+    "city": "Kilinochi"
+  },
+  {
+    "code": "42405",
+    "city": "Vaddakachy"
+  },
+  {
+    "code": "42408",
+    "city": "Ramanathapuram"
+  },
+  {
+    "code": "42500",
+    "city": "Paranthan"
+  },
+  {
+    "code": "42502",
+    "city": "Uruthirapuram"
+  },
+  {
+    "code": "42505",
+    "city": "Murasumoddai"
+  },
+  {
+    "code": "42508",
+    "city": "Kandavalai"
+  },
+  {
+    "code": "42509",
+    "city": "Puliyampokkanai"
+  },
+  {
+    "code": "42510",
+    "city": "Elephent Pass"
+  },
+  {
+    "code": "42512",
+    "city": "Tharumapuram"
+  },
+  {
+    "code": "42515",
+    "city": "Viswamadhukulam"
+  },
+  {
+    "code": "42518",
+    "city": "Udayarkadu"
+  },
+  {
+    "code": "42520",
+    "city": "Iyakachchi"
+  },
+  {
+    "code": "42530",
+    "city": "Puthukudiyiruppu"
+  },
+  {
+    "code": "42535",
+    "city": "Anandapuram"
+  },
+  {
+    "code": "42537",
+    "city": "Ampalavanpokkanai"
+  },
+  {
+    "code": "42540",
+    "city": "Mulliwaikal"
+  },
+  {
+    "code": "42550",
+    "city": "Pallai"
+  },
+  {
+    "code": "42560",
+    "city": "Chempiyanpattu"
+  },
+  {
+    "code": "42563",
+    "city": "Thalaiyadi"
+  },
+  {
+    "code": "42565",
+    "city": "Aliyawalai"
+  },
+  {
+    "code": "42570",
+    "city": "Mulliyan"
+  },
+  {
+    "code": "42580",
+    "city": "Eluthumadduwal"
+  },
+  {
+    "code": "42600",
+    "city": "Punakary"
+  },
+  {
+    "code": "42606",
+    "city": "Punakary- Nallur"
+  },
+  {
+    "code": "42608",
+    "city": "Kavutharimunai"
+  },
+  {
+    "code": "42615",
+    "city": "Pallavarayankadu"
+  },
+  {
+    "code": "42618",
+    "city": "Sivapuram"
+  },
+  {
+    "code": "42620",
+    "city": "Neravil"
+  },
+  {
+    "code": "42625",
+    "city": "Vinayagapuram"
+  },
+  {
+    "code": "42630",
+    "city": "Iranaitiv"
+  },
+  {
+    "code": "42635",
+    "city": "Vannerikkulam"
+  },
+  {
+    "code": "42638",
+    "city": "Skanthapuram"
+  },
+  {
+    "code": "42640",
+    "city": "Akkarayankulam"
+  },
+  {
+    "code": "42645",
+    "city": "Konavil"
+  },
+  {
+    "code": "43000",
+    "city": "Vavuniya"
+  },
+  {
+    "code": "43075",
+    "city": "Nedunkerni"
+  },
+  {
+    "code": "43100",
+    "city": "Neriyakulam"
+  },
+  {
+    "code": "43120",
+    "city": "Cheddikulam"
+  },
+  {
+    "code": "50000",
+    "city": "Anuradhapura"
+  },
+  {
+    "code": "50003",
+    "city": "Anuradhapura Sacred City"
+  },
+  {
+    "code": "50004",
+    "city": "Perimiyankulama"
+  },
+  {
+    "code": "50006",
+    "city": "Galkadawala"
+  },
+  {
+    "code": "50007",
+    "city": "Periyankulam"
+  },
+  {
+    "code": "50008",
+    "city": "Saliyapura"
+  },
+  {
+    "code": "50009",
+    "city": "Pahiyankadawala"
+  },
+  {
+    "code": "50012",
+    "city": "Viharapalugama"
+  },
+  {
+    "code": "50014",
+    "city": "Elayapattuwa"
+  },
+  {
+    "code": "50016",
+    "city": "Tantirimale"
+  },
+  {
+    "code": "50017",
+    "city": "Maninggamuwa"
+  },
+  {
+    "code": "50020",
+    "city": "Pemaduwa"
+  },
+  {
+    "code": "50021",
+    "city": "Mannaram-Junction"
+  },
+  {
+    "code": "50022",
+    "city": "Mahawilachchiya"
+  },
+  {
+    "code": "50026",
+    "city": "Kadapanaha"
+  },
+  {
+    "code": "50027",
+    "city": "Rajarada Medicle facalty"
+  },
+  {
+    "code": "50028",
+    "city": "Pothanegama"
+  },
+  {
+    "code": "50029",
+    "city": "Pandulagama"
+  },
+  {
+    "code": "50033",
+    "city": "Anura Vijayapura"
+  },
+  {
+    "code": "50034",
+    "city": "Wannitammennawa"
+  },
+  {
+    "code": "50035",
+    "city": "Sucharithagama"
+  },
+  {
+    "code": "50036",
+    "city": "Gnanikulama"
+  },
+  {
+    "code": "50042",
+    "city": "Sravasthipura"
+  },
+  {
+    "code": "50044",
+    "city": "Hidogama"
+  },
+  {
+    "code": "50046",
+    "city": "Nachaduwa"
+  },
+  {
+    "code": "50051",
+    "city": "Anuradhapura Secrateriet"
+  },
+  {
+    "code": "50052",
+    "city": "Nuwarawewa"
+  },
+  {
+    "code": "50053",
+    "city": "Jayawewa"
+  },
+  {
+    "code": "50054",
+    "city": "Katupuliyankulama"
+  },
+  {
+    "code": "50055",
+    "city": "Parasangahawewa"
+  },
+  {
+    "code": "50056",
+    "city": "Aluthgama-Helambagaswewa"
+  },
+  {
+    "code": "50057",
+    "city": "Gambirigaswewa"
+  },
+  {
+    "code": "50062",
+    "city": "Kurundankulama"
+  },
+  {
+    "code": "50064",
+    "city": "Galkulama"
+  },
+  {
+    "code": "50065",
+    "city": "Kahapanvilagama"
+  },
+  {
+    "code": "50066",
+    "city": "Pairimaduwa"
+  },
+  {
+    "code": "50067",
+    "city": "Uttimaduwa"
+  },
+  {
+    "code": "50068",
+    "city": "Sivalakulama"
+  },
+  {
+    "code": "50072",
+    "city": "Tirappane"
+  },
+  {
+    "code": "50073",
+    "city": "Ethungama"
+  },
+  {
+    "code": "50080",
+    "city": "Maradankadawala"
+  },
+  {
+    "code": "50081",
+    "city": "Mamniyawa"
+  },
+  {
+    "code": "50082",
+    "city": "Dampelessagama"
+  },
+  {
+    "code": "50085",
+    "city": "Periyakulam"
+  },
+  {
+    "code": "50086",
+    "city": "Walagambahuwa"
+  },
+  {
+    "code": "50087",
+    "city": "Mahakanumulla"
+  },
+  {
+    "code": "50088",
+    "city": "Labunoruwa"
+  },
+  {
+    "code": "50089",
+    "city": "Kattamurichchan"
+  },
+  {
+    "code": "5010",
+    "city": "Vijithapura"
+  },
+  {
+    "code": "50100",
+    "city": "Kekirawa"
+  },
+  {
+    "code": "50103",
+    "city": "Olukarandahandiya"
+  },
+  {
+    "code": "50104",
+    "city": "Tammnnawa"
+  },
+  {
+    "code": "50105",
+    "city": "Kanjankulama"
+  },
+  {
+    "code": "50110",
+    "city": "Vijithapura"
+  },
+  {
+    "code": "50111",
+    "city": "Palagala"
+  },
+  {
+    "code": "50112",
+    "city": "Andiyagala"
+  },
+  {
+    "code": "50120",
+    "city": "Galkiriyagama"
+  },
+  {
+    "code": "50122",
+    "city": "Pubbogama"
+  },
+  {
+    "code": "50124",
+    "city": "Halmillawa Dambulla"
+  },
+  {
+    "code": "50126",
+    "city": "Maha Elagamuwa"
+  },
+  {
+    "code": "50130",
+    "city": "Madatugama"
+  },
+  {
+    "code": "50132",
+    "city": "Kitulhitiyawa"
+  },
+  {
+    "code": "50142",
+    "city": "Ganewalpola"
+  },
+  {
+    "code": "50143",
+    "city": "Senadhiriyagama"
+  },
+  {
+    "code": "50144",
+    "city": "Palugaswewa"
+  },
+  {
+    "code": "50150",
+    "city": "Habarana"
+  },
+  {
+    "code": "50151",
+    "city": "Moragaswewa"
+  },
+  {
+    "code": "50169",
+    "city": "Awukana"
+  },
+  {
+    "code": "50170",
+    "city": "Galnewa"
+  },
+  {
+    "code": "50171",
+    "city": "Bulnewa"
+  },
+  {
+    "code": "50174",
+    "city": "Kalankuttiya"
+  },
+  {
+    "code": "50176",
+    "city": "Hurigaswewa"
+  },
+  {
+    "code": "50180",
+    "city": "Negampaha"
+  },
+  {
+    "code": "50182",
+    "city": "Maneruwa"
+  },
+  {
+    "code": "50184",
+    "city": "Siyambalewa"
+  },
+  {
+    "code": "50196",
+    "city": "Mahabulankulama"
+  },
+  {
+    "code": "50200",
+    "city": "Nochchiyagama"
+  },
+  {
+    "code": "50202",
+    "city": "Singharagama"
+  },
+  {
+    "code": "50203",
+    "city": "Ambagahawewa"
+  },
+  {
+    "code": "50206",
+    "city": "Pahala Halmillewa"
+  },
+  {
+    "code": "50207",
+    "city": "Udunuwara Colony"
+  },
+  {
+    "code": "50208",
+    "city": "Dunupothagama"
+  },
+  {
+    "code": "50209",
+    "city": "Helambewa"
+  },
+  {
+    "code": "50210",
+    "city": "Galadiwulwewa"
+  },
+  {
+    "code": "50212",
+    "city": "Ranorawa"
+  },
+  {
+    "code": "50214",
+    "city": "Dunumadalawa"
+  },
+  {
+    "code": "50220",
+    "city": "Pahala Maragahawewa"
+  },
+  {
+    "code": "50222",
+    "city": "Horiwila"
+  },
+  {
+    "code": "50223",
+    "city": "Adhikaripura"
+  },
+  {
+    "code": "50224",
+    "city": "Gemunupura"
+  },
+  {
+    "code": "50226",
+    "city": "Kalaoya"
+  },
+  {
+    "code": "50230",
+    "city": "Talawa"
+  },
+  {
+    "code": "50232",
+    "city": "Kargahawewa"
+  },
+  {
+    "code": "50233",
+    "city": "Andarawewa"
+  },
+  {
+    "code": "50234",
+    "city": "Pahala Talawa"
+  },
+  {
+    "code": "50236",
+    "city": "Malwanegama"
+  },
+  {
+    "code": "50237",
+    "city": "Mahabellankadawala"
+  },
+  {
+    "code": "50238",
+    "city": "Puliyankadawala"
+  },
+  {
+    "code": "50240",
+    "city": "Tambuttegama"
+  },
+  {
+    "code": "50242",
+    "city": "Telhiriyawa"
+  },
+  {
+    "code": "50243",
+    "city": "Lunuwewa"
+  },
+  {
+    "code": "50244",
+    "city": "Pahalagama"
+  },
+  {
+    "code": "50245",
+    "city": "Kalundegama"
+  },
+  {
+    "code": "50246",
+    "city": "Rajanganaya"
+  },
+  {
+    "code": "50247",
+    "city": "Saliyagama"
+  },
+  {
+    "code": "50248",
+    "city": "Angamuwa"
+  },
+  {
+    "code": "50250",
+    "city": "Ettikulama"
+  },
+  {
+    "code": "50259",
+    "city": "Kiralogama"
+  },
+  {
+    "code": "50260",
+    "city": "Eppawala"
+  },
+  {
+    "code": "50261",
+    "city": "Katiyawa"
+  },
+  {
+    "code": "50262",
+    "city": "Ihala Halmillewa"
+  },
+  {
+    "code": "50263",
+    "city": "Selweheragama"
+  },
+  {
+    "code": "50265",
+    "city": "Endagala"
+  },
+  {
+    "code": "50266",
+    "city": "Dikwewa"
+  },
+  {
+    "code": "50267",
+    "city": "Kuda Katiyawa"
+  },
+  {
+    "code": "50270",
+    "city": "Mahailluppalama"
+  },
+  {
+    "code": "50280",
+    "city": "Ipologama"
+  },
+  {
+    "code": "50282",
+    "city": "Kagama"
+  },
+  {
+    "code": "50284",
+    "city": "Senapura"
+  },
+  {
+    "code": "50285",
+    "city": "Gonapathirawa"
+  },
+  {
+    "code": "50286",
+    "city": "Manewa"
+  },
+  {
+    "code": "50287",
+    "city": "Hiripitiyagama"
+  },
+  {
+    "code": "50288",
+    "city": "Kalakarambewa"
+  },
+  {
+    "code": "50289",
+    "city": "Akkarapansiyayaya"
+  },
+  {
+    "code": "50297",
+    "city": "Kannattiya"
+  },
+  {
+    "code": "50300",
+    "city": "Mihintale"
+  },
+  {
+    "code": "50301",
+    "city": "Ihalagama"
+  },
+  {
+    "code": "50303",
+    "city": "Ruwangama"
+  },
+  {
+    "code": "50304",
+    "city": "Ihalagama"
+  },
+  {
+    "code": "50305",
+    "city": "Kanadarakatukeliyawa"
+  },
+  {
+    "code": "50306",
+    "city": "Mahakanadarawa"
+  },
+  {
+    "code": "50308",
+    "city": "Maradankalla"
+  },
+  {
+    "code": "50320",
+    "city": "Kahatagasdigiliya"
+  },
+  {
+    "code": "50321",
+    "city": "Moragahawela"
+  },
+  {
+    "code": "50323",
+    "city": "Manelpura"
+  },
+  {
+    "code": "50324",
+    "city": "Mulkiriyawa"
+  },
+  {
+    "code": "50326",
+    "city": "Parakumpura"
+  },
+  {
+    "code": "50327",
+    "city": "Mahapothana"
+  },
+  {
+    "code": "50329",
+    "city": "Meeminnawela"
+  },
+  {
+    "code": "50331",
+    "city": "Karunagama"
+  },
+  {
+    "code": "50333",
+    "city": "HuruluJayapura"
+  },
+  {
+    "code": "50334",
+    "city": "Megodawewa"
+  },
+  {
+    "code": "50335",
+    "city": "Mannakkattiya"
+  },
+  {
+    "code": "50336",
+    "city": "Bandiwewa"
+  },
+  {
+    "code": "50338",
+    "city": "Padikaramaduwa"
+  },
+  {
+    "code": "50339",
+    "city": "Namalpura"
+  },
+  {
+    "code": "50341",
+    "city": "Unagollewa"
+  },
+  {
+    "code": "50342",
+    "city": "Alagollewa"
+  },
+  {
+    "code": "50344",
+    "city": "Muriyakadawala"
+  },
+  {
+    "code": "50349",
+    "city": "Morakewa"
+  },
+  {
+    "code": "50350",
+    "city": "Horawpatana"
+  },
+  {
+    "code": "50351",
+    "city": "Horowpatana Bazaar"
+  },
+  {
+    "code": "50353",
+    "city": "Wadigawewa"
+  },
+  {
+    "code": "50354",
+    "city": "Parangiyavadiya"
+  },
+  {
+    "code": "50356",
+    "city": "Dematawewa"
+  },
+  {
+    "code": "50358",
+    "city": "Welimuwapothana"
+  },
+  {
+    "code": "50359",
+    "city": "Ratmale-Suhadagama"
+  },
+  {
+    "code": "50370",
+    "city": "Kapugallawa"
+  },
+  {
+    "code": "50371",
+    "city": "Anaolondawa"
+  },
+  {
+    "code": "50380",
+    "city": "Seeppukulama"
+  },
+  {
+    "code": "50381",
+    "city": "Nekatanuwewa"
+  },
+  {
+    "code": "50382",
+    "city": "Upuldeniya"
+  },
+  {
+    "code": "50384",
+    "city": "Mailagaswewa"
+  },
+  {
+    "code": "50386",
+    "city": "Rampathwila"
+  },
+  {
+    "code": "50387",
+    "city": "Samadhigama"
+  },
+  {
+    "code": "50390",
+    "city": "Galabindunuwewa"
+  },
+  {
+    "code": "50392",
+    "city": "Getalawa"
+  },
+  {
+    "code": "50393",
+    "city": "Dutuwewa"
+  },
+  {
+    "code": "50394",
+    "city": "Hurulunikawewa"
+  },
+  {
+    "code": "50395",
+    "city": "Aluthdivulwewa"
+  },
+  {
+    "code": "50448",
+    "city": "Pandukabayapura"
+  },
+  {
+    "code": "50450",
+    "city": "Rambewa"
+  },
+  {
+    "code": "50452",
+    "city": "Kendewa"
+  },
+  {
+    "code": "50453",
+    "city": "Talgahawewa"
+  },
+  {
+    "code": "50454",
+    "city": "Kallanchiya"
+  },
+  {
+    "code": "50455",
+    "city": "Mahakandarawa-Kudagama"
+  },
+  {
+    "code": "50492",
+    "city": "Wahamalgollewa"
+  },
+  {
+    "code": "50500",
+    "city": "Medawachchiya"
+  },
+  {
+    "code": "50503",
+    "city": "Kadawathgama"
+  },
+  {
+    "code": "50504",
+    "city": "Rambakulama"
+  },
+  {
+    "code": "50506",
+    "city": "Punewa"
+  },
+  {
+    "code": "50507",
+    "city": "parana Halmillewa"
+  },
+  {
+    "code": "50511",
+    "city": "Kirigalwewa"
+  },
+  {
+    "code": "50512",
+    "city": "Pihimbiyagollewa"
+  },
+  {
+    "code": "50513",
+    "city": "Thambalagollewa"
+  },
+  {
+    "code": "50514",
+    "city": "Ratmalgahawewa"
+  },
+  {
+    "code": "50516",
+    "city": "Walahaviddahewa"
+  },
+  {
+    "code": "50518",
+    "city": "Etawatunuwewa"
+  },
+  {
+    "code": "50521",
+    "city": "Ethakada"
+  },
+  {
+    "code": "50522",
+    "city": "Etambagaskada"
+  },
+  {
+    "code": "50523",
+    "city": "Heerallugama"
+  },
+  {
+    "code": "50550",
+    "city": "Kebithigollewa"
+  },
+  {
+    "code": "50552",
+    "city": "Halmillawetiya"
+  },
+  {
+    "code": "50553",
+    "city": "Handagala-Kirimetiyawa"
+  },
+  {
+    "code": "50554",
+    "city": "Gonahaddenawa"
+  },
+  {
+    "code": "50556",
+    "city": "Kalawedi Ulpotha"
+  },
+  {
+    "code": "50558",
+    "city": "Thittagonewa"
+  },
+  {
+    "code": "50559",
+    "city": "Herath-Halmillewa"
+  },
+  {
+    "code": "50562",
+    "city": "Kahatagollewa"
+  },
+  {
+    "code": "50564",
+    "city": "Wahalkada"
+  },
+  {
+    "code": "50566",
+    "city": "Bogahawewa"
+  },
+  {
+    "code": "50567",
+    "city": "Pulmoddai"
+  },
+  {
+    "code": "50570",
+    "city": "Padaviya"
+  },
+  {
+    "code": "50572",
+    "city": "Padavi Maithripura"
+  },
+  {
+    "code": "50574",
+    "city": "Mahasenpura"
+  },
+  {
+    "code": "50582",
+    "city": "Padavi Parakramapura"
+  },
+  {
+    "code": "50584",
+    "city": "Etawatunuwewa"
+  },
+  {
+    "code": "50586",
+    "city": "Welioya Project"
+  },
+  {
+    "code": "50587",
+    "city": "Padavi Sripura"
+  },
+  {
+    "code": "50588",
+    "city": "Padavi Sritissapura"
+  },
+  {
+    "code": "50594",
+    "city": "Etawetunuwea"
+  },
+  {
+    "code": "510",
+    "city": "Colombo Labour Sec"
+  },
+  {
+    "code": "51000",
+    "city": "Polonnaruwa"
+  },
+  {
+    "code": "51002",
+    "city": "Kalingaela"
+  },
+  {
+    "code": "51004",
+    "city": "Onegama"
+  },
+  {
+    "code": "51006",
+    "city": "Lakshauyana"
+  },
+  {
+    "code": "51008",
+    "city": "Unagalavehera"
+  },
+  {
+    "code": "51010",
+    "city": "Polonnaruwa Sac. City"
+  },
+  {
+    "code": "51014",
+    "city": "Alutwewa"
+  },
+  {
+    "code": "51016",
+    "city": "Parakramasamudraya"
+  },
+  {
+    "code": "51024",
+    "city": "Jayanthipura"
+  },
+  {
+    "code": "51026",
+    "city": "Giritale"
+  },
+  {
+    "code": "51031",
+    "city": "Dimbulagala"
+  },
+  {
+    "code": "51032",
+    "city": "Kashyapapura"
+  },
+  {
+    "code": "51033",
+    "city": "Pelatiyawa"
+  },
+  {
+    "code": "51034",
+    "city": "Ellewewa"
+  },
+  {
+    "code": "51037",
+    "city": "Kalukele Badanagla"
+  },
+  {
+    "code": "51039",
+    "city": "Nuwaragala"
+  },
+  {
+    "code": "51042",
+    "city": "Wijayabapura"
+  },
+  {
+    "code": "51044",
+    "city": "Talpotha"
+  },
+  {
+    "code": "51046",
+    "city": "Palugasdamana"
+  },
+  {
+    "code": "51049",
+    "city": "Tambala"
+  },
+  {
+    "code": "51050",
+    "city": "Pulastigama"
+  },
+  {
+    "code": "51052",
+    "city": "Sungavila"
+  },
+  {
+    "code": "51062",
+    "city": "Sewanapitiya"
+  },
+  {
+    "code": "51064",
+    "city": "Mutugala"
+  },
+  {
+    "code": "51066",
+    "city": "Nawasenapura"
+  },
+  {
+    "code": "51070",
+    "city": "Welikanda"
+  },
+  {
+    "code": "51072",
+    "city": "Aselapura"
+  },
+  {
+    "code": "51076",
+    "city": "Mahawela Sinhapura"
+  },
+  {
+    "code": "51089",
+    "city": "Tamankaduwa"
+  },
+  {
+    "code": "51090",
+    "city": "Manampitiya"
+  },
+  {
+    "code": "51092",
+    "city": "Dalukkana"
+  },
+  {
+    "code": "51094",
+    "city": "Dewagala"
+  },
+  {
+    "code": "51096",
+    "city": "Nelumwewa"
+  },
+  {
+    "code": "51098",
+    "city": "Hansayapalama"
+  },
+  {
+    "code": "51100",
+    "city": "Aralaganwila"
+  },
+  {
+    "code": "51102",
+    "city": "Pimburatewa"
+  },
+  {
+    "code": "51104",
+    "city": "Divuldamana"
+  },
+  {
+    "code": "51106",
+    "city": "Damminna"
+  },
+  {
+    "code": "51108",
+    "city": "Madurupya"
+  },
+  {
+    "code": "51225",
+    "city": "Diyabeduma"
+  },
+  {
+    "code": "51235",
+    "city": "Attankadawala"
+  },
+  {
+    "code": "51244",
+    "city": "Kottapitiya"
+  },
+  {
+    "code": "51246",
+    "city": "Jayasiripura"
+  },
+  {
+    "code": "51250",
+    "city": "Bakamuna"
+  },
+  {
+    "code": "51256",
+    "city": "Orubendi Siyambalawa"
+  },
+  {
+    "code": "51258",
+    "city": "Elahera"
+  },
+  {
+    "code": "51309",
+    "city": "Nuwarangala"
+  },
+  {
+    "code": "51375",
+    "city": "Galoya Junction"
+  },
+  {
+    "code": "51378",
+    "city": "Sinhagama"
+  },
+  {
+    "code": "51400",
+    "city": "Hingurakgoda"
+  },
+  {
+    "code": "51408",
+    "city": "Hingurakdamana"
+  },
+  {
+    "code": "51410",
+    "city": "Minneriya"
+  },
+  {
+    "code": "51412",
+    "city": "Kumaragama"
+  },
+  {
+    "code": "51414",
+    "city": "Kawudulla"
+  },
+  {
+    "code": "51416",
+    "city": "Galamuna"
+  },
+  {
+    "code": "51418",
+    "city": "Gal-Amuna"
+  },
+  {
+    "code": "51422",
+    "city": "Yodaela"
+  },
+  {
+    "code": "51424",
+    "city": "Yudaganawa"
+  },
+  {
+    "code": "51428",
+    "city": "Divulankadawala"
+  },
+  {
+    "code": "51500",
+    "city": "Medirigiriya"
+  },
+  {
+    "code": "51504",
+    "city": "Diyasenpura"
+  },
+  {
+    "code": "51506",
+    "city": "Mahatalakolawewa"
+  },
+  {
+    "code": "51508",
+    "city": "Meegaswewa"
+  },
+  {
+    "code": "51514",
+    "city": "Kawduluwewa Stage"
+  },
+  {
+    "code": "51518",
+    "city": "Maha Ambagaswewa"
+  },
+  {
+    "code": "60000",
+    "city": "Kurunegala"
+  },
+  {
+    "code": "60003",
+    "city": "Kudagalgamuwa"
+  },
+  {
+    "code": "60004",
+    "city": "Minhettiya"
+  },
+  {
+    "code": "60013",
+    "city": "Doratiyawa"
+  },
+  {
+    "code": "60016",
+    "city": "Indulgodakanda"
+  },
+  {
+    "code": "60024",
+    "city": "Demataluwa"
+  },
+  {
+    "code": "60025",
+    "city": "Ithanawatte"
+  },
+  {
+    "code": "60027",
+    "city": "Boyagane"
+  },
+  {
+    "code": "60028",
+    "city": "Kohilagedara"
+  },
+  {
+    "code": "60029",
+    "city": "Kosgolla"
+  },
+  {
+    "code": "60034",
+    "city": "Hindagolla"
+  },
+  {
+    "code": "60036",
+    "city": "Ambakote"
+  },
+  {
+    "code": "60038",
+    "city": "Morathiha"
+  },
+  {
+    "code": "60040",
+    "city": "Ridigama"
+  },
+  {
+    "code": "60044",
+    "city": "Delwite"
+  },
+  {
+    "code": "60045",
+    "city": "Iriyagolla"
+  },
+  {
+    "code": "60047",
+    "city": "Alawatuvala"
+  },
+  {
+    "code": "60052",
+    "city": "Panagamuwa"
+  },
+  {
+    "code": "60053",
+    "city": "Pihimbuwa"
+  },
+  {
+    "code": "60054",
+    "city": "Kanadeniyawala"
+  },
+  {
+    "code": "60058",
+    "city": "Pilessa"
+  },
+  {
+    "code": "60060",
+    "city": "Mawathagama"
+  },
+  {
+    "code": "60062",
+    "city": "Kahapathwala"
+  },
+  {
+    "code": "60064",
+    "city": "Inguruwatte"
+  },
+  {
+    "code": "60066",
+    "city": "Meetanwala"
+  },
+  {
+    "code": "60072",
+    "city": "Puswelitenna"
+  },
+  {
+    "code": "60074",
+    "city": "Anhandiya"
+  },
+  {
+    "code": "60076",
+    "city": "Buluwala"
+  },
+  {
+    "code": "60080",
+    "city": "Weuda"
+  },
+  {
+    "code": "60094",
+    "city": "Uhumiya"
+  },
+  {
+    "code": "60096",
+    "city": "Kalugamuwa"
+  },
+  {
+    "code": "60100",
+    "city": "Narammala"
+  },
+  {
+    "code": "60106",
+    "city": "Karagahagedara"
+  },
+  {
+    "code": "60107",
+    "city": "Bogamulla"
+  },
+  {
+    "code": "60108",
+    "city": "Lonahettiya"
+  },
+  {
+    "code": "60112",
+    "city": "Pahamune"
+  },
+  {
+    "code": "60121",
+    "city": "Metiyagane"
+  },
+  {
+    "code": "60122",
+    "city": "Muruthnge"
+  },
+  {
+    "code": "60130",
+    "city": "Dambadeniya"
+  },
+  {
+    "code": "60135",
+    "city": "Ihala Katugampala"
+  },
+  {
+    "code": "60140",
+    "city": "Giriulla"
+  },
+  {
+    "code": "60152",
+    "city": "Narangoda"
+  },
+  {
+    "code": "60155",
+    "city": "Bopitiya"
+  },
+  {
+    "code": "60156",
+    "city": "Elibichchiya"
+  },
+  {
+    "code": "60160",
+    "city": "Pannala"
+  },
+  {
+    "code": "60162",
+    "city": "Labbala"
+  },
+  {
+    "code": "60170",
+    "city": "Gonawila"
+  },
+  {
+    "code": "60174",
+    "city": "Daraluwa"
+  },
+  {
+    "code": "60176",
+    "city": "Sandalankawa"
+  },
+  {
+    "code": "60181",
+    "city": "Horambawa"
+  },
+  {
+    "code": "60182",
+    "city": "Alahitiyawa"
+  },
+  {
+    "code": "60183",
+    "city": "Kekunagolla"
+  },
+  {
+    "code": "60184",
+    "city": "Kirimetiyawa"
+  },
+  {
+    "code": "60186",
+    "city": "Nakkawatta"
+  },
+  {
+    "code": "60188",
+    "city": "Kithalawa"
+  },
+  {
+    "code": "60195",
+    "city": "Wewagama"
+  },
+  {
+    "code": "60198",
+    "city": "Walakmbrurumulla"
+  },
+  {
+    "code": "60200",
+    "city": "Kuliyapitiya"
+  },
+  {
+    "code": "60202",
+    "city": "Yakwila"
+  },
+  {
+    "code": "60204",
+    "city": "Wadumunnegedara"
+  },
+  {
+    "code": "60206",
+    "city": "Welpalla"
+  },
+  {
+    "code": "60208",
+    "city": "Thalahitimulla"
+  },
+  {
+    "code": "60209",
+    "city": "Madakumburumulla"
+  },
+  {
+    "code": "60211",
+    "city": "Ihala Gomugomuwa"
+  },
+  {
+    "code": "60212",
+    "city": "Kirindawa"
+  },
+  {
+    "code": "60214",
+    "city": "Anukkane"
+  },
+  {
+    "code": "60218",
+    "city": "Munamaldeniya"
+  },
+  {
+    "code": "60221",
+    "city": "Magulagama"
+  },
+  {
+    "code": "60226",
+    "city": "Nagollagoda"
+  },
+  {
+    "code": "60227",
+    "city": "Tharana Udawela"
+  },
+  {
+    "code": "60228",
+    "city": "Deegalla"
+  },
+  {
+    "code": "60232",
+    "city": "Ilukhena"
+  },
+  {
+    "code": "60236",
+    "city": "Padiwela"
+  },
+  {
+    "code": "60238",
+    "city": "Ihala Kadigamuwa"
+  },
+  {
+    "code": "60240",
+    "city": "Welipennagahamulla"
+  },
+  {
+    "code": "60250",
+    "city": "Udubaddawa"
+  },
+  {
+    "code": "60260",
+    "city": "Dummalasuriya"
+  },
+  {
+    "code": "60262",
+    "city": "Watuwatta"
+  },
+  {
+    "code": "60266",
+    "city": "Etungahakotuwa"
+  },
+  {
+    "code": "60280",
+    "city": "Alawwa"
+  },
+  {
+    "code": "60284",
+    "city": "Wennoruwa"
+  },
+  {
+    "code": "60286",
+    "city": "Maharachchimulla"
+  },
+  {
+    "code": "60288",
+    "city": "Keppitiwalana"
+  },
+  {
+    "code": "60291",
+    "city": "Bujjomuwa"
+  },
+  {
+    "code": "60292",
+    "city": "Nawatalwatta"
+  },
+  {
+    "code": "60300",
+    "city": "Polgahawela"
+  },
+  {
+    "code": "60304",
+    "city": "Metikumbura"
+  },
+  {
+    "code": "60306",
+    "city": "Talawattegedara"
+  },
+  {
+    "code": "60308",
+    "city": "Aragoda"
+  },
+  {
+    "code": "60312",
+    "city": "Penaliya"
+  },
+  {
+    "code": "60314",
+    "city": "Yatigaloluwa"
+  },
+  {
+    "code": "60318",
+    "city": "Wadakada"
+  },
+  {
+    "code": "60330",
+    "city": "Pothuhera"
+  },
+  {
+    "code": "60332",
+    "city": "Ilukhena"
+  },
+  {
+    "code": "60344",
+    "city": "Maspotha"
+  },
+  {
+    "code": "60347",
+    "city": "Bamunukotuwa"
+  },
+  {
+    "code": "60348",
+    "city": "Panadaragama"
+  },
+  {
+    "code": "60350",
+    "city": "Katupota"
+  },
+  {
+    "code": "60354",
+    "city": "Moragane"
+  },
+  {
+    "code": "60356",
+    "city": "Kosdeniya "
+  },
+  {
+    "code": "60378",
+    "city": "Solewewa"
+  },
+  {
+    "code": "60400",
+    "city": "Wariyapola"
+  },
+  {
+    "code": "60402",
+    "city": "Wellagala"
+  },
+  {
+    "code": "60404",
+    "city": "Malagane"
+  },
+  {
+    "code": "60406",
+    "city": "Minuwangete"
+  },
+  {
+    "code": "60408",
+    "city": "Mirihanegama"
+  },
+  {
+    "code": "60410",
+    "city": "Kobeigane"
+  },
+  {
+    "code": "60414",
+    "city": "Hengamuwa"
+  },
+  {
+    "code": "60416",
+    "city": "Alahengama"
+  },
+  {
+    "code": "60422",
+    "city": "Kanattewewa"
+  },
+  {
+    "code": "60424",
+    "city": "Bandara Koswatte"
+  },
+  {
+    "code": "60426",
+    "city": "Tuttiripitigama"
+  },
+  {
+    "code": "60430",
+    "city": "Hettipola"
+  },
+  {
+    "code": "60434",
+    "city": "Mandapola"
+  },
+  {
+    "code": "60436",
+    "city": "Sunandapura"
+  },
+  {
+    "code": "60437",
+    "city": "Boraluwewa"
+  },
+  {
+    "code": "60438",
+    "city": "Kuraithena"
+  },
+  {
+    "code": "60439",
+    "city": "Pehimbiya Ratmale"
+  },
+  {
+    "code": "60441",
+    "city": "Halmillawewa"
+  },
+  {
+    "code": "60450",
+    "city": "Bingiriya"
+  },
+  {
+    "code": "60453",
+    "city": "Tisogama"
+  },
+  {
+    "code": "60454",
+    "city": "Weerapokuna"
+  },
+  {
+    "code": "60456",
+    "city": "Wellarawa"
+  },
+  {
+    "code": "60458",
+    "city": "Hiruwalpola"
+  },
+  {
+    "code": "60461",
+    "city": "Padeniya"
+  },
+  {
+    "code": "60462",
+    "city": "Awulegama"
+  },
+  {
+    "code": "60464",
+    "city": "Welawa Junction"
+  },
+  {
+    "code": "60465",
+    "city": "Wannigama"
+  },
+  {
+    "code": "60470",
+    "city": "Nikaweratiya"
+  },
+  {
+    "code": "60472",
+    "city": "Divullegoda"
+  },
+  {
+    "code": "60474",
+    "city": "Hulogedara"
+  },
+  {
+    "code": "60476",
+    "city": "Thimbiriyawa"
+  },
+  {
+    "code": "60477",
+    "city": "Hulugalla"
+  },
+  {
+    "code": "60478",
+    "city": "Sinsetagama"
+  },
+  {
+    "code": "60479",
+    "city": "Mahagirilla"
+  },
+  {
+    "code": "60482",
+    "city": "Nabadewa"
+  },
+  {
+    "code": "60483",
+    "city": "Kotawehera "
+  },
+  {
+    "code": "60484",
+    "city": "Meewellawa"
+  },
+  {
+    "code": "60485",
+    "city": "Digannewa"
+  },
+  {
+    "code": "60486",
+    "city": "Hilogama"
+  },
+  {
+    "code": "60490",
+    "city": "Wannirasnayakapura"
+  },
+  {
+    "code": "60492",
+    "city": "Kadigawa"
+  },
+  {
+    "code": "60495",
+    "city": "Monnekulama"
+  },
+  {
+    "code": "60499",
+    "city": "Torayaya"
+  },
+  {
+    "code": "60500",
+    "city": "Ibbagamuwa"
+  },
+  {
+    "code": "60502",
+    "city": "Kirindigalla"
+  },
+  {
+    "code": "60506",
+    "city": "Kumbukwewa"
+  },
+  {
+    "code": "60508",
+    "city": "Kumbukgeta"
+  },
+  {
+    "code": "60512",
+    "city": "Maeliya"
+  },
+  {
+    "code": "60514",
+    "city": "Makulpotha"
+  },
+  {
+    "code": "60516",
+    "city": "Mahamukalanyaya"
+  },
+  {
+    "code": "60518",
+    "city": "Periyakdneluwa"
+  },
+  {
+    "code": "60522",
+    "city": "Gokarella"
+  },
+  {
+    "code": "60530",
+    "city": "Dodangaslanda"
+  },
+  {
+    "code": "60532",
+    "city": "Maduragoda"
+  },
+  {
+    "code": "60540",
+    "city": "Melsiripura"
+  },
+  {
+    "code": "60544",
+    "city": "Diddeniya"
+  },
+  {
+    "code": "60546",
+    "city": "Hiriyana Lenawa"
+  },
+  {
+    "code": "60548",
+    "city": "Kimbulwanaoya"
+  },
+  {
+    "code": "60549",
+    "city": "Nelliya"
+  },
+  {
+    "code": "60552",
+    "city": "Madahapola"
+  },
+  {
+    "code": "60554",
+    "city": "Pansiyagama"
+  },
+  {
+    "code": "60558",
+    "city": "Panliyadda"
+  },
+  {
+    "code": "60570",
+    "city": "Wellawa"
+  },
+  {
+    "code": "60572",
+    "city": "Thalwita"
+  },
+  {
+    "code": "60578",
+    "city": "Makulwewa"
+  },
+  {
+    "code": "60580",
+    "city": "Nikadalupotha"
+  },
+  {
+    "code": "60582",
+    "city": "Hunupola"
+  },
+  {
+    "code": "60584",
+    "city": "Thambagalla"
+  },
+  {
+    "code": "60590",
+    "city": "Nagollagama"
+  },
+  {
+    "code": "60600",
+    "city": "Maho"
+  },
+  {
+    "code": "60602",
+    "city": "Karambe"
+  },
+  {
+    "code": "60604",
+    "city": "Balalla"
+  },
+  {
+    "code": "60606",
+    "city": "Ridibendiella"
+  },
+  {
+    "code": "60612",
+    "city": "Medivawa"
+  },
+  {
+    "code": "60620",
+    "city": "Polpitigama"
+  },
+  {
+    "code": "60622",
+    "city": "Ulpotha Pallekele"
+  },
+  {
+    "code": "60624",
+    "city": "Thalkolawewa"
+  },
+  {
+    "code": "60630",
+    "city": "Konwewa"
+  },
+  {
+    "code": "60640",
+    "city": "Moragollagama"
+  },
+  {
+    "code": "60646",
+    "city": "Siyambalangamuwa"
+  },
+  {
+    "code": "60650",
+    "city": "Ambanpola"
+  },
+  {
+    "code": "60700",
+    "city": "Galgamuwa"
+  },
+  {
+    "code": "60704",
+    "city": "Palukadawala"
+  },
+  {
+    "code": "60706",
+    "city": "Ataragalle"
+  },
+  {
+    "code": "60712",
+    "city": "Gallewa"
+  },
+  {
+    "code": "60714",
+    "city": "Makulewa"
+  },
+  {
+    "code": "60716",
+    "city": "Ehetuwewa"
+  },
+  {
+    "code": "60718",
+    "city": "Embogama"
+  },
+  {
+    "code": "60721",
+    "city": "Wannikudawewa"
+  },
+  {
+    "code": "60722",
+    "city": "Wannihalagama"
+  },
+  {
+    "code": "60724",
+    "city": "Mahananneriya"
+  },
+  {
+    "code": "60731",
+    "city": "Mahagalkadawala"
+  },
+  {
+    "code": "60732",
+    "city": "Usgala Siyambalangamuwa"
+  },
+  {
+    "code": "60734",
+    "city": "Tambutta"
+  },
+  {
+    "code": "60735",
+    "city": "Pahalagiribawa"
+  },
+  {
+    "code": "60736",
+    "city": "Saliya Asokapura"
+  },
+  {
+    "code": "60737",
+    "city": "Slolepura"
+  },
+  {
+    "code": "60738",
+    "city": "Solewewa"
+  },
+  {
+    "code": "60739",
+    "city": "Warawewa"
+  },
+  {
+    "code": "60750",
+    "city": "Meegalawa"
+  },
+  {
+    "code": "60752",
+    "city": "Girathalana"
+  },
+  {
+    "code": "60754",
+    "city": "Kudakatnoruwa"
+  },
+  {
+    "code": "61000",
+    "city": "Chillaw"
+  },
+  {
+    "code": "61004",
+    "city": "Udappuwa"
+  },
+  {
+    "code": "61006",
+    "city": "Wijekatupotha"
+  },
+  {
+    "code": "61008",
+    "city": "Wilpotha"
+  },
+  {
+    "code": "61012",
+    "city": "Adippala"
+  },
+  {
+    "code": "61014",
+    "city": "Mugunuwatawana"
+  },
+  {
+    "code": "61018",
+    "city": "Ilippadeniya"
+  },
+  {
+    "code": "61022",
+    "city": "Karawitagara"
+  },
+  {
+    "code": "61024",
+    "city": "Ambakandawila"
+  },
+  {
+    "code": "61032",
+    "city": "Kumarakattuwa"
+  },
+  {
+    "code": "61040",
+    "city": "Pallama"
+  },
+  {
+    "code": "61042",
+    "city": "Serukele"
+  },
+  {
+    "code": "61110",
+    "city": "Waikkal"
+  },
+  {
+    "code": "61120",
+    "city": "Nainamadama"
+  },
+  {
+    "code": "61130",
+    "city": "Dankotuwa"
+  },
+  {
+    "code": "61136",
+    "city": "Bujjampola"
+  },
+  {
+    "code": "61138",
+    "city": "Lihiriyagama"
+  },
+  {
+    "code": "61144",
+    "city": "Yogiyana"
+  },
+  {
+    "code": "61150",
+    "city": "Lunuwila"
+  },
+  {
+    "code": "61154",
+    "city": "Ihala Kottaramulla"
+  },
+  {
+    "code": "61158",
+    "city": "Koswatta"
+  },
+  {
+    "code": "61162",
+    "city": "Pothuwatawana"
+  },
+  {
+    "code": "61170",
+    "city": "Wennappuwa"
+  },
+  {
+    "code": "61180",
+    "city": "Katuneriya"
+  },
+  {
+    "code": "61190",
+    "city": "Nattandiya"
+  },
+  {
+    "code": "61192",
+    "city": "Dunkannawa"
+  },
+  {
+    "code": "61195",
+    "city": "Muttibendiwila"
+  },
+  {
+    "code": "61198",
+    "city": "Watugahamulla"
+  },
+  {
+    "code": "61210",
+    "city": "Marawila"
+  },
+  {
+    "code": "61220",
+    "city": "Mahwewa"
+  },
+  {
+    "code": "61224",
+    "city": "Toduwawa"
+  },
+  {
+    "code": "61226",
+    "city": "Kudawewa"
+  },
+  {
+    "code": "61230",
+    "city": "Madampe"
+  },
+  {
+    "code": "61233",
+    "city": "Galmuruwa"
+  },
+  {
+    "code": "61234",
+    "city": "Panirendawa"
+  },
+  {
+    "code": "61236",
+    "city": "Kakkapalliya"
+  },
+  {
+    "code": "61238",
+    "city": "Bangadeniya"
+  },
+  {
+    "code": "61242",
+    "city": "Rajakadaluwa"
+  },
+  {
+    "code": "61244",
+    "city": "Nalladarankattuwa"
+  },
+  {
+    "code": "61246",
+    "city": "Battuluoya"
+  },
+  {
+    "code": "61250",
+    "city": "Mundel"
+  },
+  {
+    "code": "61252",
+    "city": "Kottantivu"
+  },
+  {
+    "code": "61262",
+    "city": "Baranankattuwa"
+  },
+  {
+    "code": "61264",
+    "city": "Angunawila"
+  },
+  {
+    "code": "61266",
+    "city": "Mangaleliya"
+  },
+  {
+    "code": "61270",
+    "city": "Madurankuliya"
+  },
+  {
+    "code": "61272",
+    "city": "Mahakumbukkadawala"
+  },
+  {
+    "code": "61274",
+    "city": "Mukkutoduwawa"
+  },
+  {
+    "code": "61280",
+    "city": "Palaviya"
+  },
+  {
+    "code": "61300",
+    "city": "Puttalam  "
+  },
+  {
+    "code": "61302",
+    "city": "Ismailpuram"
+  },
+  {
+    "code": "61306",
+    "city": "Vanathawilluwa"
+  },
+  {
+    "code": "61307",
+    "city": "Karativ Ponparappi"
+  },
+  {
+    "code": "61308",
+    "city": "Eluwankulama"
+  },
+  {
+    "code": "61312",
+    "city": "Sirambiyadiya"
+  },
+  {
+    "code": "61314",
+    "city": "Karuwalagaswewa"
+  },
+  {
+    "code": "61316",
+    "city": "Ihala Puliyankulama"
+  },
+  {
+    "code": "61322",
+    "city": "Tabbowa"
+  },
+  {
+    "code": "61324",
+    "city": "Saliyawewa Junction"
+  },
+  {
+    "code": "61326",
+    "city": "Puttalam Cement Factory"
+  },
+  {
+    "code": "61328",
+    "city": "Attawilluwa"
+  },
+  {
+    "code": "61341",
+    "city": "Mampuri"
+  },
+  {
+    "code": "61342",
+    "city": "Norachcholai"
+  },
+  {
+    "code": "61343",
+    "city": "Ettale"
+  },
+  {
+    "code": "61344",
+    "city": "Talawila Church"
+  },
+  {
+    "code": "61354",
+    "city": "Palliwasalthurai"
+  },
+  {
+    "code": "61356",
+    "city": "Kurinjanpitiya"
+  },
+  {
+    "code": "61358",
+    "city": "Kandakuliya"
+  },
+  {
+    "code": "61360",
+    "city": "Kalpitiya"
+  },
+  {
+    "code": "61362",
+    "city": "Kirimundalama"
+  },
+  {
+    "code": "61500",
+    "city": "Anamaduwa"
+  },
+  {
+    "code": "61502",
+    "city": "Uriyawa"
+  },
+  {
+    "code": "61504",
+    "city": "Siyambalagahashene"
+  },
+  {
+    "code": "61506",
+    "city": "Mudalakkuliya"
+  },
+  {
+    "code": "61508",
+    "city": "Andigama"
+  },
+  {
+    "code": "61512",
+    "city": "Mahauswewa"
+  },
+  {
+    "code": "61514",
+    "city": "Inginimitiya"
+  },
+  {
+    "code": "61516",
+    "city": "Kuruketiyawa"
+  },
+  {
+    "code": "61520",
+    "city": "Nawagattegama"
+  },
+  {
+    "code": "61532",
+    "city": "Kottukachiya"
+  },
+  {
+    "code": "61534",
+    "city": "Kalladiya"
+  },
+  {
+    "code": "70000",
+    "city": "Ratnapura"
+  },
+  {
+    "code": "70001",
+    "city": "Malwala Junction"
+  },
+  {
+    "code": "70002",
+    "city": "Gillimale"
+  },
+  {
+    "code": "70003",
+    "city": "Rathturugala"
+  },
+  {
+    "code": "70004",
+    "city": "Sri Palabaddala"
+  },
+  {
+    "code": "70005",
+    "city": "Kudawa"
+  },
+  {
+    "code": "70008",
+    "city": "Weralupe-Kospelawinna"
+  },
+  {
+    "code": "70009",
+    "city": "Ratnapura Hospital"
+  },
+  {
+    "code": "70010",
+    "city": "Ratnapura Secretariat"
+  },
+  {
+    "code": "70011",
+    "city": "Malangama"
+  },
+  {
+    "code": "70012",
+    "city": "Hidellana"
+  },
+  {
+    "code": "70013",
+    "city": "Karapincha"
+  },
+  {
+    "code": "70014",
+    "city": "Kosgala Kithulpe"
+  },
+  {
+    "code": "70015",
+    "city": "Samanpura"
+  },
+  {
+    "code": "70016",
+    "city": "Kahangama"
+  },
+  {
+    "code": "70017",
+    "city": "Dodampe"
+  },
+  {
+    "code": "70018",
+    "city": "Karangoda"
+  },
+  {
+    "code": "70019",
+    "city": "Dambuluwana"
+  },
+  {
+    "code": "70021",
+    "city": "Medagalatur"
+  },
+  {
+    "code": "70022",
+    "city": "Sinhalagoda"
+  },
+  {
+    "code": "70024",
+    "city": "Ayagama"
+  },
+  {
+    "code": "70025",
+    "city": "Pallekada"
+  },
+  {
+    "code": "70026",
+    "city": "Gawaragiriya"
+  },
+  {
+    "code": "70027",
+    "city": "Rathanaparagala"
+  },
+  {
+    "code": "70031",
+    "city": "Mudduwa-Muwagama"
+  },
+  {
+    "code": "70032",
+    "city": "Elapatha"
+  },
+  {
+    "code": "70034",
+    "city": "Udaniriella"
+  },
+  {
+    "code": "70035",
+    "city": "Kehelowitigama"
+  },
+  {
+    "code": "70036",
+    "city": "Ratna Hangamuwa"
+  },
+  {
+    "code": "70037",
+    "city": "Digankanda"
+  },
+  {
+    "code": "70038",
+    "city": "Niralagama"
+  },
+  {
+    "code": "70041",
+    "city": "Marapana"
+  },
+  {
+    "code": "70042",
+    "city": "Dela"
+  },
+  {
+    "code": "70043",
+    "city": "Sri Noragalla"
+  },
+  {
+    "code": "70044",
+    "city": "Udakarawita"
+  },
+  {
+    "code": "70045",
+    "city": "Pebotuwa"
+  },
+  {
+    "code": "70046",
+    "city": "Delwala "
+  },
+  {
+    "code": "70047",
+    "city": "Delwalakanda"
+  },
+  {
+    "code": "70051",
+    "city": "Godigamuwa"
+  },
+  {
+    "code": "70052",
+    "city": "Tiruwanaketiya"
+  },
+  {
+    "code": "70053",
+    "city": "Pelwadiya"
+  },
+  {
+    "code": "70054",
+    "city": "Ihala Hakamuwa"
+  },
+  {
+    "code": "70055",
+    "city": "Gonakumbura"
+  },
+  {
+    "code": "70056",
+    "city": "Lellopitiya"
+  },
+  {
+    "code": "70057",
+    "city": "Hettikanda"
+  },
+  {
+    "code": "70061",
+    "city": "Ratnagalabada"
+  },
+  {
+    "code": "70062",
+    "city": "Gallella"
+  },
+  {
+    "code": "70063",
+    "city": "Ihala Rathgama"
+  },
+  {
+    "code": "70065",
+    "city": "Banagoda"
+  },
+  {
+    "code": "70066",
+    "city": "Wewelwatta"
+  },
+  {
+    "code": "70067",
+    "city": "Aswedduma"
+  },
+  {
+    "code": "70070",
+    "city": "Pelmadulla"
+  },
+  {
+    "code": "70071",
+    "city": "Handurukanda"
+  },
+  {
+    "code": "70072",
+    "city": "Pathakada"
+  },
+  {
+    "code": "70073",
+    "city": "Wattepanguwa"
+  },
+  {
+    "code": "70074",
+    "city": "Morathota"
+  },
+  {
+    "code": "70075",
+    "city": "Panawenna"
+  },
+  {
+    "code": "70080",
+    "city": "Opanayaka"
+  },
+  {
+    "code": "70082",
+    "city": "Akarella"
+  },
+  {
+    "code": "70083",
+    "city": "Illukkumbura - Panana"
+  },
+  {
+    "code": "70084",
+    "city": "Madola"
+  },
+  {
+    "code": "70097",
+    "city": "Gawaranhena"
+  },
+  {
+    "code": "70098",
+    "city": "Ellepola"
+  },
+  {
+    "code": "70100",
+    "city": "Balangoda"
+  },
+  {
+    "code": "70101",
+    "city": "Talakolahinna"
+  },
+  {
+    "code": "70102",
+    "city": "Kirimetitenna"
+  },
+  {
+    "code": "70103",
+    "city": "Kongastenna"
+  },
+  {
+    "code": "70104",
+    "city": "Weliepola"
+  },
+  {
+    "code": "70105",
+    "city": "Hatangala"
+  },
+  {
+    "code": "70106",
+    "city": "Handagiriya"
+  },
+  {
+    "code": "70108",
+    "city": "Hatarabage"
+  },
+  {
+    "code": "70112",
+    "city": "Mahawalatenna"
+  },
+  {
+    "code": "70113",
+    "city": "Tanjantenna"
+  },
+  {
+    "code": "70114",
+    "city": "Wikiliya"
+  },
+  {
+    "code": "70116",
+    "city": "Rajawaka"
+  },
+  {
+    "code": "70117",
+    "city": "Mulgama"
+  },
+  {
+    "code": "70118",
+    "city": "Tanjantenna"
+  },
+  {
+    "code": "70122",
+    "city": "Kaltota"
+  },
+  {
+    "code": "70123",
+    "city": "Medabedda"
+  },
+  {
+    "code": "70124",
+    "city": "Welipathayaya"
+  },
+  {
+    "code": "70126",
+    "city": "Massenna Helakanda"
+  },
+  {
+    "code": "70127",
+    "city": "Meddekanda"
+  },
+  {
+    "code": "70128",
+    "city": "Oluganthota"
+  },
+  {
+    "code": "70129",
+    "city": "Morahela"
+  },
+  {
+    "code": "70130",
+    "city": "Pinnawala"
+  },
+  {
+    "code": "70131",
+    "city": "Bolthumbe"
+  },
+  {
+    "code": "70132",
+    "city": "Alakolaella"
+  },
+  {
+    "code": "70133",
+    "city": "Pambagolla"
+  },
+  {
+    "code": "70134",
+    "city": "Imbulpe"
+  },
+  {
+    "code": "70135",
+    "city": "Rassagala"
+  },
+  {
+    "code": "70136",
+    "city": "Gurubewilagama"
+  },
+  {
+    "code": "70137",
+    "city": "Penipanguwa"
+  },
+  {
+    "code": "70138",
+    "city": "Waleboda"
+  },
+  {
+    "code": "70140",
+    "city": "Belihuloya"
+  },
+  {
+    "code": "70141",
+    "city": "Sabaragamuwa University"
+  },
+  {
+    "code": "70142",
+    "city": "Samanalawewa"
+  },
+  {
+    "code": "70144",
+    "city": "Ihalagama"
+  },
+  {
+    "code": "70145",
+    "city": "Halpe"
+  },
+  {
+    "code": "70150",
+    "city": "Kahawatta"
+  },
+  {
+    "code": "70151",
+    "city": "Sri Godakumbur"
+  },
+  {
+    "code": "70152",
+    "city": "Panapitiya"
+  },
+  {
+    "code": "70154",
+    "city": "Udaha Hawupe"
+  },
+  {
+    "code": "70156",
+    "city": "Gabbela"
+  },
+  {
+    "code": "70158",
+    "city": "Madalagama"
+  },
+  {
+    "code": "70160",
+    "city": "Godakawela"
+  },
+  {
+    "code": "70162",
+    "city": "Ranwala"
+  },
+  {
+    "code": "70164",
+    "city": "Hapugastenna"
+  },
+  {
+    "code": "70165",
+    "city": "Nawinna Pinnakanda"
+  },
+  {
+    "code": "70170",
+    "city": "Pallebedda"
+  },
+  {
+    "code": "70171",
+    "city": "Halwinna"
+  },
+  {
+    "code": "70179",
+    "city": "Mahagama Kalumukalana"
+  },
+  {
+    "code": "70180",
+    "city": "Kolambageara"
+  },
+  {
+    "code": "70181",
+    "city": "Palugahawela"
+  },
+  {
+    "code": "70190",
+    "city": "Udawalawe"
+  },
+  {
+    "code": "70191",
+    "city": "Maduwanwela Colony "
+  },
+  {
+    "code": "70194",
+    "city": "Hingura Ara"
+  },
+  {
+    "code": "70195",
+    "city": "Gangeyaya"
+  },
+  {
+    "code": "70199",
+    "city": "Embilipitiya Bazzar"
+  },
+  {
+    "code": "70200",
+    "city": "Embilipitiya"
+  },
+  {
+    "code": "70202",
+    "city": "Yodagama"
+  },
+  {
+    "code": "70203",
+    "city": "Embilipitiya Paper Corp"
+  },
+  {
+    "code": "70205",
+    "city": "Tunkama"
+  },
+  {
+    "code": "70206",
+    "city": "Chandrikawewa"
+  },
+  {
+    "code": "70208",
+    "city": "Moraketiya"
+  },
+  {
+    "code": "70212",
+    "city": "Mulendiyawela"
+  },
+  {
+    "code": "70213",
+    "city": "Nungahayaya"
+  },
+  {
+    "code": "70215",
+    "city": "Omalpe"
+  },
+  {
+    "code": "70216",
+    "city": "Dapane"
+  },
+  {
+    "code": "70218",
+    "city": "Panamura"
+  },
+  {
+    "code": "70230",
+    "city": "Padalangala"
+  },
+  {
+    "code": "70231",
+    "city": "Uruperessa"
+  },
+  {
+    "code": "70250",
+    "city": "Sewanagala"
+  },
+  {
+    "code": "70252",
+    "city": "Kiriibbanwewa"
+  },
+  {
+    "code": "70254",
+    "city": "Ekamutugama"
+  },
+  {
+    "code": "70256",
+    "city": "Mahagama Colony"
+  },
+  {
+    "code": "70293",
+    "city": "Wellandura"
+  },
+  {
+    "code": "70294",
+    "city": "Atakalanpanna"
+  },
+  {
+    "code": "70296",
+    "city": "Hiramadagama"
+  },
+  {
+    "code": "70298",
+    "city": "Makandura Sabara"
+  },
+  {
+    "code": "70300",
+    "city": "Rakwana"
+  },
+  {
+    "code": "70332",
+    "city": "Demuwatha"
+  },
+  {
+    "code": "70333",
+    "city": "Galwetawatta"
+  },
+  {
+    "code": "70334",
+    "city": "Mahapannila"
+  },
+  {
+    "code": "70336",
+    "city": "Kopikella"
+  },
+  {
+    "code": "70337",
+    "city": "Rambuka"
+  },
+  {
+    "code": "70338",
+    "city": "Pothupitiya"
+  },
+  {
+    "code": "70339",
+    "city": "Ilumbakanda"
+  },
+  {
+    "code": "70341",
+    "city": "Suriyakanda"
+  },
+  {
+    "code": "70342",
+    "city": "Ittakanda"
+  },
+  {
+    "code": "70344",
+    "city": "Boraluwageaina"
+  },
+  {
+    "code": "70345",
+    "city": "Ullinduwawa"
+  },
+  {
+    "code": "70346",
+    "city": "Bulutota"
+  },
+  {
+    "code": "70348",
+    "city": "Vijeriya"
+  },
+  {
+    "code": "70350",
+    "city": "Kolonna"
+  },
+  {
+    "code": "70352",
+    "city": "Kella Junction"
+  },
+  {
+    "code": "70400",
+    "city": "Nivitigala"
+  },
+  {
+    "code": "70403",
+    "city": "Kolombugama"
+  },
+  {
+    "code": "70404",
+    "city": "Doloswalakande"
+  },
+  {
+    "code": "70405",
+    "city": "Dumbara Manana"
+  },
+  {
+    "code": "70408",
+    "city": "Watapotha"
+  },
+  {
+    "code": "70409",
+    "city": "Yatagara"
+  },
+  {
+    "code": "70450",
+    "city": "Kalawana"
+  },
+  {
+    "code": "70455",
+    "city": "Daugala"
+  },
+  {
+    "code": "70456",
+    "city": "Waturawa"
+  },
+  {
+    "code": "70457",
+    "city": "Panahetagala"
+  },
+  {
+    "code": "70459",
+    "city": "Veddagala"
+  },
+  {
+    "code": "70461",
+    "city": "Panapola"
+  },
+  {
+    "code": "70462",
+    "city": "Kukulegama"
+  },
+  {
+    "code": "70463",
+    "city": "Pitigalakanda"
+  },
+  {
+    "code": "70464",
+    "city": "Daugalagama"
+  },
+  {
+    "code": "70468",
+    "city": "Meepagama"
+  },
+  {
+    "code": "70469",
+    "city": "Nawalakanda"
+  },
+  {
+    "code": "70471",
+    "city": "Nikagoda"
+  },
+  {
+    "code": "70472",
+    "city": "Pimbura"
+  },
+  {
+    "code": "70473",
+    "city": "Pedikanda"
+  },
+  {
+    "code": "70474",
+    "city": "Wewelkandura"
+  },
+  {
+    "code": "70480",
+    "city": "Kiriella"
+  },
+  {
+    "code": "70482",
+    "city": "Matuwagalagama"
+  },
+  {
+    "code": "70483",
+    "city": "Hindurangala"
+  },
+  {
+    "code": "70484",
+    "city": "Madabaddara"
+  },
+  {
+    "code": "70486",
+    "city": "Epitawela- Sabara"
+  },
+  {
+    "code": "70487",
+    "city": "Yatipawwa"
+  },
+  {
+    "code": "70488",
+    "city": "Karandana"
+  },
+  {
+    "code": "70489",
+    "city": "Ketepola"
+  },
+  {
+    "code": "70492",
+    "city": "Ellagawa"
+  },
+  {
+    "code": "70494",
+    "city": "Minipura Dumbara"
+  },
+  {
+    "code": "70495",
+    "city": "Dumbara Manana"
+  },
+  {
+    "code": "70500",
+    "city": "Kuruwita"
+  },
+  {
+    "code": "70502",
+    "city": "Sudagala"
+  },
+  {
+    "code": "70504",
+    "city": "Batatota"
+  },
+  {
+    "code": "70506",
+    "city": "Eratna"
+  },
+  {
+    "code": "70509",
+    "city": "Dehipahala"
+  },
+  {
+    "code": "70511",
+    "city": "Pathegama-Sabara"
+  },
+  {
+    "code": "70512",
+    "city": "Teppanawa"
+  },
+  {
+    "code": "70549",
+    "city": "Pussella-Millawitiya"
+  },
+  {
+    "code": "70550",
+    "city": "Parakaduwa"
+  },
+  {
+    "code": "70552",
+    "city": "Ellaulla"
+  },
+  {
+    "code": "70553",
+    "city": "Bawila"
+  },
+  {
+    "code": "70555",
+    "city": "Ambalanpitiya"
+  },
+  {
+    "code": "70556",
+    "city": "Godagampola"
+  },
+  {
+    "code": "70559",
+    "city": "Imbulpitiya"
+  },
+  {
+    "code": "70561",
+    "city": "Bodhimaluwa"
+  },
+  {
+    "code": "70562",
+    "city": "Pohorabawa"
+  },
+  {
+    "code": "70600",
+    "city": "Eheliyagoda"
+  },
+  {
+    "code": "70602",
+    "city": "Erepola"
+  },
+  {
+    "code": "70604",
+    "city": "Mitipola"
+  },
+  {
+    "code": "70605",
+    "city": "Talagahamula Junction"
+  },
+  {
+    "code": "70606",
+    "city": "Ellawala"
+  },
+  {
+    "code": "70607",
+    "city": "Paleegala"
+  },
+  {
+    "code": "70609",
+    "city": "Medikele Colony"
+  },
+  {
+    "code": "70611",
+    "city": "Madagammana"
+  },
+  {
+    "code": "70612",
+    "city": "Panawala"
+  },
+  {
+    "code": "70613",
+    "city": "Rangegama"
+  },
+  {
+    "code": "70620",
+    "city": "Getahetta"
+  },
+  {
+    "code": "70621",
+    "city": "Bopetta"
+  },
+  {
+    "code": "710",
+    "city": "Colombo University"
+  },
+  {
+    "code": "71000",
+    "city": "Kegalle"
+  },
+  {
+    "code": "71009",
+    "city": "Deldeniya"
+  },
+  {
+    "code": "71014",
+    "city": "Hiriwadunna"
+  },
+  {
+    "code": "71016",
+    "city": "Molagoda"
+  },
+  {
+    "code": "71022",
+    "city": "Deewala Pallegama"
+  },
+  {
+    "code": "71029",
+    "city": "Yattogoda"
+  },
+  {
+    "code": "71034",
+    "city": "Damunupola"
+  },
+  {
+    "code": "71035",
+    "city": "Watura"
+  },
+  {
+    "code": "71037",
+    "city": "Debathgama"
+  },
+  {
+    "code": "71039",
+    "city": "Pothukoladeniya"
+  },
+  {
+    "code": "71041",
+    "city": "Aruggammana"
+  },
+  {
+    "code": "71044",
+    "city": "Bligala"
+  },
+  {
+    "code": "71046",
+    "city": "Helamada"
+  },
+  {
+    "code": "71050",
+    "city": "Dewalegama"
+  },
+  {
+    "code": "71055",
+    "city": "Imbulgasdeniya"
+  },
+  {
+    "code": "71060",
+    "city": "Nelundeniya"
+  },
+  {
+    "code": "71062",
+    "city": "Tuntota"
+  },
+  {
+    "code": "71063",
+    "city": "Mahapallegama"
+  },
+  {
+    "code": "71100",
+    "city": "Rambukkana"
+  },
+  {
+    "code": "71105",
+    "city": "Parape"
+  },
+  {
+    "code": "71106",
+    "city": "Thotawella"
+  },
+  {
+    "code": "71108",
+    "city": "Hewadiwela"
+  },
+  {
+    "code": "71113",
+    "city": "Udagaldeniya"
+  },
+  {
+    "code": "71115",
+    "city": "Dombemada"
+  },
+  {
+    "code": "71116",
+    "city": "Yatagama"
+  },
+  {
+    "code": "71130",
+    "city": "Pattampitiya"
+  },
+  {
+    "code": "71200",
+    "city": "Undugoda"
+  },
+  {
+    "code": "71202",
+    "city": "Kabagamuwa"
+  },
+  {
+    "code": "71204",
+    "city": "Alawatura"
+  },
+  {
+    "code": "71208",
+    "city": "Bossella"
+  },
+  {
+    "code": "71210",
+    "city": "Hettimulla"
+  },
+  {
+    "code": "71211",
+    "city": "Maharangalla"
+  },
+  {
+    "code": "71220",
+    "city": "Morontota"
+  },
+  {
+    "code": "71222",
+    "city": "Gantuna"
+  },
+  {
+    "code": "71230",
+    "city": "Bulathkohupitiya"
+  },
+  {
+    "code": "71232",
+    "city": "Ampagala"
+  },
+  {
+    "code": "71234",
+    "city": "Wegalla"
+  },
+  {
+    "code": "71236",
+    "city": "Udapotha"
+  },
+  {
+    "code": "71237",
+    "city": "Dedugala"
+  },
+  {
+    "code": "71300",
+    "city": "Ruwanwella"
+  },
+  {
+    "code": "71303",
+    "city": "Wahakula"
+  },
+  {
+    "code": "71304",
+    "city": "Waharaka"
+  },
+  {
+    "code": "71312",
+    "city": "Galpatha"
+  },
+  {
+    "code": "71313",
+    "city": "Imbulana"
+  },
+  {
+    "code": "71315",
+    "city": "Lewangama"
+  },
+  {
+    "code": "71318",
+    "city": "Gonagala"
+  },
+  {
+    "code": "71320",
+    "city": "Amitirigala"
+  },
+  {
+    "code": "71321",
+    "city": "Batuwita"
+  },
+  {
+    "code": "71325",
+    "city": "Malmaduwa"
+  },
+  {
+    "code": "71326",
+    "city": "Yatapana"
+  },
+  {
+    "code": "71350",
+    "city": "Galigamuwa Town"
+  },
+  {
+    "code": "71352",
+    "city": "Hakahinna"
+  },
+  {
+    "code": "71360",
+    "city": "Pitagaldeniya"
+  },
+  {
+    "code": "71363",
+    "city": "Atale"
+  },
+  {
+    "code": "71370",
+    "city": "Kotiyakumbura"
+  },
+  {
+    "code": "71372",
+    "city": "Kannattota"
+  },
+  {
+    "code": "71380",
+    "city": "Kotiyakumbura"
+  },
+  {
+    "code": "71400",
+    "city": "Dehiowita"
+  },
+  {
+    "code": "71401",
+    "city": "Deloluwa"
+  },
+  {
+    "code": "71403",
+    "city": "Anhettigama"
+  },
+  {
+    "code": "71407",
+    "city": "Noori"
+  },
+  {
+    "code": "71411",
+    "city": "Maliboda"
+  },
+  {
+    "code": "71417",
+    "city": "Hinguralakanda"
+  },
+  {
+    "code": "71418",
+    "city": "Boralankada"
+  },
+  {
+    "code": "71430",
+    "city": "Deraniyagala"
+  },
+  {
+    "code": "71432",
+    "city": "Miyanawita"
+  },
+  {
+    "code": "71500",
+    "city": "Mawanella"
+  },
+  {
+    "code": "71501",
+    "city": "Kondeniya"
+  },
+  {
+    "code": "71503",
+    "city": "Ambulugala"
+  },
+  {
+    "code": "71505",
+    "city": "Galatara"
+  },
+  {
+    "code": "71507",
+    "city": "Makehelwala"
+  },
+  {
+    "code": "71508",
+    "city": "Alutnuwara"
+  },
+  {
+    "code": "71510",
+    "city": "Ussapitiya"
+  },
+  {
+    "code": "71520",
+    "city": "Hingula"
+  },
+  {
+    "code": "71521",
+    "city": "Udumulla"
+  },
+  {
+    "code": "71527",
+    "city": "Dewanagala"
+  },
+  {
+    "code": "71530",
+    "city": "Hemmatagama"
+  },
+  {
+    "code": "71533",
+    "city": "Kehepannala"
+  },
+  {
+    "code": "71540",
+    "city": "Aranayaka"
+  },
+  {
+    "code": "71541",
+    "city": "Talgaspitiya"
+  },
+  {
+    "code": "71546",
+    "city": "Ambalakande"
+  },
+  {
+    "code": "71600",
+    "city": "Warakapola"
+  },
+  {
+    "code": "71601",
+    "city": "Dorawaka"
+  },
+  {
+    "code": "71602",
+    "city": "Niyadurupola"
+  },
+  {
+    "code": "71603",
+    "city": "Galapitamada"
+  },
+  {
+    "code": "71605",
+    "city": "Dunumala"
+  },
+  {
+    "code": "71607",
+    "city": "Algama"
+  },
+  {
+    "code": "71610",
+    "city": "Tulhiriya"
+  },
+  {
+    "code": "71612",
+    "city": "Bopitiya"
+  },
+  {
+    "code": "71619",
+    "city": "Tholangamuwa"
+  },
+  {
+    "code": "71622",
+    "city": "Weragala"
+  },
+  {
+    "code": "71700",
+    "city": "Yatiyantota"
+  },
+  {
+    "code": "71702",
+    "city": "Weeoya"
+  },
+  {
+    "code": "71704",
+    "city": "Malalpola"
+  },
+  {
+    "code": "71706",
+    "city": "Berennawa"
+  },
+  {
+    "code": "71708",
+    "city": "Seaforth Colony"
+  },
+  {
+    "code": "71712",
+    "city": "Welihalatenna"
+  },
+  {
+    "code": "71715",
+    "city": "Hakbellawaka"
+  },
+  {
+    "code": "71716",
+    "city": "Migastenna Sabara"
+  },
+  {
+    "code": "71720",
+    "city": "Kitulgala"
+  },
+  {
+    "code": "71722",
+    "city": "Mahabage"
+  },
+  {
+    "code": "71724",
+    "city": "Teligama"
+  },
+  {
+    "code": "71918",
+    "city": "Gonagala"
+  },
+  {
+    "code": "72325",
+    "city": "Malmaduwa"
+  },
+  {
+    "code": "72520",
+    "city": "Hingula"
+  },
+  {
+    "code": "80000",
+    "city": "Galle"
+  },
+  {
+    "code": "80042",
+    "city": "Wakwella"
+  },
+  {
+    "code": "80044",
+    "city": "Anangoda"
+  },
+  {
+    "code": "80046",
+    "city": "Walahanduwa"
+  },
+  {
+    "code": "80048",
+    "city": "Ankokkawala"
+  },
+  {
+    "code": "80054",
+    "city": "Gonamulla Junction"
+  },
+  {
+    "code": "80056",
+    "city": "Hiyare"
+  },
+  {
+    "code": "80058",
+    "city": "Talagampola"
+  },
+  {
+    "code": "80062",
+    "city": "Kottawagama"
+  },
+  {
+    "code": "80064",
+    "city": "Nakiyadeniya"
+  },
+  {
+    "code": "80070",
+    "city": "Udugama"
+  },
+  {
+    "code": "80075",
+    "city": "Penangala"
+  },
+  {
+    "code": "80080",
+    "city": "Hiniduma"
+  },
+  {
+    "code": "80082",
+    "city": "Neluwa"
+  },
+  {
+    "code": "80084",
+    "city": "Warukandeniya"
+  },
+  {
+    "code": "80086",
+    "city": "Pannimulla Panagoda"
+  },
+  {
+    "code": "80090",
+    "city": "Akmeemana"
+  },
+  {
+    "code": "80092",
+    "city": "Meda-Kembiya"
+  },
+  {
+    "code": "80100",
+    "city": "Wanduramba"
+  },
+  {
+    "code": "80107",
+    "city": "Yatalamatta"
+  },
+  {
+    "code": "80108",
+    "city": "Udalamatta"
+  },
+  {
+    "code": "80110",
+    "city": "Nagoda"
+  },
+  {
+    "code": "80112",
+    "city": "Mapalagama  "
+  },
+  {
+    "code": "80114",
+    "city": "Parana Thanayamgoda"
+  },
+  {
+    "code": "80116",
+    "city": "Mapalagama Central"
+  },
+  {
+    "code": "80120",
+    "city": "Wanchawela"
+  },
+  {
+    "code": "80122",
+    "city": "Angulugaha"
+  },
+  {
+    "code": "80130",
+    "city": "Imaduwa"
+  },
+  {
+    "code": "80132",
+    "city": "Hawpe"
+  },
+  {
+    "code": "80134",
+    "city": "Ihala Walpola"
+  },
+  {
+    "code": "80136",
+    "city": "Kananke Bazaar"
+  },
+  {
+    "code": "80142",
+    "city": "Opatha"
+  },
+  {
+    "code": "80143",
+    "city": "Banagala"
+  },
+  {
+    "code": "80144",
+    "city": "Malgalla Talangalla"
+  },
+  {
+    "code": "80146",
+    "city": "Halvitigala Colony"
+  },
+  {
+    "code": "80147",
+    "city": "Tawalama"
+  },
+  {
+    "code": "80148",
+    "city": "Tawalama"
+  },
+  {
+    "code": "80150",
+    "city": "Induruwa"
+  },
+  {
+    "code": "80151",
+    "city": "Karagoda "
+  },
+  {
+    "code": "80152",
+    "city": "Magedera"
+  },
+  {
+    "code": "80168",
+    "city": "Uluvitike"
+  },
+  {
+    "code": "80170",
+    "city": "Poddala"
+  },
+  {
+    "code": "80200",
+    "city": "Baddegama"
+  },
+  {
+    "code": "80204",
+    "city": "Ampegama"
+  },
+  {
+    "code": "80212",
+    "city": "Agaliya"
+  },
+  {
+    "code": "80214",
+    "city": "Unenwitiya"
+  },
+  {
+    "code": "80216",
+    "city": "Weihena"
+  },
+  {
+    "code": "80220",
+    "city": "Ginimellagaha"
+  },
+  {
+    "code": "80230",
+    "city": "Gonapinuwala"
+  },
+  {
+    "code": "80240",
+    "city": "Hikkaduwa"
+  },
+  {
+    "code": "80244",
+    "city": "Thiranagama"
+  },
+  {
+    "code": "80250",
+    "city": "Dodanduwa"
+  },
+  {
+    "code": "80260",
+    "city": "Ratgama"
+  },
+  {
+    "code": "80270",
+    "city": "Boossa"
+  },
+  {
+    "code": "80280",
+    "city": "Gintota"
+  },
+  {
+    "code": "80300",
+    "city": "Ambalangoda"
+  },
+  {
+    "code": "80302",
+    "city": "Godahena"
+  },
+  {
+    "code": "80312",
+    "city": "Kahawa"
+  },
+  {
+    "code": "80318",
+    "city": "Nindana"
+  },
+  {
+    "code": "80320",
+    "city": "Batapola"
+  },
+  {
+    "code": "80328",
+    "city": "Kuleegoda"
+  },
+  {
+    "code": "80330",
+    "city": "Meetiyagoda"
+  },
+  {
+    "code": "80332",
+    "city": "Aluthwala"
+  },
+  {
+    "code": "80340",
+    "city": "Watugedera"
+  },
+  {
+    "code": "80350",
+    "city": "Uragasmanhandiya"
+  },
+  {
+    "code": "80352",
+    "city": "Uragaha"
+  },
+  {
+    "code": "80354",
+    "city": "Rantotuwila"
+  },
+  {
+    "code": "80360",
+    "city": "Karandeniya"
+  },
+  {
+    "code": "80400",
+    "city": "Elpitiya"
+  },
+  {
+    "code": "80402",
+    "city": "Ella Tanabaddegama"
+  },
+  {
+    "code": "80406",
+    "city": "Talgaspe"
+  },
+  {
+    "code": "80408",
+    "city": "Porowagama"
+  },
+  {
+    "code": "80416",
+    "city": "Nawadagala"
+  },
+  {
+    "code": "80420",
+    "city": "Pitigala"
+  },
+  {
+    "code": "80422",
+    "city": "Amugoda"
+  },
+  {
+    "code": "80424",
+    "city": "Mattaka"
+  },
+  {
+    "code": "80432",
+    "city": "Ihalahewessa"
+  },
+  {
+    "code": "80440",
+    "city": "Ganegoda"
+  },
+  {
+    "code": "80458",
+    "city": "Ethkandura"
+  },
+  {
+    "code": "80460",
+    "city": "Kahaduwa"
+  },
+  {
+    "code": "80470",
+    "city": "Talgaswela"
+  },
+  {
+    "code": "80500",
+    "city": "Bentota"
+  },
+  {
+    "code": "80502",
+    "city": "Gonagalpura"
+  },
+  {
+    "code": "80506",
+    "city": "Haburugala"
+  },
+  {
+    "code": "80508",
+    "city": "Miriswatta"
+  },
+  {
+    "code": "80510",
+    "city": "Induruwa"
+  },
+  {
+    "code": "80550",
+    "city": "Balapitiya"
+  },
+  {
+    "code": "80562",
+    "city": "Ahungalla"
+  },
+  {
+    "code": "80570",
+    "city": "Kosgoda"
+  },
+  {
+    "code": "80600",
+    "city": "Unawatuna"
+  },
+  {
+    "code": "80615",
+    "city": "Talpe"
+  },
+  {
+    "code": "80630",
+    "city": "Habaraduwa"
+  },
+  {
+    "code": "80650",
+    "city": "Ahangama"
+  },
+  {
+    "code": "80654",
+    "city": "Dikkumbura"
+  },
+  {
+    "code": "81000",
+    "city": "Matara"
+  },
+  {
+    "code": "81017",
+    "city": "Naimana"
+  },
+  {
+    "code": "81020",
+    "city": "Kekanadura"
+  },
+  {
+    "code": "81030",
+    "city": "Ratmale"
+  },
+  {
+    "code": "81032",
+    "city": "Aparekka"
+  },
+  {
+    "code": "81034",
+    "city": "Yatiyana"
+  },
+  {
+    "code": "81038",
+    "city": "Diyagaha"
+  },
+  {
+    "code": "81050",
+    "city": "Palatuwa"
+  },
+  {
+    "code": "81051",
+    "city": "Sultanagoda"
+  },
+  {
+    "code": "81060",
+    "city": "Telijjawila"
+  },
+  {
+    "code": "81064",
+    "city": "Ransegoda"
+  },
+  {
+    "code": "81070",
+    "city": "Makandura  "
+  },
+  {
+    "code": "81071",
+    "city": "Mulatiyana Junction"
+  },
+  {
+    "code": "81072",
+    "city": "Gomilamawarala"
+  },
+  {
+    "code": "81074",
+    "city": "Rotumba"
+  },
+  {
+    "code": "81082",
+    "city": "Karagoda Uyangoda"
+  },
+  {
+    "code": "81092",
+    "city": "Nadugala"
+  },
+  {
+    "code": "81100",
+    "city": "Kamburupitiya"
+  },
+  {
+    "code": "81106",
+    "city": "Karaputugala"
+  },
+  {
+    "code": "81108",
+    "city": "Horapawita"
+  },
+  {
+    "code": "81160",
+    "city": "Devinuwara"
+  },
+  {
+    "code": "81170",
+    "city": "Gandara"
+  },
+  {
+    "code": "81180",
+    "city": "Kottegoda"
+  },
+  {
+    "code": "81200",
+    "city": "Dikwella"
+  },
+  {
+    "code": "81220",
+    "city": "Walasgala"
+  },
+  {
+    "code": "81230",
+    "city": "Urugamuwa"
+  },
+  {
+    "code": "81280",
+    "city": "Thihagoda"
+  },
+  {
+    "code": "81290",
+    "city": "Puhulwella"
+  },
+  {
+    "code": "81294",
+    "city": "Walakanda"
+  },
+  {
+    "code": "81300",
+    "city": "Hakmana"
+  },
+  {
+    "code": "81302",
+    "city": "Narawelpita"
+  },
+  {
+    "code": "81308",
+    "city": "Karatota"
+  },
+  {
+    "code": "81312",
+    "city": "Miella"
+  },
+  {
+    "code": "81314",
+    "city": "Denagama"
+  },
+  {
+    "code": "81316",
+    "city": "Radawela"
+  },
+  {
+    "code": "81320",
+    "city": "Deiyandara"
+  },
+  {
+    "code": "81322",
+    "city": "Parapamulla"
+  },
+  {
+    "code": "81326",
+    "city": "Handugala"
+  },
+  {
+    "code": "81400",
+    "city": "Akuressa"
+  },
+  {
+    "code": "81402",
+    "city": "Athureliya"
+  },
+  {
+    "code": "81404",
+    "city": "Wilpita"
+  },
+  {
+    "code": "81408",
+    "city": "Godapitiya"
+  },
+  {
+    "code": "81412",
+    "city": "Bopagoda"
+  },
+  {
+    "code": "81414",
+    "city": "Urumutta"
+  },
+  {
+    "code": "81416",
+    "city": "Maramba"
+  },
+  {
+    "code": "81422",
+    "city": "Diyalape"
+  },
+  {
+    "code": "81424",
+    "city": "Maliduwa"
+  },
+  {
+    "code": "81450",
+    "city": "Pitabeddara"
+  },
+  {
+    "code": "81452",
+    "city": "Deegala Lenama"
+  },
+  {
+    "code": "81454",
+    "city": "Derangala"
+  },
+  {
+    "code": "81456",
+    "city": "Kiriwelkele"
+  },
+  {
+    "code": "81462",
+    "city": "Siyambalgoda"
+  },
+  {
+    "code": "81470",
+    "city": "Morawaka"
+  },
+  {
+    "code": "81472",
+    "city": "Pahala Millawa"
+  },
+  {
+    "code": "81474",
+    "city": "Paragala"
+  },
+  {
+    "code": "81475",
+    "city": "Alapaladeniya"
+  },
+  {
+    "code": "81477",
+    "city": "Dellawa"
+  },
+  {
+    "code": "81478",
+    "city": "Kalubowitiyana"
+  },
+  {
+    "code": "81479",
+    "city": "Waralla"
+  },
+  {
+    "code": "81480",
+    "city": "Kotapola"
+  },
+  {
+    "code": "81500",
+    "city": "Deniyaya"
+  },
+  {
+    "code": "81508",
+    "city": "Viharahena"
+  },
+  {
+    "code": "81514",
+    "city": "Kiriweldola"
+  },
+  {
+    "code": "81522",
+    "city": "Kolawenigama"
+  },
+  {
+    "code": "81524",
+    "city": "Mediripitiya"
+  },
+  {
+    "code": "81526",
+    "city": "Lankagama"
+  },
+  {
+    "code": "81532",
+    "city": "Moragala Kirillapone"
+  },
+  {
+    "code": "81538",
+    "city": "Pothdeniya"
+  },
+  {
+    "code": "81541",
+    "city": "Beralapanathara"
+  },
+  {
+    "code": "81600",
+    "city": "Urubokka"
+  },
+  {
+    "code": "81612",
+    "city": "Dampahala"
+  },
+  {
+    "code": "81614",
+    "city": "Bengamuva"
+  },
+  {
+    "code": "81615",
+    "city": "Pasgoda"
+  },
+  {
+    "code": "81700",
+    "city": "Weligama"
+  },
+  {
+    "code": "81720",
+    "city": "Welipitiya "
+  },
+  {
+    "code": "81722",
+    "city": "Penetiyana"
+  },
+  {
+    "code": "81730",
+    "city": "Denipitiya"
+  },
+  {
+    "code": "81740",
+    "city": "Mirissa"
+  },
+  {
+    "code": "81750",
+    "city": "Kamburugamuwa"
+  },
+  {
+    "code": "82000",
+    "city": "Hambantota"
+  },
+  {
+    "code": "82002",
+    "city": "Bundala"
+  },
+  {
+    "code": "82004",
+    "city": "Weligatta"
+  },
+  {
+    "code": "82005",
+    "city": "Bandagiriya Colony"
+  },
+  {
+    "code": "82006",
+    "city": "Gonnoeuwa"
+  },
+  {
+    "code": "82008",
+    "city": "Pahala Andarawewa"
+  },
+  {
+    "code": "82010",
+    "city": "Sooriyawewa Town"
+  },
+  {
+    "code": "82014",
+    "city": "Migahajandur"
+  },
+  {
+    "code": "82016",
+    "city": "Mahagalwewa"
+  },
+  {
+    "code": "82018",
+    "city": "Ranmuduwewa"
+  },
+  {
+    "code": "82100",
+    "city": "Ambalantota"
+  },
+  {
+    "code": "82102",
+    "city": "Beragama"
+  },
+  {
+    "code": "82104",
+    "city": "Goda Koggala"
+  },
+  {
+    "code": "82106",
+    "city": "Ru/Ridiyagama"
+  },
+  {
+    "code": "82108",
+    "city": "Lunama"
+  },
+  {
+    "code": "82109",
+    "city": "Mamadala"
+  },
+  {
+    "code": "82110",
+    "city": "Barawakumbuka"
+  },
+  {
+    "code": "82120",
+    "city": "Hungama"
+  },
+  {
+    "code": "82125",
+    "city": "Ranna"
+  },
+  {
+    "code": "82126",
+    "city": "Kahandamodara"
+  },
+  {
+    "code": "82135",
+    "city": "Netolpitiya"
+  },
+  {
+    "code": "82200",
+    "city": "Tangalla"
+  },
+  {
+    "code": "82220",
+    "city": "Angunakolapelessa"
+  },
+  {
+    "code": "82232",
+    "city": "Vitharandeniya"
+  },
+  {
+    "code": "82240",
+    "city": "Weeraketiya"
+  },
+  {
+    "code": "82242",
+    "city": "Mulkirigala"
+  },
+  {
+    "code": "82246",
+    "city": "Wekandawela"
+  },
+  {
+    "code": "82248",
+    "city": "Hakuruwela"
+  },
+  {
+    "code": "82250",
+    "city": "Kirama"
+  },
+  {
+    "code": "82252",
+    "city": "Julampitiya"
+  },
+  {
+    "code": "82254",
+    "city": "Medanula Na"
+  },
+  {
+    "code": "82270",
+    "city": "Middeniya"
+  },
+  {
+    "code": "82274",
+    "city": "Kariyamaditta"
+  },
+  {
+    "code": "82276",
+    "city": "Ratmalwala"
+  },
+  {
+    "code": "82278",
+    "city": "Uswewa"
+  },
+  {
+    "code": "82300",
+    "city": "Nakulugamuwa"
+  },
+  {
+    "code": "82400",
+    "city": "Beliyatta"
+  },
+  {
+    "code": "82412",
+    "city": "Ihala Beligalla"
+  },
+  {
+    "code": "82414",
+    "city": "Nihiluwa"
+  },
+  {
+    "code": "82416",
+    "city": "Modarawana"
+  },
+  {
+    "code": "82418",
+    "city": "Yatigala"
+  },
+  {
+    "code": "82420",
+    "city": "Getamanna"
+  },
+  {
+    "code": "82450",
+    "city": "Walasmulla"
+  },
+  {
+    "code": "82454",
+    "city": "Pallekanda"
+  },
+  {
+    "code": "82456",
+    "city": "Horewelagoda"
+  },
+  {
+    "code": "82458",
+    "city": "Bowalagama"
+  },
+  {
+    "code": "82462",
+    "city": "Ittademaliya"
+  },
+  {
+    "code": "82500",
+    "city": "Katuwana"
+  },
+  {
+    "code": "82504",
+    "city": "Uda Gomadiya"
+  },
+  {
+    "code": "82506",
+    "city": "Ganguladeniya"
+  },
+  {
+    "code": "82550",
+    "city": "Kirama"
+  },
+  {
+    "code": "82554",
+    "city": "Rammalawarapitiya"
+  },
+  {
+    "code": "82600",
+    "city": "Tissamaharama"
+  },
+  {
+    "code": "82602",
+    "city": "Gonagamuwa Uduwila"
+  },
+  {
+    "code": "82608",
+    "city": "Magama"
+  },
+  {
+    "code": "82610",
+    "city": "Tissamaharama Sacred City "
+  },
+  {
+    "code": "82612",
+    "city": "Ranakeliya"
+  },
+  {
+    "code": "82614",
+    "city": "Kirinda"
+  },
+  {
+    "code": "82615",
+    "city": "Weerawila New Town"
+  },
+  {
+    "code": "82618",
+    "city": "Beralihela"
+  },
+  {
+    "code": "82619",
+    "city": "Ellagala"
+  },
+  {
+    "code": "82622",
+    "city": "Kawantissapura"
+  },
+  {
+    "code": "82630",
+    "city": "Padawkema"
+  },
+  {
+    "code": "82632",
+    "city": "Weerawila New Town"
+  },
+  {
+    "code": "82634",
+    "city": "Lunugamwehera"
+  },
+  {
+    "code": "82636",
+    "city": "Padawkema"
+  },
+  {
+    "code": "82638",
+    "city": "Udamattala"
+  },
+  {
+    "code": "82720",
+    "city": "Ambagasdeniya"
+  },
+  {
+    "code": "90000",
+    "city": "Badulla"
+  },
+  {
+    "code": "90008",
+    "city": "Soranatota"
+  },
+  {
+    "code": "90012",
+    "city": "Thimbirigaspitiya"
+  },
+  {
+    "code": "90013",
+    "city": "Egodawela"
+  },
+  {
+    "code": "90014",
+    "city": "Taldena"
+  },
+  {
+    "code": "90015",
+    "city": "Meegahakiula"
+  },
+  {
+    "code": "90016",
+    "city": "Ketawatte"
+  },
+  {
+    "code": "90017",
+    "city": "Arawa"
+  },
+  {
+    "code": "90019",
+    "city": "Baduluoya"
+  },
+  {
+    "code": "90020",
+    "city": "Kandaketiya"
+  },
+  {
+    "code": "90026",
+    "city": "Rilpola"
+  },
+  {
+    "code": "90028",
+    "city": "Spring Valley"
+  },
+  {
+    "code": "90034",
+    "city": "Wineethagama"
+  },
+  {
+    "code": "90042",
+    "city": "Nelumgama"
+  },
+  {
+    "code": "90044",
+    "city": "Sirimalgoda"
+  },
+  {
+    "code": "90046",
+    "city": "Kuttiyagolla"
+  },
+  {
+    "code": "90048",
+    "city": "Kendagolla"
+  },
+  {
+    "code": "90052",
+    "city": "Kahataruppa"
+  },
+  {
+    "code": "90060",
+    "city": "Hali Ela"
+  },
+  {
+    "code": "90061",
+    "city": "Uva Uduwara"
+  },
+  {
+    "code": "90062",
+    "city": "Uva Deegalla"
+  },
+  {
+    "code": "90063",
+    "city": "Jangulla"
+  },
+  {
+    "code": "90064",
+    "city": "Narangala"
+  },
+  {
+    "code": "90065",
+    "city": "Galauda"
+  },
+  {
+    "code": "90066",
+    "city": "Beramada"
+  },
+  {
+    "code": "90067",
+    "city": "Godunna"
+  },
+  {
+    "code": "90068",
+    "city": "Landewela"
+  },
+  {
+    "code": "90070",
+    "city": "Kandegedara"
+  },
+  {
+    "code": "90071",
+    "city": "Pathanewatta"
+  },
+  {
+    "code": "90072",
+    "city": "Tennepanguwa"
+  },
+  {
+    "code": "90080",
+    "city": "Demodara"
+  },
+  {
+    "code": "90082",
+    "city": "Gawarawela"
+  },
+  {
+    "code": "90090",
+    "city": "Ella "
+  },
+  {
+    "code": "90091",
+    "city": "Uva Karandagolla"
+  },
+  {
+    "code": "90092",
+    "city": "Ballaketuwa"
+  },
+  {
+    "code": "90094",
+    "city": "Helapupula"
+  },
+  {
+    "code": "90100",
+    "city": "Bandarawela"
+  },
+  {
+    "code": "90102",
+    "city": "Kebillawela"
+  },
+  {
+    "code": "90103",
+    "city": "Diganatenna"
+  },
+  {
+    "code": "90104",
+    "city": "Dulgolla"
+  },
+  {
+    "code": "90106",
+    "city": "Liyanagahawela"
+  },
+  {
+    "code": "90108",
+    "city": "Ambadandegama"
+  },
+  {
+    "code": "90112",
+    "city": "Heeloya"
+  },
+  {
+    "code": "90114",
+    "city": "Makulella"
+  },
+  {
+    "code": "90122",
+    "city": "Helahalpe"
+  },
+  {
+    "code": "90132",
+    "city": "Diganatenna"
+  },
+  {
+    "code": "90134",
+    "city": "Mairahawatta"
+  },
+  {
+    "code": "90138",
+    "city": "Pattiyagedara"
+  },
+  {
+    "code": "90140",
+    "city": "Ettampitiya"
+  },
+  {
+    "code": "90150",
+    "city": "Diyatalawa"
+  },
+  {
+    "code": "90160",
+    "city": "Haputale"
+  },
+  {
+    "code": "90164",
+    "city": "Ratkarawwa"
+  },
+  {
+    "code": "90165",
+    "city": "Nikapotha"
+  },
+  {
+    "code": "90166",
+    "city": "Akkarasiyaya"
+  },
+  {
+    "code": "90167",
+    "city": "Idalgashinna"
+  },
+  {
+    "code": "90168",
+    "city": "Ohiya"
+  },
+  {
+    "code": "90170",
+    "city": "Boralanda"
+  },
+  {
+    "code": "90171",
+    "city": "Pitapola"
+  },
+  {
+    "code": "90180",
+    "city": "Haldummulla"
+  },
+  {
+    "code": "90183",
+    "city": "Soragune"
+  },
+  {
+    "code": "90184",
+    "city": "Kiriwanagama"
+  },
+  {
+    "code": "90186",
+    "city": "Kalupahana"
+  },
+  {
+    "code": "90188",
+    "city": "Uva Tenna"
+  },
+  {
+    "code": "90190",
+    "city": "Koslanda"
+  },
+  {
+    "code": "90192",
+    "city": "Uva Mavelagama"
+  },
+  {
+    "code": "90200",
+    "city": "Welimada"
+  },
+  {
+    "code": "90204",
+    "city": "Amunumulla"
+  },
+  {
+    "code": "90206",
+    "city": "Galedanda"
+  },
+  {
+    "code": "90208",
+    "city": "Gurutalawa"
+  },
+  {
+    "code": "90212",
+    "city": "Puhulpola"
+  },
+  {
+    "code": "90214",
+    "city": "Dikkapitiya"
+  },
+  {
+    "code": "90216",
+    "city": "Nugatalawa"
+  },
+  {
+    "code": "90218",
+    "city": "Medawala Udukinda"
+  },
+  {
+    "code": "90222",
+    "city": "Perawella"
+  },
+  {
+    "code": "90224",
+    "city": "Hangunnawa"
+  },
+  {
+    "code": "90226",
+    "city": "Uduhawara"
+  },
+  {
+    "code": "90230",
+    "city": "Uva Paranagama"
+  },
+  {
+    "code": "90300",
+    "city": "Ambagasdova"
+  },
+  {
+    "code": "90302",
+    "city": "Bowela"
+  },
+  {
+    "code": "90310",
+    "city": "Lunuwatta"
+  },
+  {
+    "code": "90322",
+    "city": "Bambarapana"
+  },
+  {
+    "code": "90324",
+    "city": "Dimbulana"
+  },
+  {
+    "code": "90326",
+    "city": "Ambagahawatte"
+  },
+  {
+    "code": "90328",
+    "city": "Maspanna"
+  },
+  {
+    "code": "90329",
+    "city": "Yalagamuwa"
+  },
+  {
+    "code": "90350",
+    "city": "Keppetipola"
+  },
+  {
+    "code": "90352",
+    "city": "Kalubululanda"
+  },
+  {
+    "code": "90354",
+    "city": "Bogahakumbura"
+  },
+  {
+    "code": "90356",
+    "city": "Kandepuhulpola"
+  },
+  {
+    "code": "90358",
+    "city": "Hewanakumbura"
+  },
+  {
+    "code": "90362",
+    "city": "Boragas"
+  },
+  {
+    "code": "90364",
+    "city": "Silmiyapura"
+  },
+  {
+    "code": "90405",
+    "city": "Sella Kataragama"
+  },
+  {
+    "code": "90500",
+    "city": "Passara"
+  },
+  {
+    "code": "90502",
+    "city": "Bibilegama"
+  },
+  {
+    "code": "90504",
+    "city": "Miriyabedda"
+  },
+  {
+    "code": "90506",
+    "city": "Kotamuduna"
+  },
+  {
+    "code": "90508",
+    "city": "Hingurukaduwa"
+  },
+  {
+    "code": "90512",
+    "city": "Gamewela"
+  },
+  {
+    "code": "90518",
+    "city": "Medawelagama"
+  },
+  {
+    "code": "90522",
+    "city": "Pelagahatenna"
+  },
+  {
+    "code": "90524",
+    "city": "Hopton"
+  },
+  {
+    "code": "90530",
+    "city": "Lunugala"
+  },
+  {
+    "code": "90532",
+    "city": "Arawakumbura"
+  },
+  {
+    "code": "90534",
+    "city": "Pallekiruwa"
+  },
+  {
+    "code": "90535",
+    "city": "Madulsima"
+  },
+  {
+    "code": "90540",
+    "city": "Metigahattenna"
+  },
+  {
+    "code": "90542",
+    "city": "Atakiriya"
+  },
+  {
+    "code": "90544",
+    "city": "Pitamaruwa"
+  },
+  {
+    "code": "90546",
+    "city": "Kalugahakandura"
+  },
+  {
+    "code": "90580",
+    "city": "Namunukkulla"
+  },
+  {
+    "code": "90582",
+    "city": "Maussagolla"
+  },
+  {
+    "code": "90584",
+    "city": "Miyanakandura"
+  },
+  {
+    "code": "90670",
+    "city": "Badalkumbura"
+  },
+  {
+    "code": "90700",
+    "city": "Mahiyanganaya"
+  },
+  {
+    "code": "90702",
+    "city": "Uraniya"
+  },
+  {
+    "code": "90704",
+    "city": "Ridimaliyadda"
+  },
+  {
+    "code": "90706",
+    "city": "Yalwela"
+  },
+  {
+    "code": "90712",
+    "city": "Arawatta"
+  },
+  {
+    "code": "90714",
+    "city": "Dambana"
+  },
+  {
+    "code": "90716",
+    "city": "Wewatta"
+  },
+  {
+    "code": "90718",
+    "city": "Sorabora Colony"
+  },
+  {
+    "code": "90722",
+    "city": "Aluttaramma"
+  },
+  {
+    "code": "90724",
+    "city": "Hebarawa"
+  },
+  {
+    "code": "90726",
+    "city": "Divulapelessa"
+  },
+  {
+    "code": "90728",
+    "city": "Kueuwitenna"
+  },
+  {
+    "code": "90730",
+    "city": "Mapakadawewa"
+  },
+  {
+    "code": "90734",
+    "city": "Uva Tissapura"
+  },
+  {
+    "code": "90736",
+    "city": "Aluketiyawa"
+  },
+  {
+    "code": "90738",
+    "city": "Keselpotha"
+  },
+  {
+    "code": "90750",
+    "city": "Girandurukotte"
+  },
+  {
+    "code": "90752",
+    "city": "Galporuyaya"
+  },
+  {
+    "code": "90754",
+    "city": "Malgoda"
+  },
+  {
+    "code": "90756",
+    "city": "Pahalarathkinda"
+  },
+  {
+    "code": "91000",
+    "city": "Monaragala"
+  },
+  {
+    "code": "91001",
+    "city": "Moneragala Kachcheri"
+  },
+  {
+    "code": "91002",
+    "city": "Pangura"
+  },
+  {
+    "code": "91003",
+    "city": "Nakkala"
+  },
+  {
+    "code": "91004",
+    "city": "Hulandawa"
+  },
+  {
+    "code": "91005",
+    "city": "Wedikumbura"
+  },
+  {
+    "code": "91006",
+    "city": "Marawa "
+  },
+  {
+    "code": "91007",
+    "city": "Obbgoda"
+  },
+  {
+    "code": "91008",
+    "city": "Galabedda"
+  },
+  {
+    "code": "91010",
+    "city": "Dombagahawela"
+  },
+  {
+    "code": "91020",
+    "city": "Ethimalawewa"
+  },
+  {
+    "code": "91022",
+    "city": "Wilaoya"
+  },
+  {
+    "code": "91024",
+    "city": "Kotiyagala"
+  },
+  {
+    "code": "91030",
+    "city": "Siyambalanduwa"
+  },
+  {
+    "code": "91032",
+    "city": "Kandaudapanguwa"
+  },
+  {
+    "code": "91038",
+    "city": "Buddama"
+  },
+  {
+    "code": "91040",
+    "city": "Inginiyagala"
+  },
+  {
+    "code": "91042",
+    "city": "Nelliyadda"
+  },
+  {
+    "code": "91050",
+    "city": "Dambagalla"
+  },
+  {
+    "code": "91052",
+    "city": "Mariarawa"
+  },
+  {
+    "code": "91054",
+    "city": "Uva Gangodagama"
+  },
+  {
+    "code": "91056",
+    "city": "Ruwalwela"
+  },
+  {
+    "code": "91058",
+    "city": "Baduluwela"
+  },
+  {
+    "code": "91060",
+    "city": "Okkampitiya"
+  },
+  {
+    "code": "91070",
+    "city": "Badalkumbura"
+  },
+  {
+    "code": "91098",
+    "city": "Kumbukkana"
+  },
+  {
+    "code": "91100",
+    "city": "Buttala"
+  },
+  {
+    "code": "91102",
+    "city": "Buttala"
+  },
+  {
+    "code": "91103",
+    "city": "Kukurampola"
+  },
+  {
+    "code": "91107",
+    "city": "Gonaganara"
+  },
+  {
+    "code": "91108",
+    "city": "Moretuwegama"
+  },
+  {
+    "code": "91112",
+    "city": "Uva Pelwatta"
+  },
+  {
+    "code": "91198",
+    "city": "Warunagama"
+  },
+  {
+    "code": "91200",
+    "city": "Wellawaya"
+  },
+  {
+    "code": "91202",
+    "city": "Siyambalaguna"
+  },
+  {
+    "code": "91204",
+    "city": "Randeniya"
+  },
+  {
+    "code": "91206",
+    "city": "Weherayaya Handapanagala"
+  },
+  {
+    "code": "91250",
+    "city": "Ettiliwewa"
+  },
+  {
+    "code": "91295",
+    "city": "Balaharuwa"
+  },
+  {
+    "code": "91298",
+    "city": "Uva Kudaoya"
+  },
+  {
+    "code": "91300",
+    "city": "Tanamalwila "
+  },
+  {
+    "code": "91302",
+    "city": "Angunakolawewa"
+  },
+  {
+    "code": "91306",
+    "city": "Suriara"
+  },
+  {
+    "code": "91308",
+    "city": "Hambegamuwa"
+  },
+  {
+    "code": "91312",
+    "city": "Kotawehera Mankada"
+  },
+  {
+    "code": "91400",
+    "city": "Kataragama"
+  },
+  {
+    "code": "91404",
+    "city": "Kandasurindugama"
+  },
+  {
+    "code": "91405",
+    "city": "Sella Kataragama"
+  },
+  {
+    "code": "91500",
+    "city": "Bibile"
+  },
+  {
+    "code": "91502",
+    "city": "Ekiriyankumbura"
+  },
+  {
+    "code": "91505",
+    "city": "Pitakumbura"
+  },
+  {
+    "code": "91508",
+    "city": "Nilgala"
+  },
+  {
+    "code": "91512",
+    "city": "Kotagama"
+  },
+  {
+    "code": "91514",
+    "city": "Diyakobala"
+  },
+  {
+    "code": "91516",
+    "city": "Ayiwela"
+  },
+  {
+    "code": "91519",
+    "city": "Nannapurawa"
+  },
+  {
+    "code": "91550",
+    "city": "Medagana"
+  },
+  {
+    "code": "91552",
+    "city": "Kandawinna"
+  },
+  {
+    "code": "91554",
+    "city": "Bakingahawella"
+  }
+]

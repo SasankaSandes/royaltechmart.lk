@@ -1,6 +1,9 @@
 import 'server-only';
 import { neon } from '@neondatabase/serverless';
-import type { Product, Category, StockStatus, Badge, Banner, AdminUser, AdminRole } from './types';
+import type {
+  Product, Category, StockStatus, Badge, Banner, AdminUser, AdminRole,
+  Order, OrderItem, OrderStatus, DeliveryMethod, PaymentType,
+} from './types';
 import { slugify } from './catalog';
 
 const sql = neon(process.env.DATABASE_URL!);
@@ -279,4 +282,166 @@ export async function createAdminUser(fields: {
 
 export async function deleteAdminUser(id: number): Promise<void> {
   await sql`DELETE FROM admin_users WHERE id = ${id}`;
+}
+
+// ─── Orders ─────────────────────────────────────────────────────────────────
+
+function rowToOrderItem(r: Record<string, unknown>): OrderItem {
+  return {
+    id:        r.id as number,
+    orderId:   r.order_id as number,
+    productId: r.product_id as number,
+    name:      (r.name ?? '(deleted product)') as string,
+    qty:       r.qty as number,
+    unitPrice: r.unit_price as number,
+  };
+}
+
+function rowToOrder(r: Record<string, unknown>, items: OrderItem[] = []): Order {
+  return {
+    id:             r.id as number,
+    ref:            r.ref as string,
+    customerName:   r.customer_name as string,
+    customerPhone:  r.customer_phone as string,
+    address:        (r.address ?? undefined) as string | undefined,
+    city:           (r.city ?? undefined) as string | undefined,
+    postalCode:     (r.postal_code ?? undefined) as string | undefined,
+    deliveryMethod: r.delivery_method as DeliveryMethod,
+    courierName:    (r.courier_name ?? undefined) as string | undefined,
+    trackingNumber: (r.tracking_number ?? undefined) as string | undefined,
+    paymentType:    r.payment_type as PaymentType,
+    status:         r.status as OrderStatus,
+    notes:          (r.notes ?? undefined) as string | undefined,
+    createdAt:      new Date(r.created_at as string),
+    updatedAt:      new Date(r.updated_at as string),
+    items,
+    total:          items.reduce((sum, it) => sum + it.qty * it.unitPrice, 0),
+  };
+}
+
+export async function createOrder(fields: {
+  customerName: string;
+  customerPhone: string;
+  address?: string | null;
+  city?: string | null;
+  postalCode?: string | null;
+  deliveryMethod: DeliveryMethod;
+  courierName?: string | null;
+  trackingNumber?: string | null;
+  paymentType: PaymentType;
+  notes?: string | null;
+  items: { productId: number; qty: number; unitPrice: number }[];
+}): Promise<Order> {
+  // Generate next ref: NVT-ORD-001
+  const refRows = await sql`
+    SELECT 'NVT-ORD-' || LPAD((COUNT(*) + 1)::text, 3, '0') AS ref FROM orders
+  `;
+  const ref = refRows[0].ref as string;
+
+  const orderRows = await sql`
+    INSERT INTO orders
+      (ref, customer_name, customer_phone, address, city, postal_code,
+       delivery_method, courier_name, tracking_number, payment_type, notes)
+    VALUES
+      (${ref}, ${fields.customerName}, ${fields.customerPhone}, ${fields.address ?? null},
+       ${fields.city ?? null}, ${fields.postalCode ?? null},
+       ${fields.deliveryMethod}, ${fields.courierName ?? null}, ${fields.trackingNumber ?? null},
+       ${fields.paymentType}, ${fields.notes ?? null})
+    RETURNING *
+  `;
+  const orderId = orderRows[0].id as number;
+
+  for (const item of fields.items) {
+    await sql`
+      INSERT INTO order_items (order_id, product_id, qty, unit_price)
+      VALUES (${orderId}, ${item.productId}, ${item.qty}, ${item.unitPrice})
+    `;
+  }
+
+  const created = await getOrderByRef(ref);
+  return created!;
+}
+
+export async function getAllOrders(opts?: { status?: OrderStatus; q?: string }): Promise<(Order & { itemCount: number })[]> {
+  const status = opts?.status ?? null;
+  const q = opts?.q?.trim() ? `%${opts.q.trim()}%` : null;
+  const rows = await sql`
+    SELECT o.*,
+           COALESCE(SUM(oi.qty * oi.unit_price), 0) AS total,
+           COALESCE(SUM(oi.qty), 0)                 AS item_count
+    FROM orders o
+    LEFT JOIN order_items oi ON oi.order_id = o.id
+    WHERE (${status}::text IS NULL OR o.status = ${status})
+      AND (${q}::text IS NULL OR o.customer_name ILIKE ${q} OR o.customer_phone ILIKE ${q})
+    GROUP BY o.id
+    ORDER BY o.created_at DESC
+  `;
+  return rows.map(r => ({
+    ...rowToOrder(r),
+    total: Number(r.total),
+    items: [],
+    itemCount: Number(r.item_count),
+  })) as (Order & { itemCount: number })[];
+}
+
+export async function getOrderByRef(ref: string): Promise<Order | undefined> {
+  const orderRows = await sql`SELECT * FROM orders WHERE ref = ${ref} LIMIT 1`;
+  if (!orderRows[0]) return undefined;
+  const itemRows = await sql`
+    SELECT oi.*, p.name
+    FROM order_items oi
+    LEFT JOIN products p ON p.id = oi.product_id
+    WHERE oi.order_id = ${orderRows[0].id as number}
+    ORDER BY oi.id
+  `;
+  return rowToOrder(orderRows[0], itemRows.map(rowToOrderItem));
+}
+
+export async function updateOrderStatus(ref: string, status: OrderStatus): Promise<void> {
+  await sql`UPDATE orders SET status = ${status} WHERE ref = ${ref}`;
+}
+
+export async function updateOrderDelivery(
+  ref: string,
+  fields: { courierName?: string | null; trackingNumber?: string | null },
+): Promise<void> {
+  await sql`
+    UPDATE orders SET
+      courier_name    = ${fields.courierName ?? null},
+      tracking_number = ${fields.trackingNumber ?? null}
+    WHERE ref = ${ref}
+  `;
+}
+
+export async function getOrderStats(): Promise<{
+  pending: number;
+  processing: number;
+  shipped: number;
+  delivered: number;
+  total: number;
+  codPendingValue: number;
+}> {
+  const statusRows = await sql`SELECT status, COUNT(*) AS count FROM orders GROUP BY status`;
+  const map: Record<string, number> = {};
+  let total = 0;
+  for (const r of statusRows) {
+    const c = Number(r.count);
+    map[r.status as string] = c;
+    total += c;
+  }
+  // COD still owed: COD orders that have shipped but aren't delivered/cancelled/returned.
+  const codRows = await sql`
+    SELECT COALESCE(SUM(oi.qty * oi.unit_price), 0) AS value
+    FROM orders o
+    JOIN order_items oi ON oi.order_id = o.id
+    WHERE o.payment_type = 'cod' AND o.status = 'shipped'
+  `;
+  return {
+    pending:    map['pending'] ?? 0,
+    processing: map['processing'] ?? 0,
+    shipped:    map['shipped'] ?? 0,
+    delivered:  map['delivered'] ?? 0,
+    total,
+    codPendingValue: Number(codRows[0].value),
+  };
 }

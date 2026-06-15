@@ -42,8 +42,7 @@ export default function AdminShell({
   active: string; // href of the active nav item
   children: React.ReactNode;
 }) {
-  const phase1Done = true; // Sprint 1 live
-  const phaseAvailable = (phase: number) => phase <= 1;
+  const phaseAvailable = (phase: number) => phase <= 2; // Sprint 1 + 2 live
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
