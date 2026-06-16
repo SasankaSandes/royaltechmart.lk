@@ -69,12 +69,13 @@ export default async function ProductPage(
           display: 'flex', gap: 6, alignItems: 'center',
           fontSize: 13, color: 'var(--muted)',
           borderBottom: '1px solid var(--line)',
+          minWidth: 0,
         }}>
-          <Link href="/" style={{ color: 'var(--muted)' }}>Home</Link>
-          <span style={{ opacity: 0.4 }}>/</span>
-          <Link href={`/shop?cat=${product.category}`} style={{ color: 'var(--muted)' }}>{catLabel}</Link>
-          <span style={{ opacity: 0.4 }}>/</span>
-          <span style={{ color: 'var(--ink)', fontWeight: 500 }}>{product.name}</span>
+          <Link href="/" style={{ color: 'var(--muted)', flexShrink: 0 }}>Home</Link>
+          <span style={{ opacity: 0.4, flexShrink: 0 }}>/</span>
+          <Link href={`/shop?cat=${product.category}`} style={{ color: 'var(--muted)', flexShrink: 0 }}>{catLabel}</Link>
+          <span style={{ opacity: 0.4, flexShrink: 0 }}>/</span>
+          <span style={{ color: 'var(--ink)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0 }}>{product.name}</span>
         </div>
 
         {/* PDP grid */}
@@ -84,11 +85,11 @@ export default async function ProductPage(
             gap: 54, alignItems: 'start',
           }}>
             {/* ── Left — Image ── */}
-            <div style={{ position: 'sticky', top: 96 }}>
+            <div className="pdp-image-col" style={{ position: 'sticky', top: 96 }}>
               <div style={{
-                aspectRatio: '1', borderRadius: 'var(--radius-xl)',
+                aspectRatio: '1', borderRadius: 'var(--radius)',
                 overflow: 'hidden', marginBottom: 12,
-                background: 'var(--surface-card)', boxShadow: 'var(--shadow-sm)',
+                background: 'var(--surface-card)',
                 position: 'relative',
               }}>
                 {product.image ? (
@@ -110,24 +111,6 @@ export default async function ProductPage(
                       textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--text-muted, var(--nv-slate-300))',
                     }}>{itemCode(product.id)}</span>
                   </div>
-                )}
-              </div>
-              <div style={{
-                background: 'var(--surface)', borderRadius: 'var(--radius-sm)',
-                padding: '12px 16px', display: 'flex', alignItems: 'center',
-                justifyContent: 'space-between', gap: 12, flexWrap: 'wrap',
-              }}>
-                <span style={{ fontSize: 12, color: 'var(--muted)' }}>
-                  Item code:{' '}
-                  <strong style={{ fontFamily: 'var(--mono)', color: 'var(--ink)', fontSize: 13 }}>
-                    {itemCode(product.id)}
-                  </strong>
-                </span>
-                {brand && model && (
-                  <span style={{
-                    fontSize: 11, fontFamily: 'var(--mono)', color: 'var(--muted)',
-                    textTransform: 'uppercase', letterSpacing: '0.1em',
-                  }}>{brand} · {model}</span>
                 )}
               </div>
             </div>
@@ -155,7 +138,7 @@ export default async function ProductPage(
               <p style={{ fontSize: 15, color: 'var(--ink-2)', lineHeight: 1.7, marginBottom: 24, paddingBottom: 24, borderBottom: '1px solid var(--line)' }}>{product.short}</p>
 
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: savings ? 10 : 24, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 38, fontFamily: 'var(--font-head)', fontWeight: 600, letterSpacing: '-0.01em' }}>{money(product.price)}</span>
+                <span style={{ fontSize: 'clamp(26px, 8vw, 38px)', fontFamily: 'var(--font-head)', fontWeight: 600, letterSpacing: '-0.01em' }}>{money(product.price)}</span>
                 {product.oldPrice && <span style={{ fontSize: 17, color: 'var(--muted)', textDecoration: 'line-through' }}>{money(product.oldPrice)}</span>}
               </div>
               {savings > 0 && (
@@ -178,17 +161,14 @@ export default async function ProductPage(
                 </Button> */}
               </div>
 
-              <p style={{ fontSize: 12, color: 'var(--muted)', textAlign: 'center', marginBottom: 32 }}>
-                Item code <strong style={{ color: 'var(--ink)', fontFamily: 'var(--mono)' }}>{itemCode(product.id)}</strong> is pre-filled in your WhatsApp message
-              </p>
 
               {product.specs.length > 0 && (
                 <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius)', padding: 24, border: '1px solid var(--line)' }}>
                   <p style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16, marginBottom: 16 }}>Key specs</p>
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <tbody>
-                      {product.specs.map(([k, v]) => (
-                        <tr key={k} style={{ borderBottom: '1px solid var(--line)' }}>
+                      {product.specs.map(([k, v], i) => (
+                        <tr key={k} style={{ borderBottom: i < product.specs.length - 1 ? '1px solid var(--line)' : 'none' }}>
                           <td style={{ padding: '10px 12px 10px 0', fontSize: 13, color: 'var(--muted)', width: '42%', fontWeight: 500, verticalAlign: 'top' }}>{k}</td>
                           <td style={{ padding: '10px 0', fontSize: 13, fontWeight: 600, verticalAlign: 'top' }}>{v}</td>
                         </tr>
@@ -203,7 +183,7 @@ export default async function ProductPage(
 
         {/* Info cards */}
         <section className="section--tight" style={{ background: 'var(--surface)' }}>
-          <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div className="wrap pdp-info-cards" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 'var(--radius)', padding: 28 }}>
               <p style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 17, marginBottom: 14 }}>About this product</p>
               <p style={{ fontSize: 14, color: 'var(--ink-2)', lineHeight: 1.75, marginBottom: 14 }}>{product.short}</p>
@@ -234,13 +214,13 @@ export default async function ProductPage(
 
         {/* Related */}
         {relatedProducts.length > 0 && (
-          <section className="section">
+          <section className="section" style={{ background: 'var(--surface)' }}>
             <div className="wrap">
               <SectionHeader title="You may also like" align="center"
                 titleStyle={{ fontSize: 'clamp(22px,3vw,32px)' }}
                 actionLabel={`View all ${catLabel}`} actionHref={`/shop?cat=${product.category}`}
                 style={{ marginBottom: 32 }} />
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
+              <div className="pdp-related-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
                 {relatedProducts.map(p => <ProductCard key={p.id} product={p} />)}
               </div>
             </div>
@@ -250,8 +230,21 @@ export default async function ProductPage(
       <Footer />
       <style>{`
         .pdp-grid { display: grid; }
-        @media (max-width: 980px) { .pdp-grid { grid-template-columns: 1fr !important; gap: 32px !important; } }
-        @media (max-width: 720px) { .pdp-grid ~ section .wrap { grid-template-columns: 1fr !important; } }
+        @media (max-width: 980px) { .pdp-grid { grid-template-columns: 1fr !important; gap: 32px !important; } .pdp-image-col { position: static !important; } }
+        @media (max-width: 720px) {
+          .pdp-info-cards { grid-template-columns: 1fr !important; }
+          .pdp-related-grid {
+            display: flex !important;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            gap: 14px;
+            padding-bottom: 4px;
+          }
+          .pdp-related-grid::-webkit-scrollbar { display: none; }
+          .pdp-related-grid > * { flex: 0 0 72vw; scroll-snap-align: start; }
+        }
       `}</style>
     </>
   );

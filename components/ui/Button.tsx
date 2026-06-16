@@ -79,7 +79,7 @@ export function Button({
     fontSize: s.font,
     fontWeight: 500,
     lineHeight: 1,
-    borderRadius: 'var(--pill)',
+    borderRadius: 'var(--radius)',
     cursor: disabled ? 'not-allowed' : 'pointer',
     opacity: disabled ? 0.45 : 1,
     whiteSpace: 'nowrap',
