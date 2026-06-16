@@ -85,7 +85,7 @@ function ShopContent({ products, categories }: { products: Product[]; categories
           </div>
         </section>
 
-        <section className="section--tight">
+        <section className="section--tight" style={{ background: 'var(--surface)' }}>
           <div className="wrap">
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24, flexWrap: 'wrap', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -111,7 +111,7 @@ function ShopContent({ products, categories }: { products: Product[]; categories
             </p>
 
             {sorted.length > 0 ? (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(248px, 1fr))', gap: 22 }}>
+              <div className="shop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(248px, 1fr))', gap: 22 }}>
                 {sorted.map(p => <ProductCard key={p.id} product={p} />)}
               </div>
             ) : (

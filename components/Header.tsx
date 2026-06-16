@@ -6,10 +6,10 @@ import { useState } from 'react';
 import { Icons } from './Icons';
 import { waLink, FB_PAGE, INSTAGRAM } from '@/lib/catalog';
 
-const SOCIALS: { label: string; href: string; icon: React.ReactNode }[] = [
-  { label: 'WhatsApp', href: waLink(), icon: Icons.whatsapp },
-  { label: 'Facebook', href: FB_PAGE, icon: Icons.facebook },
-  { label: 'Instagram', href: INSTAGRAM, icon: Icons.instagram },
+const SOCIALS: { label: string; href: string; icon: React.ReactNode; color: string }[] = [
+  { label: 'WhatsApp', href: waLink(), icon: Icons.whatsapp, color: '#25D366' },
+  { label: 'Facebook', href: FB_PAGE, icon: Icons.facebook, color: '#1877F2' },
+  { label: 'Instagram', href: INSTAGRAM, icon: Icons.instagram, color: '#E1306C' },
 ];
 
 export default function Header() {
@@ -19,7 +19,7 @@ export default function Header() {
     <header style={{
       position: 'sticky', top: 0, zIndex: 50,
       height: 80, display: 'flex', alignItems: 'center',
-      background: 'var(--surface-raised)',
+      background: '#fff',
       boxShadow: 'var(--shadow)',
     }}>
       <div className="wrap" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
@@ -52,10 +52,10 @@ export default function Header() {
               style={{
                 width: 38, height: 38, borderRadius: 'var(--pill)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: 'var(--ink-2)', transition: 'background .15s, color .15s',
+                color: s.color, transition: 'background .15s, opacity .15s',
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-control)'; (e.currentTarget as HTMLElement).style.color = 'var(--ink)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ''; (e.currentTarget as HTMLElement).style.color = 'var(--ink-2)'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-control)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ''; }}
             >{s.icon}</a>
           ))}
         </div>
