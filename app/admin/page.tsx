@@ -79,6 +79,19 @@ export default async function AdminDashboard() {
           <QuickLink href="/admin/products" label="Manage products" sub={`${total} products · ${stock.out} out of stock`} icon="≡" />
           <QuickLink href="/admin/banners" label="Edit banners" sub={`${activeBanners} of ${banners.length} active`} icon="🖼" />
         </div>
+
+        {session.role === 'owner' && (
+          <>
+            <h2 style={{ fontFamily: 'var(--font-head)', fontSize: 16, fontWeight: 600, marginTop: 32, marginBottom: 14, color: '#111110' }}>
+              Owner tools
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+              <QuickLink href="/admin/sales" label="Sales dashboard" sub="Revenue, margin & exports" icon="📊" />
+              <QuickLink href="/admin/suppliers" label="Suppliers" sub="Costs & purchases" icon="🚚" />
+              <QuickLink href="/admin/suppliers/new" label="Add supplier" sub="Onboard a new supplier" icon="+" />
+            </div>
+          </>
+        )}
       </div>
     </AdminShell>
   );

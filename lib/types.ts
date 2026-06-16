@@ -66,6 +66,7 @@ export interface OrderItem {
   name: string;       // joined from products for display
   qty: number;
   unitPrice: number;
+  unitCost?: number;  // captured supplier cost at sale time (for margin)
 }
 
 export interface Order {
@@ -86,4 +87,44 @@ export interface Order {
   updatedAt: Date;
   items: OrderItem[];
   total: number;       // sum(qty * unitPrice)
+}
+
+// ─── Suppliers ──────────────────────────────────────────────────────────────
+
+export interface Supplier {
+  id: number;
+  name: string;
+  phone?: string;
+  whatsapp?: string;
+  email?: string;
+  address?: string;
+  notes?: string;
+  createdAt: Date;
+}
+
+export interface SupplierProduct {
+  supplierId: number;
+  productId: number;
+  supplierProductCode?: string;
+  costPrice: number;
+  name: string;   // joined product name
+}
+
+export interface SupplierPurchaseItem {
+  id: number;
+  purchaseId: number;
+  productId: number;
+  name: string;   // joined product name
+  qty: number;
+  unitCost: number;
+}
+
+export interface SupplierPurchase {
+  id: number;
+  supplierId: number;
+  date: Date;
+  total: number;
+  notes?: string;
+  createdAt: Date;
+  items: SupplierPurchaseItem[];
 }

@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import bcrypt from 'bcryptjs';
-import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery } from '@/lib/db';
+import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery, getProductCostMap, createSupplier, updateSupplier, deleteSupplier, setSupplierProduct, removeSupplierProduct, createPurchase } from '@/lib/db';
 import { serializeSession, SESSION_COOKIE, SESSION_MAX_AGE, getAdminSession } from '@/lib/admin-auth';
 import type { StockStatus, Badge, Category, DeliveryMethod, PaymentType, OrderStatus } from '@/lib/types';
 
@@ -208,10 +208,12 @@ export async function createOrderAction(formData: FormData) {
   const notes = (formData.get('notes') as string)?.trim() || null;
 
   // Catalog price is the fallback; an explicit per-line price entered by the admin wins.
+  // Supplier cost catalog defaults the captured cost; an explicit per-line cost wins.
   const products = await getAllProducts();
   const priceById = new Map(products.map(p => [p.id, p.price]));
+  const costById = await getProductCostMap();
 
-  const items: { productId: number; qty: number; unitPrice: number }[] = [];
+  const items: { productId: number; qty: number; unitPrice: number; unitCost?: number | null }[] = [];
   let i = 0;
   while (formData.has(`item_product_${i}`)) {
     const productId = Number(formData.get(`item_product_${i}`));
@@ -220,8 +222,15 @@ export async function createOrderAction(formData: FormData) {
     const enteredRaw = formData.get(`item_price_${i}`) as string | null;
     const entered = enteredRaw != null && enteredRaw !== '' ? Number(enteredRaw) : NaN;
     const unitPrice = Number.isFinite(entered) && entered >= 0 ? entered : catalogPrice;
+
+    const costRaw = formData.get(`item_cost_${i}`) as string | null;
+    const enteredCost = costRaw != null && costRaw !== '' ? Number(costRaw) : NaN;
+    const unitCost = Number.isFinite(enteredCost) && enteredCost >= 0
+      ? enteredCost
+      : (costById[productId] ?? null);
+
     if (productId && qty > 0 && unitPrice !== undefined) {
-      items.push({ productId, qty, unitPrice });
+      items.push({ productId, qty, unitPrice, unitCost });
     }
     i++;
   }
@@ -263,4 +272,86 @@ export async function updateOrderDeliveryAction(formData: FormData) {
   revalidatePath('/admin/orders');
   revalidatePath(`/admin/orders/${ref}`);
   redirect(`/admin/orders/${ref}`);
+}
+
+// ─── Suppliers ──────────────────────────────────────────────────────────────
+
+export async function createSupplierAction(formData: FormData) {
+  const id = await createSupplier({
+    name: (formData.get('name') as string).trim(),
+    phone: (formData.get('phone') as string)?.trim() || null,
+    whatsapp: (formData.get('whatsapp') as string)?.trim() || null,
+    email: (formData.get('email') as string)?.trim() || null,
+    address: (formData.get('address') as string)?.trim() || null,
+    notes: (formData.get('notes') as string)?.trim() || null,
+  });
+  revalidatePath('/admin/suppliers');
+  redirect(`/admin/suppliers/${id.id}`);
+}
+
+export async function updateSupplierAction(formData: FormData) {
+  const id = Number(formData.get('id'));
+  await updateSupplier(id, {
+    name: (formData.get('name') as string).trim(),
+    phone: (formData.get('phone') as string)?.trim() || null,
+    whatsapp: (formData.get('whatsapp') as string)?.trim() || null,
+    email: (formData.get('email') as string)?.trim() || null,
+    address: (formData.get('address') as string)?.trim() || null,
+    notes: (formData.get('notes') as string)?.trim() || null,
+  });
+  revalidatePath('/admin/suppliers');
+  revalidatePath(`/admin/suppliers/${id}`);
+  redirect(`/admin/suppliers/${id}`);
+}
+
+export async function deleteSupplierAction(formData: FormData) {
+  const id = Number(formData.get('id'));
+  await deleteSupplier(id);
+  revalidatePath('/admin/suppliers');
+  redirect('/admin/suppliers');
+}
+
+export async function setSupplierProductAction(formData: FormData) {
+  const supplierId = Number(formData.get('supplier_id'));
+  const productId = Number(formData.get('product_id'));
+  const costPrice = Number(formData.get('cost_price'));
+  const code = (formData.get('supplier_product_code') as string)?.trim() || null;
+  if (supplierId && productId && Number.isFinite(costPrice) && costPrice >= 0) {
+    await setSupplierProduct(supplierId, productId, costPrice, code);
+  }
+  revalidatePath(`/admin/suppliers/${supplierId}`);
+  redirect(`/admin/suppliers/${supplierId}?tab=products`);
+}
+
+export async function removeSupplierProductAction(formData: FormData) {
+  const supplierId = Number(formData.get('supplier_id'));
+  const productId = Number(formData.get('product_id'));
+  await removeSupplierProduct(supplierId, productId);
+  revalidatePath(`/admin/suppliers/${supplierId}`);
+  redirect(`/admin/suppliers/${supplierId}?tab=products`);
+}
+
+export async function createPurchaseAction(formData: FormData) {
+  const supplierId = Number(formData.get('supplier_id'));
+  const date = (formData.get('date') as string)?.trim() || null;
+  const notes = (formData.get('notes') as string)?.trim() || null;
+
+  const items: { productId: number; qty: number; unitCost: number }[] = [];
+  let i = 0;
+  while (formData.has(`pitem_product_${i}`)) {
+    const productId = Number(formData.get(`pitem_product_${i}`));
+    const qty = Number(formData.get(`pitem_qty_${i}`)) || 1;
+    const costRaw = formData.get(`pitem_cost_${i}`) as string | null;
+    const unitCost = costRaw != null && costRaw !== '' ? Number(costRaw) : NaN;
+    if (productId && qty > 0 && Number.isFinite(unitCost) && unitCost >= 0) {
+      items.push({ productId, qty, unitCost });
+    }
+    i++;
+  }
+
+  if (supplierId && items.length > 0) {
+    await createPurchase({ supplierId, date, notes, items });
+  }
+  revalidatePath(`/admin/suppliers/${supplierId}`);
+  redirect(`/admin/suppliers/${supplierId}?tab=purchases`);
 }

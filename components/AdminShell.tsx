@@ -42,7 +42,8 @@ export default function AdminShell({
   active: string; // href of the active nav item
   children: React.ReactNode;
 }) {
-  const phaseAvailable = (phase: number) => phase <= 2; // Sprint 1 + 2 live
+  // Sprint 1 + 2 live for everyone; Sprint 3 (Suppliers/Sales) is owner-only.
+  const phaseAvailable = (phase: number) => phase <= 2 || (phase === 3 && session.role === 'owner');
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>

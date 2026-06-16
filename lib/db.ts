@@ -3,6 +3,7 @@ import { neon } from '@neondatabase/serverless';
 import type {
   Product, Category, StockStatus, Badge, Banner, AdminUser, AdminRole,
   Order, OrderItem, OrderStatus, DeliveryMethod, PaymentType,
+  Supplier, SupplierProduct, SupplierPurchase, SupplierPurchaseItem,
 } from './types';
 import { slugify } from './catalog';
 
@@ -294,6 +295,7 @@ function rowToOrderItem(r: Record<string, unknown>): OrderItem {
     name:      (r.name ?? '(deleted product)') as string,
     qty:       r.qty as number,
     unitPrice: r.unit_price as number,
+    unitCost:  (r.unit_cost ?? undefined) as number | undefined,
   };
 }
 
@@ -330,7 +332,7 @@ export async function createOrder(fields: {
   trackingNumber?: string | null;
   paymentType: PaymentType;
   notes?: string | null;
-  items: { productId: number; qty: number; unitPrice: number }[];
+  items: { productId: number; qty: number; unitPrice: number; unitCost?: number | null }[];
 }): Promise<Order> {
   // Generate next ref: NVT-ORD-001
   const refRows = await sql`
@@ -353,8 +355,8 @@ export async function createOrder(fields: {
 
   for (const item of fields.items) {
     await sql`
-      INSERT INTO order_items (order_id, product_id, qty, unit_price)
-      VALUES (${orderId}, ${item.productId}, ${item.qty}, ${item.unitPrice})
+      INSERT INTO order_items (order_id, product_id, qty, unit_price, unit_cost)
+      VALUES (${orderId}, ${item.productId}, ${item.qty}, ${item.unitPrice}, ${item.unitCost ?? null})
     `;
   }
 
@@ -444,4 +446,280 @@ export async function getOrderStats(): Promise<{
     total,
     codPendingValue: Number(codRows[0].value),
   };
+}
+
+// ─── Suppliers ──────────────────────────────────────────────────────────────
+
+function rowToSupplier(r: Record<string, unknown>): Supplier {
+  return {
+    id:        r.id as number,
+    name:      r.name as string,
+    phone:     (r.phone ?? undefined) as string | undefined,
+    whatsapp:  (r.whatsapp ?? undefined) as string | undefined,
+    email:     (r.email ?? undefined) as string | undefined,
+    address:   (r.address ?? undefined) as string | undefined,
+    notes:     (r.notes ?? undefined) as string | undefined,
+    createdAt: new Date(r.created_at as string),
+  };
+}
+
+export async function getAllSuppliers(): Promise<(Supplier & { productCount: number })[]> {
+  const rows = await sql`
+    SELECT s.*, COUNT(sp.product_id) AS product_count
+    FROM suppliers s
+    LEFT JOIN supplier_products sp ON sp.supplier_id = s.id
+    GROUP BY s.id
+    ORDER BY s.name
+  `;
+  return rows.map(r => ({ ...rowToSupplier(r), productCount: Number(r.product_count) }));
+}
+
+export async function getSupplierById(id: number): Promise<
+  (Supplier & { products: SupplierProduct[]; purchases: SupplierPurchase[] }) | undefined
+> {
+  const rows = await sql`SELECT * FROM suppliers WHERE id = ${id} LIMIT 1`;
+  if (!rows[0]) return undefined;
+
+  const productRows = await sql`
+    SELECT sp.*, p.name
+    FROM supplier_products sp
+    LEFT JOIN products p ON p.id = sp.product_id
+    WHERE sp.supplier_id = ${id}
+    ORDER BY p.name
+  `;
+  const products: SupplierProduct[] = productRows.map(r => ({
+    supplierId:          r.supplier_id as number,
+    productId:           r.product_id as number,
+    supplierProductCode: (r.supplier_product_code ?? undefined) as string | undefined,
+    costPrice:           r.cost_price as number,
+    name:                (r.name ?? '(deleted product)') as string,
+  }));
+
+  const purchaseRows = await sql`
+    SELECT * FROM supplier_purchases WHERE supplier_id = ${id} ORDER BY date DESC, id DESC
+  `;
+  const purchases: SupplierPurchase[] = [];
+  for (const pr of purchaseRows) {
+    const itemRows = await sql`
+      SELECT spi.*, p.name
+      FROM supplier_purchase_items spi
+      LEFT JOIN products p ON p.id = spi.product_id
+      WHERE spi.purchase_id = ${pr.id as number}
+      ORDER BY spi.id
+    `;
+    purchases.push({
+      id:        pr.id as number,
+      supplierId: pr.supplier_id as number,
+      date:      new Date(pr.date as string),
+      total:     pr.total as number,
+      notes:     (pr.notes ?? undefined) as string | undefined,
+      createdAt: new Date(pr.created_at as string),
+      items: itemRows.map(ir => ({
+        id:        ir.id as number,
+        purchaseId: ir.purchase_id as number,
+        productId: ir.product_id as number,
+        name:      (ir.name ?? '(deleted product)') as string,
+        qty:       ir.qty as number,
+        unitCost:  ir.unit_cost as number,
+      })),
+    });
+  }
+
+  return { ...rowToSupplier(rows[0]), products, purchases };
+}
+
+export async function createSupplier(fields: {
+  name: string; phone?: string | null; whatsapp?: string | null;
+  email?: string | null; address?: string | null; notes?: string | null;
+}): Promise<Supplier> {
+  const rows = await sql`
+    INSERT INTO suppliers (name, phone, whatsapp, email, address, notes)
+    VALUES (${fields.name}, ${fields.phone ?? null}, ${fields.whatsapp ?? null},
+            ${fields.email ?? null}, ${fields.address ?? null}, ${fields.notes ?? null})
+    RETURNING *
+  `;
+  return rowToSupplier(rows[0]);
+}
+
+export async function updateSupplier(id: number, fields: {
+  name: string; phone?: string | null; whatsapp?: string | null;
+  email?: string | null; address?: string | null; notes?: string | null;
+}): Promise<void> {
+  await sql`
+    UPDATE suppliers SET
+      name = ${fields.name}, phone = ${fields.phone ?? null}, whatsapp = ${fields.whatsapp ?? null},
+      email = ${fields.email ?? null}, address = ${fields.address ?? null}, notes = ${fields.notes ?? null}
+    WHERE id = ${id}
+  `;
+}
+
+export async function deleteSupplier(id: number): Promise<void> {
+  // supplier_products cascades on supplier delete, but supplier_purchases does not —
+  // remove purchases first (their items cascade) so the delete can't be blocked by an FK.
+  await sql`DELETE FROM supplier_purchases WHERE supplier_id = ${id}`;
+  await sql`DELETE FROM suppliers WHERE id = ${id}`;
+}
+
+export async function setSupplierProduct(
+  supplierId: number, productId: number, costPrice: number, code?: string | null,
+): Promise<void> {
+  await sql`
+    INSERT INTO supplier_products (supplier_id, product_id, supplier_product_code, cost_price)
+    VALUES (${supplierId}, ${productId}, ${code ?? null}, ${costPrice})
+    ON CONFLICT (supplier_id, product_id) DO UPDATE SET
+      supplier_product_code = EXCLUDED.supplier_product_code,
+      cost_price = EXCLUDED.cost_price
+  `;
+}
+
+export async function removeSupplierProduct(supplierId: number, productId: number): Promise<void> {
+  await sql`DELETE FROM supplier_products WHERE supplier_id = ${supplierId} AND product_id = ${productId}`;
+}
+
+/** product_id → lowest recorded supplier cost. Defaults order-line cost. */
+export async function getProductCostMap(): Promise<Record<number, number>> {
+  const rows = await sql`
+    SELECT product_id, MIN(cost_price) AS cost FROM supplier_products GROUP BY product_id
+  `;
+  const map: Record<number, number> = {};
+  for (const r of rows) map[r.product_id as number] = Number(r.cost);
+  return map;
+}
+
+export async function createPurchase(fields: {
+  supplierId: number;
+  date?: string | null;
+  notes?: string | null;
+  items: { productId: number; qty: number; unitCost: number }[];
+}): Promise<number> {
+  const total = fields.items.reduce((s, it) => s + it.qty * it.unitCost, 0);
+  const rows = await sql`
+    INSERT INTO supplier_purchases (supplier_id, date, total, notes)
+    VALUES (${fields.supplierId}, ${fields.date || null}::date, ${total}, ${fields.notes ?? null})
+    RETURNING id
+  `;
+  const purchaseId = rows[0].id as number;
+  for (const it of fields.items) {
+    await sql`
+      INSERT INTO supplier_purchase_items (purchase_id, product_id, qty, unit_cost)
+      VALUES (${purchaseId}, ${it.productId}, ${it.qty}, ${it.unitCost})
+    `;
+  }
+  return purchaseId;
+}
+
+// ─── Sales ──────────────────────────────────────────────────────────────────
+
+export async function getSalesStats(): Promise<{
+  revenueMtd: number; revenueAll: number; unitsSold: number;
+  codPending: number; returnsCount: number; returnsValue: number;
+  cost: number; margin: number;
+}> {
+  // Realised revenue/units/cost come from delivered orders.
+  const deliveredRows = await sql`
+    SELECT
+      COALESCE(SUM(oi.qty * oi.unit_price), 0) AS revenue_all,
+      COALESCE(SUM(oi.qty * oi.unit_price) FILTER (WHERE o.created_at >= date_trunc('month', NOW())), 0) AS revenue_mtd,
+      COALESCE(SUM(oi.qty), 0) AS units_sold,
+      COALESCE(SUM(oi.qty * oi.unit_cost) FILTER (WHERE oi.unit_cost IS NOT NULL), 0) AS cost
+    FROM orders o
+    JOIN order_items oi ON oi.order_id = o.id
+    WHERE o.status = 'delivered'
+  `;
+  const codRows = await sql`
+    SELECT COALESCE(SUM(oi.qty * oi.unit_price), 0) AS value
+    FROM orders o JOIN order_items oi ON oi.order_id = o.id
+    WHERE o.payment_type = 'cod' AND o.status = 'shipped'
+  `;
+  const returnRows = await sql`
+    SELECT COUNT(DISTINCT o.id) AS cnt, COALESCE(SUM(oi.qty * oi.unit_price), 0) AS value
+    FROM orders o JOIN order_items oi ON oi.order_id = o.id
+    WHERE o.status = 'returned'
+  `;
+  const revenueAll = Number(deliveredRows[0].revenue_all);
+  const cost = Number(deliveredRows[0].cost);
+  return {
+    revenueMtd:   Number(deliveredRows[0].revenue_mtd),
+    revenueAll,
+    unitsSold:    Number(deliveredRows[0].units_sold),
+    codPending:   Number(codRows[0].value),
+    returnsCount: Number(returnRows[0].cnt),
+    returnsValue: Number(returnRows[0].value),
+    cost,
+    margin:       revenueAll - cost,
+  };
+}
+
+export async function getRevenueByWeek(weeks = 8): Promise<{ weekStart: Date; revenue: number }[]> {
+  const rows = await sql`
+    SELECT date_trunc('week', o.created_at) AS week_start,
+           COALESCE(SUM(oi.qty * oi.unit_price), 0) AS revenue
+    FROM orders o JOIN order_items oi ON oi.order_id = o.id
+    WHERE o.status = 'delivered'
+      AND o.created_at >= date_trunc('week', NOW()) - (${weeks - 1} * INTERVAL '1 week')
+    GROUP BY week_start
+  `;
+  const byKey = new Map<string, number>();
+  for (const r of rows) byKey.set(new Date(r.week_start as string).toISOString().slice(0, 10), Number(r.revenue));
+
+  // Fill all buckets so the chart always shows `weeks` bars.
+  const out: { weekStart: Date; revenue: number }[] = [];
+  const monday = new Date();
+  const day = (monday.getUTCDay() + 6) % 7; // 0 = Monday
+  monday.setUTCDate(monday.getUTCDate() - day);
+  monday.setUTCHours(0, 0, 0, 0);
+  for (let i = weeks - 1; i >= 0; i--) {
+    const d = new Date(monday);
+    d.setUTCDate(d.getUTCDate() - i * 7);
+    const key = d.toISOString().slice(0, 10);
+    out.push({ weekStart: d, revenue: byKey.get(key) ?? 0 });
+  }
+  return out;
+}
+
+export async function getTopProducts(limit = 5): Promise<{ name: string; units: number; revenue: number }[]> {
+  const rows = await sql`
+    SELECT p.name,
+           COALESCE(SUM(oi.qty), 0) AS units,
+           COALESCE(SUM(oi.qty * oi.unit_price), 0) AS revenue
+    FROM order_items oi
+    JOIN orders o ON o.id = oi.order_id
+    LEFT JOIN products p ON p.id = oi.product_id
+    WHERE o.status = 'delivered'
+    GROUP BY p.name
+    ORDER BY units DESC
+    LIMIT ${limit}
+  `;
+  return rows.map(r => ({ name: (r.name ?? '(deleted)') as string, units: Number(r.units), revenue: Number(r.revenue) }));
+}
+
+export async function getSalesOrders(opts?: { from?: string; to?: string }): Promise<{
+  ref: string; date: Date; customer: string; status: OrderStatus; paymentType: PaymentType;
+  revenue: number; cost: number; margin: number;
+}[]> {
+  const from = opts?.from || null;
+  const to = opts?.to || null;
+  const rows = await sql`
+    SELECT o.ref, o.created_at, o.customer_name, o.status, o.payment_type,
+           COALESCE(SUM(oi.qty * oi.unit_price), 0) AS revenue,
+           COALESCE(SUM(oi.qty * oi.unit_cost) FILTER (WHERE oi.unit_cost IS NOT NULL), 0) AS cost
+    FROM orders o
+    LEFT JOIN order_items oi ON oi.order_id = o.id
+    WHERE (${from}::date IS NULL OR o.created_at >= ${from}::date)
+      AND (${to}::date IS NULL OR o.created_at < (${to}::date + INTERVAL '1 day'))
+    GROUP BY o.id
+    ORDER BY o.created_at DESC
+  `;
+  return rows.map(r => {
+    const revenue = Number(r.revenue);
+    const cost = Number(r.cost);
+    return {
+      ref: r.ref as string,
+      date: new Date(r.created_at as string),
+      customer: r.customer_name as string,
+      status: r.status as OrderStatus,
+      paymentType: r.payment_type as PaymentType,
+      revenue, cost, margin: revenue - cost,
+    };
+  });
 }

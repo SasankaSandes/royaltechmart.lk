@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { requireAdmin } from '@/lib/admin-auth';
-import { getAllProducts } from '@/lib/db';
+import { getAllProducts, getProductCostMap } from '@/lib/db';
 import { itemCode } from '@/lib/catalog';
 import { createOrderAction } from '@/app/admin/actions';
 import AdminShell from '@/components/AdminShell';
@@ -14,7 +14,7 @@ export default async function NewOrderPage({
 }) {
   const session = await requireAdmin();
   const { error } = await searchParams;
-  const products = await getAllProducts();
+  const [products, costById] = await Promise.all([getAllProducts(), getProductCostMap()]);
   const pickerProducts = products.map(p => ({ id: p.id, name: p.name, price: p.price, code: itemCode(p.id) }));
 
   return (
@@ -56,7 +56,7 @@ export default async function NewOrderPage({
             </Card>
 
             <Card title="Items">
-              <OrderItemsEditor products={pickerProducts} />
+              <OrderItemsEditor products={pickerProducts} costById={costById} />
             </Card>
 
             <Card title="Notes">
