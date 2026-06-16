@@ -32,7 +32,7 @@ export default async function Home() {
         <HeroBanner banners={banners} />
 
         {/* 2 — Trending products */}
-        <section className="section">
+        <section className="section" style={{ background: 'var(--surface)' }}>
           <div className="wrap">
             <SectionHeader eyebrow="Hot right now" title="Trending products" actionLabel="View all" actionHref="/shop?sort=popular" />
             <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }}>
@@ -82,11 +82,11 @@ export default async function Home() {
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Button href={FB_PAGE} variant="secondary" icon={Icons.facebook} iconPosition="left"
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
-                  Follow on Facebook
+                   Facebook
                 </Button>
                 <Button href={INSTAGRAM} variant="secondary" icon={Icons.instagram} iconPosition="left"
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
-                  Follow on Instagram
+                  Instagram
                 </Button>
               </div>
             </div>
@@ -114,12 +114,20 @@ export default async function Home() {
         @media (max-width: 980px) {
           .hero-grid { grid-template-columns: 1fr !important; }
           .hero-right { display: none; }
-          .cat-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .product-grid {
+            display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 14px; padding-bottom: 4px;
+          }
+          .product-grid > * { flex: 0 0 calc(50% - 16px) !important; scroll-snap-align: start; }
+          .cat-grid {
+            display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 14px; padding-bottom: 4px;
+          }
+          .cat-grid > * { flex: 0 0 calc(33% - 10px) !important; scroll-snap-align: start; }
         }
         @media (max-width: 720px) {
-          .cat-grid { grid-template-columns: 1fr !important; }
-          .product-grid { grid-template-columns: 1fr !important; }
+          .product-grid > * { flex: 0 0 72vw !important; }
+          .cat-grid > * { flex: 0 0 62vw !important; }
         }
       `}</style>
     </>
