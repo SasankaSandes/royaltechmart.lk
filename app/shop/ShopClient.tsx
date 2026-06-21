@@ -2,7 +2,6 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import { Pill } from '@/components/ui/Pill';
@@ -39,7 +38,7 @@ function sortProducts(products: Product[], sort: SortKey): Product[] {
   }
 }
 
-function ShopContent({ products, categories }: { products: Product[]; categories: CategoryInfo[] }) {
+function ShopContent({ products, categories, header }: { products: Product[]; categories: CategoryInfo[]; header: React.ReactNode }) {
   const params = useSearchParams();
   const router = useRouter();
 
@@ -75,7 +74,7 @@ function ShopContent({ products, categories }: { products: Product[]; categories
 
   return (
     <>
-      <Header />
+      {header}
       <main>
         <section style={{ background: 'var(--surface)', paddingBlock: 48, borderBottom: '1px solid var(--line)' }}>
           <div className="wrap">
@@ -129,10 +128,10 @@ function ShopContent({ products, categories }: { products: Product[]; categories
   );
 }
 
-export default function ShopClient({ products, categories }: { products: Product[]; categories: CategoryInfo[] }) {
+export default function ShopClient({ products, categories, header }: { products: Product[]; categories: CategoryInfo[]; header: React.ReactNode }) {
   return (
     <Suspense>
-      <ShopContent products={products} categories={categories} />
+      <ShopContent products={products} categories={categories} header={header} />
     </Suspense>
   );
 }

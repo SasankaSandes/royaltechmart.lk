@@ -6,13 +6,14 @@ import { useState } from 'react';
 import { Icons } from './Icons';
 import { waLink, FB_PAGE, INSTAGRAM } from '@/lib/catalog';
 
-const SOCIALS: { label: string; href: string; icon: React.ReactNode; color: string }[] = [
-  { label: 'WhatsApp', href: waLink(), icon: Icons.whatsapp, color: '#25D366' },
+const DEFAULT_SOCIALS = [
+  { label: 'WhatsApp', href: waLink(undefined, { whatsapp_number: '' }), icon: Icons.whatsapp, color: '#25D366' },
   { label: 'Facebook', href: FB_PAGE, icon: Icons.facebook, color: '#1877F2' },
   { label: 'Instagram', href: INSTAGRAM, icon: Icons.instagram, color: '#E1306C' },
 ];
 
-export default function Header() {
+export default function Header({ socials }: { socials?: typeof DEFAULT_SOCIALS }) {
+  const SOCIALS = socials ?? DEFAULT_SOCIALS;
   const [open, setOpen] = useState(false);
 
   return (

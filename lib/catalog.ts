@@ -33,18 +33,22 @@ export function productUrl(product: Product): string {
   return `/product/${product.slug ?? slugify(product.name)}`;
 }
 
-export function waLink(product?: Product): string {
+export function waLink(
+  product: Product | undefined,
+  settings: Record<string, string>,
+): string {
+  const wa = settings.whatsapp_number || WHATSAPP;
   let text: string;
   if (product) {
-    text =
-      `Hi Novatek 👋\n\nI'd like to order:\n` +
-      `• ${product.name}\n` +
-      `• Price: ${money(product.price)}\n` +
-      `• Item code: ${itemCode(product.id)}\n\n` +
-      `Please share availability & delivery details.`;
+    const template = settings.order_message ||
+      'Hi Novatek 👋\n\nI\'d like to order:\n• {name}\n• Price: {price}\n• Item code: {code}\n\nPlease share availability & delivery details.';
+    text = template
+      .replace('{name}',  product.name)
+      .replace('{price}', money(product.price))
+      .replace('{code}',  itemCode(product.id));
   } else {
     text = `Hi Novatek 👋 I'd like to know more about your products.`;
   }
-  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+  return `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
 }
 

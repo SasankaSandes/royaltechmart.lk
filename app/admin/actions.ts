@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import bcrypt from 'bcryptjs';
-import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery, getProductCostMap, createSupplier, updateSupplier, deleteSupplier, setSupplierProduct, removeSupplierProduct, createPurchase } from '@/lib/db';
+import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery, getProductCostMap, createSupplier, updateSupplier, deleteSupplier, setSupplierProduct, removeSupplierProduct, createPurchase, upsertSiteSettings } from '@/lib/db';
 import { serializeSession, SESSION_COOKIE, SESSION_MAX_AGE, getAdminSession } from '@/lib/admin-auth';
 import type { StockStatus, Badge, Category, DeliveryMethod, PaymentType, OrderStatus } from '@/lib/types';
 
@@ -354,4 +354,22 @@ export async function createPurchaseAction(formData: FormData) {
   }
   revalidatePath(`/admin/suppliers/${supplierId}`);
   redirect(`/admin/suppliers/${supplierId}?tab=purchases`);
+}
+
+// ─── Site Settings ─────────────────────────────────────────────────────────────
+
+export async function updateSiteSettingsAction(formData: FormData) {
+  const keys = [
+    'whatsapp_number', 'fb_page', 'instagram', 'tiktok',
+    'phone', 'email', 'delivery_price', 'delivery_sla', 'order_message',
+  ];
+  const entries: Record<string, string> = {};
+  for (const key of keys) {
+    entries[key] = (formData.get(key) as string | null) ?? '';
+  }
+  await upsertSiteSettings(entries);
+  revalidatePath('/');
+  revalidatePath('/shop');
+  revalidatePath('/about');
+  redirect('/admin/settings');
 }

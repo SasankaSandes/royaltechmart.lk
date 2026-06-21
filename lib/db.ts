@@ -723,3 +723,20 @@ export async function getSalesOrders(opts?: { from?: string; to?: string }): Pro
     };
   });
 }
+
+// ─── Site Settings ─────────────────────────────────────────────────────────────
+
+export async function getAllSiteSettings(): Promise<Record<string, string>> {
+  const rows = await sql`SELECT key, value FROM site_settings`;
+  return Object.fromEntries(rows.map(r => [r.key as string, r.value as string]));
+}
+
+export async function upsertSiteSettings(entries: Record<string, string>): Promise<void> {
+  for (const [key, value] of Object.entries(entries)) {
+    await sql`
+      INSERT INTO site_settings (key, value, updated_at)
+      VALUES (${key}, ${value}, NOW())
+      ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = NOW()
+    `;
+  }
+}

@@ -150,6 +150,17 @@ h1, h2, h3, h4 {
   .section { padding-block: 56px; }
 }
 
+/* ---- About page ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 @media (max-width: 720px) {
   .shop-grid {
     display: flex !important;

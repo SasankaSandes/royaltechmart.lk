@@ -2,12 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import Header from '@/components/Header';
+import HeaderWrapper from '@/components/HeaderWrapper';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
 import ProductCard from '@/components/ProductCard';
 import HeroBanner from '@/components/HeroBanner';
-import { CATEGORIES, FB_PAGE, INSTAGRAM } from '@/lib/catalog';
+import { CATEGORIES } from '@/lib/catalog';
+import { getSiteSettings } from '@/lib/site-settings';
 import { getAllProducts, getActiveBanners } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 import type { Product } from '@/lib/types';
@@ -17,7 +18,7 @@ export const revalidate = 3600;
 const CAT_NUMS = ['01', '02', '03', '04', '05'];
 
 export default async function Home() {
-  const [allProducts, banners] = await Promise.all([getAllProducts(), getActiveBanners()]);
+  const [allProducts, banners, s] = await Promise.all([getAllProducts(), getActiveBanners(), getSiteSettings()]);
   const trending: Product[] = allProducts.filter(p => p.badge === 'Trending').length
     ? allProducts.filter(p => p.badge === 'Trending').slice(0, 4)
     : allProducts.slice(0, 4);
@@ -26,7 +27,7 @@ export default async function Home() {
     : allProducts.slice(4, 8);
   return (
     <>
-      <Header />
+      <HeaderWrapper />
       <main>
         {/* 1 — Hero banner */}
         <HeroBanner banners={banners} />
@@ -80,14 +81,14 @@ export default async function Home() {
               <p style={{ fontSize: 19, color: 'rgba(255,255,255,.72)', lineHeight: 1.45, marginBottom: 36, maxWidth: 520 }}>
                 Follow our Facebook and Instagram page and be the first to know about new arrivals and exclusive offers. Message us on WhatsApp to place your order directly through our social media channels.</p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Button href={FB_PAGE} variant="secondary" icon={Icons.facebook} iconPosition="left"
+                {s.fb_page && <Button href={s.fb_page} variant="secondary" icon={Icons.facebook} iconPosition="left"
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
                    Facebook
-                </Button>
-                <Button href={INSTAGRAM} variant="secondary" icon={Icons.instagram} iconPosition="left"
+                </Button>}
+                {s.instagram && <Button href={s.instagram} variant="secondary" icon={Icons.instagram} iconPosition="left"
                   style={{ background: 'var(--surface-card)', color: 'var(--text-strong)', border: 'none' }}>
                   Instagram
-                </Button>
+                </Button>}
               </div>
             </div>
           </div>

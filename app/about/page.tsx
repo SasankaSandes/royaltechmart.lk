@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import Header from '@/components/Header';
+import HeaderWrapper from '@/components/HeaderWrapper';
 import Footer from '@/components/Footer';
 import TrustStrip from '@/components/TrustStrip';
-import { waLink, FB_PAGE, INSTAGRAM, EMAIL, PHONE } from '@/lib/catalog';
+import { waLink } from '@/lib/catalog';
+import { getSiteSettings } from '@/lib/site-settings';
 import { Icons } from '@/components/Icons';
 import { Button } from '@/components/ui/Button';
 
@@ -24,10 +25,11 @@ const FAQS = [
   { q: 'What is your return policy?', a: 'We accept returns within 7 days of delivery for unused products in original packaging. Contact us on WhatsApp to initiate a return.' },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const s = await getSiteSettings();
   return (
     <>
-      <Header />
+      <HeaderWrapper />
       <main>
         {/* Hero */}
         <section className="section" style={{ background: 'var(--surface)' }}>
@@ -44,7 +46,7 @@ export default function AboutPage() {
 
         {/* Why Novatek + Contact */}
         <section className="section">
-          <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
+          <div className="wrap about-grid">
             {/* Why Novatek */}
             <div>
               <h2 style={{ fontSize: 'clamp(24px,3vw,34px)', marginBottom: 32 }}>Why Novatek?</h2>
@@ -64,26 +66,26 @@ export default function AboutPage() {
             </div>
 
             {/* Contact card */}
-            <div style={{ background: 'var(--ink)', color: '#fff', borderRadius: 'var(--radius-lg)', padding: 36 }}>
+            <div style={{ background: 'var(--ink)', color: '#fff', borderRadius: 'var(--radius-lg)', padding: 'clamp(20px, 6vw, 36px)' }}>
               <p style={{ fontFamily: 'var(--mono)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,.4)', marginBottom: 20 }}>Get in touch</p>
               <h2 style={{ fontSize: 28, marginBottom: 8, color: '#fff' }}>We&apos;re always here</h2>
               <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.65, marginBottom: 28 }}>
                 The fastest way to reach us is WhatsApp — we typically reply within minutes during business hours.
               </p>
 
-              <Button href={waLink()} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth style={{ marginBottom: 20 }}>
+              <Button href={waLink(undefined, s)} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth style={{ marginBottom: 20 }}>
                 Chat on WhatsApp
               </Button>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {[
-                  [Icons.phone, PHONE, `tel:${PHONE}`],
-                  [Icons.mail, EMAIL, `mailto:${EMAIL}`],
-                  [Icons.facebook, 'facebook.com/novateksl', FB_PAGE],
-                  [Icons.instagram, 'instagram.com/novatek.lk', INSTAGRAM],
+                  s.phone    ? [Icons.phone,     s.phone,                        `tel:${s.phone}`]          : null,
+                  s.email    ? [Icons.mail,       s.email,                        `mailto:${s.email}`]        : null,
+                  s.fb_page  ? [Icons.facebook,   'facebook.com/novateksl',       s.fb_page]                 : null,
+                  s.instagram? [Icons.instagram,  'instagram.com/novatek.lk',     s.instagram]               : null,
                   [Icons.clock, 'Mon–Sat · 9am – 7pm', null],
                   [Icons.pin, 'Island-wide delivery · Sri Lanka', null],
-                ].map(([icon, text, href], i) => (
+                ].filter((x) => x !== null).map((row, i) => { const [icon, text, href] = row as [React.ReactNode, string, string | null]; return (
                   href
                     ? <a key={i} href={href as string} target={(href as string).startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
                         style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'rgba(255,255,255,.75)', fontSize: 14 }}>
@@ -94,7 +96,7 @@ export default function AboutPage() {
                         <span style={{ flexShrink: 0 }}>{icon as React.ReactNode}</span>
                         {text as string}
                       </span>
-                ))}
+                ); })}
               </div>
             </div>
           </div>

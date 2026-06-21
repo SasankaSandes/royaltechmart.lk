@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
+import HeaderWrapper from '@/components/HeaderWrapper';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import { Button } from '@/components/ui/Button';
 import { Badge, PRODUCT_BADGE_TONE } from '@/components/ui/Badge';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { CATEGORIES, money, waLink, itemCode, productUrl, PHONE } from '@/lib/catalog';
+import { CATEGORIES, money, waLink, itemCode, productUrl } from '@/lib/catalog';
+import { getSiteSettings } from '@/lib/site-settings';
 import { getProductBySlug as bySlug, getRelatedProducts as related, getAllSlugs } from '@/lib/db';
 import { Icons } from '@/components/Icons';
 
@@ -50,7 +51,7 @@ export default async function ProductPage(
   const product = await bySlug(slug);
   if (!product) notFound();
 
-  const [relatedProducts] = await Promise.all([related(product)]);
+  const [relatedProducts, s] = await Promise.all([related(product), getSiteSettings()]);
   const catLabel = CATEGORIES.find(c => c.id === product.category)?.label ?? product.category;
   const savings = product.oldPrice ? product.oldPrice - product.price : 0;
   const pct = product.oldPrice ? Math.round((savings / product.oldPrice) * 100) : 0;
@@ -61,7 +62,7 @@ export default async function ProductPage(
 
   return (
     <>
-      <Header />
+      <HeaderWrapper />
       <main>
         {/* Breadcrumbs */}
         <div className="wrap" style={{
@@ -153,7 +154,7 @@ export default async function ProductPage(
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
-                <Button href={waLink(product)} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth>
+                <Button href={waLink(product, s)} variant="whatsapp" icon={Icons.whatsapp} iconPosition="left" fullWidth>
                   Order now
                 </Button>
                 {/* <Button href={`tel:${PHONE}`} variant="ghost" icon={Icons.phone} iconPosition="left" fullWidth>

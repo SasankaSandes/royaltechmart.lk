@@ -22,15 +22,17 @@ function ListIcon({ active }: { active: boolean })  { return icon('M9 5H7a2 2 0 
 function TruckIcon({ active }: { active: boolean }) { return icon('M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z')({ active }); }
 function ChartIcon({ active }: { active: boolean }) { return icon('M18 20V10M12 20V4M6 20v-6')({ active }); }
 function UserIcon({ active }: { active: boolean })  { return icon('M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z')({ active }); }
+function GearIcon({ active }: { active: boolean })  { return icon('M12 15a3 3 0 100-6 3 3 0 000 6zM19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z')({ active }); }
 
 const NAV = [
-  { href: '/admin',           label: 'Dashboard',  icon: GridIcon,   phase: 1 },
-  { href: '/admin/products',  label: 'Products',   icon: BoxIcon,    phase: 1 },
-  { href: '/admin/banners',   label: 'Banners',    icon: ImageIcon,  phase: 1 },
-  { href: '/admin/account',   label: 'Account',    icon: UserIcon,   phase: 1 },
-  { href: '/admin/orders',    label: 'Orders',     icon: ListIcon,   phase: 2 },
-  { href: '/admin/suppliers', label: 'Suppliers',  icon: TruckIcon,  phase: 3 },
-  { href: '/admin/sales',     label: 'Sales',      icon: ChartIcon,  phase: 3 },
+  { href: '/admin',           label: 'Dashboard',  icon: GridIcon,   phase: 1, ownerOnly: false },
+  { href: '/admin/products',  label: 'Products',   icon: BoxIcon,    phase: 1, ownerOnly: false },
+  { href: '/admin/banners',   label: 'Banners',    icon: ImageIcon,  phase: 1, ownerOnly: false },
+  { href: '/admin/account',   label: 'Account',    icon: UserIcon,   phase: 1, ownerOnly: false },
+  { href: '/admin/settings',  label: 'Settings',   icon: GearIcon,   phase: 1, ownerOnly: true  },
+  { href: '/admin/orders',    label: 'Orders',     icon: ListIcon,   phase: 2, ownerOnly: false },
+  { href: '/admin/suppliers', label: 'Suppliers',  icon: TruckIcon,  phase: 3, ownerOnly: false },
+  { href: '/admin/sales',     label: 'Sales',      icon: ChartIcon,  phase: 3, ownerOnly: false },
 ];
 
 export default function AdminShell({
@@ -42,8 +44,9 @@ export default function AdminShell({
   active: string; // href of the active nav item
   children: React.ReactNode;
 }) {
-  // Sprint 1 + 2 live for everyone; Sprint 3 (Suppliers/Sales) is owner-only.
-  const phaseAvailable = (phase: number) => phase <= 2 || (phase === 3 && session.role === 'owner');
+  // Sprint 1 + 2 live for everyone; Sprint 3 and owner-only items require owner role.
+  const itemAvailable = (phase: number, ownerOnly: boolean) =>
+    (phase <= 2 || (phase === 3 && session.role === 'owner')) && (!ownerOnly || session.role === 'owner');
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
@@ -71,8 +74,8 @@ export default function AdminShell({
 
         {/* Nav */}
         <nav style={{ flex: 1, padding: '12px 10px' }}>
-          {NAV.map(({ href, label, icon: Icon, phase }) => {
-            const available = phaseAvailable(phase);
+          {NAV.map(({ href, label, icon: Icon, phase, ownerOnly }) => {
+            const available = itemAvailable(phase, ownerOnly);
             const isActive = active === href;
             return (
               <div key={href}>
