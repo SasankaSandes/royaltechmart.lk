@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import bcrypt from 'bcryptjs';
-import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery, getProductCostMap, createSupplier, updateSupplier, deleteSupplier, setSupplierProduct, removeSupplierProduct, createPurchase, upsertSiteSettings } from '@/lib/db';
+import { getAdminUserByUsername, getAdminUserById, updateAdminPassword, updateProduct, getProductById, createProduct, createBanner, updateBanner, deleteBanner, moveBanner, getAllProducts, createOrder, updateOrderStatus, updateOrderDelivery, getProductCostMap, createSupplier, updateSupplier, deleteSupplier, setSupplierProduct, removeSupplierProduct, createPurchase, upsertSiteSettings, assignSupplierToOrderItem, reconcileSupplierInvoice } from '@/lib/db';
 import { serializeSession, SESSION_COOKIE, SESSION_MAX_AGE, getAdminSession } from '@/lib/admin-auth';
 import type { StockStatus, Badge, Category, DeliveryMethod, PaymentType, OrderStatus } from '@/lib/types';
 
@@ -354,6 +354,84 @@ export async function createPurchaseAction(formData: FormData) {
   }
   revalidatePath(`/admin/suppliers/${supplierId}`);
   redirect(`/admin/suppliers/${supplierId}?tab=purchases`);
+}
+
+// Actions for managing supplier links from the product edit page
+export async function setProductSupplierAction(formData: FormData) {
+  const productId = Number(formData.get('product_id'));
+  const supplierId = Number(formData.get('supplier_id'));
+  const costPrice = Number(formData.get('cost_price'));
+  const code = (formData.get('supplier_product_code') as string)?.trim() || null;
+  if (productId && supplierId && Number.isFinite(costPrice) && costPrice >= 0) {
+    await setSupplierProduct(supplierId, productId, costPrice, code);
+  }
+  revalidatePath(`/admin/products/${productId}`);
+  redirect(`/admin/products/${productId}`);
+}
+
+export async function removeProductSupplierAction(formData: FormData) {
+  const productId = Number(formData.get('product_id'));
+  const supplierId = Number(formData.get('supplier_id'));
+  await removeSupplierProduct(supplierId, productId);
+  revalidatePath(`/admin/products/${productId}`);
+  redirect(`/admin/products/${productId}`);
+}
+
+export async function reconcileInvoiceAction(formData: FormData) {
+  const supplierId = Number(formData.get('supplier_id'));
+  const supplierName = (formData.get('supplier_name') as string) || '';
+  const invoiceRef = ((formData.get('invoice_ref') as string) || '').trim();
+  const invoiceDate = (formData.get('invoice_date') as string) || new Date().toISOString().slice(0, 10);
+  const redirectDate = (formData.get('redirect_date') as string) || new Date().toISOString().slice(0, 10);
+
+  const items: { orderItemId?: number | null; productId: number; qty: number; unitCost: number }[] = [];
+
+  // Slip items
+  let i = 0;
+  while (formData.has(`item_${i}_product_id`)) {
+    const productId = Number(formData.get(`item_${i}_product_id`));
+    const orderItemId = Number(formData.get(`item_${i}_order_item_id`)) || null;
+    const qty = Number(formData.get(`item_${i}_qty`)) || 1;
+    const unitCost = Number(formData.get(`item_${i}_unit_cost`));
+    if (productId && Number.isFinite(unitCost) && unitCost >= 0) {
+      items.push({ orderItemId, productId, qty, unitCost });
+    }
+    i++;
+  }
+
+  // Extra (out-of-slip) items
+  for (let j = 0; j < 3; j++) {
+    const productId = Number(formData.get(`extra_${j}_product_id`)) || 0;
+    const qty = Number(formData.get(`extra_${j}_qty`)) || 1;
+    const unitCost = Number(formData.get(`extra_${j}_unit_cost`));
+    if (productId && Number.isFinite(unitCost) && unitCost >= 0) {
+      items.push({ orderItemId: null, productId, qty, unitCost });
+    }
+  }
+
+  if (supplierId && items.length > 0) {
+    await reconcileSupplierInvoice({ supplierId, invoiceRef, invoiceDate, items });
+  }
+
+  revalidatePath('/admin/sourcing');
+  revalidatePath('/admin/sales');
+  revalidatePath('/admin/suppliers');
+  redirect(`/admin/sourcing/reconcile?date=${redirectDate}&saved=${encodeURIComponent(supplierName)}`);
+}
+
+export async function assignSourcingAction(formData: FormData) {
+  const date = formData.get('date') as string;
+  for (const [key, value] of formData.entries()) {
+    if (key.startsWith('item_')) {
+      const orderItemId = Number(key.slice(5));
+      const supplierId = value ? Number(value) : null;
+      if (orderItemId) {
+        await assignSupplierToOrderItem(orderItemId, supplierId);
+      }
+    }
+  }
+  revalidatePath('/admin/sourcing');
+  redirect(`/admin/sourcing/slip?date=${date}`);
 }
 
 // ─── Site Settings ─────────────────────────────────────────────────────────────

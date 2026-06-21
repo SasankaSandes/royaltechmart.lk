@@ -4,6 +4,7 @@ import type {
   Product, Category, StockStatus, Badge, Banner, AdminUser, AdminRole,
   Order, OrderItem, OrderStatus, DeliveryMethod, PaymentType,
   Supplier, SupplierProduct, SupplierPurchase, SupplierPurchaseItem,
+  ProductSupplierInfo, SourcingItem,
 } from './types';
 import { slugify } from './catalog';
 
@@ -289,13 +290,16 @@ export async function deleteAdminUser(id: number): Promise<void> {
 
 function rowToOrderItem(r: Record<string, unknown>): OrderItem {
   return {
-    id:        r.id as number,
-    orderId:   r.order_id as number,
-    productId: r.product_id as number,
-    name:      (r.name ?? '(deleted product)') as string,
-    qty:       r.qty as number,
-    unitPrice: r.unit_price as number,
-    unitCost:  (r.unit_cost ?? undefined) as number | undefined,
+    id:                r.id as number,
+    orderId:           r.order_id as number,
+    productId:         r.product_id as number,
+    name:              (r.name ?? '(deleted product)') as string,
+    qty:               r.qty as number,
+    unitPrice:         r.unit_price as number,
+    unitCost:          (r.unit_cost ?? undefined) as number | undefined,
+    unitCostConfirmed: (r.unit_cost_confirmed ?? false) as boolean,
+    invoiceRef:        (r.invoice_ref ?? undefined) as string | undefined,
+    supplierId:        (r.supplier_id ?? undefined) as number | undefined,
   };
 }
 
@@ -606,6 +610,128 @@ export async function createPurchase(fields: {
     `;
   }
   return purchaseId;
+}
+
+export async function getProductSuppliers(productId: number): Promise<ProductSupplierInfo[]> {
+  const rows = await sql`
+    SELECT sp.supplier_id, s.name AS supplier_name, sp.cost_price, sp.supplier_product_code,
+           (SELECT MAX(pu.date)
+            FROM supplier_purchases pu
+            JOIN supplier_purchase_items pi2 ON pi2.purchase_id = pu.id
+            WHERE pu.supplier_id = sp.supplier_id AND pi2.product_id = sp.product_id
+           ) AS last_purchase_date
+    FROM supplier_products sp
+    JOIN suppliers s ON s.id = sp.supplier_id
+    WHERE sp.product_id = ${productId}
+    ORDER BY sp.cost_price ASC
+  `;
+  return rows.map(r => ({
+    supplierId:          r.supplier_id as number,
+    supplierName:        r.supplier_name as string,
+    costPrice:           r.cost_price as number,
+    supplierProductCode: (r.supplier_product_code ?? undefined) as string | undefined,
+    lastPurchaseDate:    r.last_purchase_date ? new Date(r.last_purchase_date as string) : undefined,
+  }));
+}
+
+export async function getOrdersForSourcing(date: string): Promise<SourcingItem[]> {
+  const itemRows = await sql`
+    SELECT oi.id, o.ref, o.customer_name, oi.product_id, p.name AS product_name,
+           oi.qty, oi.supplier_id
+    FROM orders o
+    JOIN order_items oi ON oi.order_id = o.id
+    LEFT JOIN products p ON p.id = oi.product_id
+    WHERE DATE(o.created_at AT TIME ZONE 'Asia/Colombo') = ${date}::date
+      AND o.status IN ('pending', 'confirmed', 'processing')
+    ORDER BY o.id, oi.id
+  `;
+  if (itemRows.length === 0) return [];
+
+  const supplierRows = await sql`
+    SELECT sp.product_id, sp.supplier_id, s.name AS supplier_name, sp.cost_price,
+           sp.supplier_product_code,
+           (SELECT MAX(pu.date)
+            FROM supplier_purchases pu
+            JOIN supplier_purchase_items pi2 ON pi2.purchase_id = pu.id
+            WHERE pu.supplier_id = sp.supplier_id AND pi2.product_id = sp.product_id
+           ) AS last_purchase_date
+    FROM supplier_products sp
+    JOIN suppliers s ON s.id = sp.supplier_id
+    WHERE sp.product_id IN (
+      SELECT DISTINCT oi2.product_id FROM order_items oi2
+      JOIN orders o2 ON o2.id = oi2.order_id
+      WHERE DATE(o2.created_at AT TIME ZONE 'Asia/Colombo') = ${date}::date
+        AND o2.status IN ('pending', 'confirmed', 'processing')
+    )
+    ORDER BY sp.product_id, sp.cost_price ASC
+  `;
+
+  const suppliersByProduct = new Map<number, ProductSupplierInfo[]>();
+  for (const r of supplierRows) {
+    const pid = r.product_id as number;
+    if (!suppliersByProduct.has(pid)) suppliersByProduct.set(pid, []);
+    suppliersByProduct.get(pid)!.push({
+      supplierId:          r.supplier_id as number,
+      supplierName:        r.supplier_name as string,
+      costPrice:           r.cost_price as number,
+      supplierProductCode: (r.supplier_product_code ?? undefined) as string | undefined,
+      lastPurchaseDate:    r.last_purchase_date ? new Date(r.last_purchase_date as string) : undefined,
+    });
+  }
+
+  return itemRows.map(r => {
+    const pid = r.product_id as number;
+    const suppliers = suppliersByProduct.get(pid) ?? [];
+    return {
+      orderItemId:         r.id as number,
+      orderRef:            r.ref as string,
+      customerName:        r.customer_name as string,
+      productId:           pid,
+      productName:         (r.product_name ?? '(deleted)') as string,
+      qty:                 r.qty as number,
+      currentSupplierId:   (r.supplier_id ?? undefined) as number | undefined,
+      suppliers,
+      recommendedSupplierId: suppliers[0]?.supplierId,
+    };
+  });
+}
+
+export async function assignSupplierToOrderItem(orderItemId: number, supplierId: number | null): Promise<void> {
+  await sql`UPDATE order_items SET supplier_id = ${supplierId} WHERE id = ${orderItemId}`;
+}
+
+export async function reconcileSupplierInvoice(fields: {
+  supplierId: number;
+  invoiceRef: string;
+  invoiceDate: string;
+  items: { orderItemId?: number | null; productId: number; qty: number; unitCost: number }[];
+}): Promise<void> {
+  const total = fields.items.reduce((s, it) => s + it.qty * it.unitCost, 0);
+  const rows = await sql`
+    INSERT INTO supplier_purchases (supplier_id, date, total, notes)
+    VALUES (${fields.supplierId}, ${fields.invoiceDate}::date, ${total}, ${fields.invoiceRef})
+    RETURNING id
+  `;
+  const purchaseId = rows[0].id as number;
+
+  for (const it of fields.items) {
+    await sql`
+      INSERT INTO supplier_purchase_items (purchase_id, product_id, qty, unit_cost)
+      VALUES (${purchaseId}, ${it.productId}, ${it.qty}, ${it.unitCost})
+    `;
+    if (it.orderItemId) {
+      await sql`
+        UPDATE order_items
+        SET unit_cost = ${it.unitCost}, unit_cost_confirmed = true, invoice_ref = ${fields.invoiceRef}
+        WHERE id = ${it.orderItemId}
+      `;
+    }
+    await sql`
+      UPDATE supplier_products
+      SET cost_price = ${it.unitCost}
+      WHERE supplier_id = ${fields.supplierId} AND product_id = ${it.productId}
+    `;
+  }
 }
 
 // ─── Sales ──────────────────────────────────────────────────────────────────

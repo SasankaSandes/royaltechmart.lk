@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { requireAdmin } from '@/lib/admin-auth';
-import { getProductById } from '@/lib/db';
+import { getProductById, getProductSuppliers, getAllSuppliers } from '@/lib/db';
 import { money, itemCode, productUrl } from '@/lib/catalog';
-import { saveProductAction } from '@/app/admin/actions';
+import { saveProductAction, setProductSupplierAction, removeProductSupplierAction } from '@/app/admin/actions';
 import AdminShell from '@/components/AdminShell';
 import SpecsEditor from '@/components/SpecsEditor';
 import { CATEGORIES } from '@/lib/catalog';
@@ -11,8 +11,15 @@ import { CATEGORIES } from '@/lib/catalog';
 export default async function EditProductPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await requireAdmin();
   const { id } = await params;
-  const product = await getProductById(Number(id));
+  const [product, productSuppliers, allSuppliers] = await Promise.all([
+    getProductById(Number(id)),
+    getProductSuppliers(Number(id)),
+    getAllSuppliers(),
+  ]);
   if (!product) redirect('/admin/products');
+
+  const linkedSupplierIds = new Set(productSuppliers.map(s => s.supplierId));
+  const unlinkedSuppliers = allSuppliers.filter(s => !linkedSupplierIds.has(s.id));
 
   return (
     <AdminShell session={session} active="/admin/products">
@@ -142,6 +149,75 @@ export default async function EditProductPage({ params }: { params: Promise<{ id
             </Link>
           </div>
         </form>
+
+        {/* Suppliers & Cost — separate section outside the main product form */}
+        <div style={{ marginTop: 20 }}>
+          <Card title="Suppliers & cost">
+            {productSuppliers.length > 0 ? (
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid #f0f0ee' }}>
+                    <th style={{ textAlign: 'left', padding: '6px 0', fontSize: 11, fontWeight: 600, color: '#888', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Supplier</th>
+                    <th style={{ textAlign: 'left', padding: '6px 0', fontSize: 11, fontWeight: 600, color: '#888', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost price</th>
+                    <th style={{ textAlign: 'left', padding: '6px 0', fontSize: 11, fontWeight: 600, color: '#888', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Supplier code</th>
+                    <th style={{ textAlign: 'left', padding: '6px 0', fontSize: 11, fontWeight: 600, color: '#888', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Last purchased</th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  {productSuppliers.map(s => (
+                    <tr key={s.supplierId} style={{ borderBottom: '1px solid #f8f8f6' }}>
+                      <td style={{ padding: '10px 0', fontWeight: 500 }}>{s.supplierName}</td>
+                      <td style={{ padding: '10px 0', fontFamily: 'var(--mono)', fontSize: 13 }}>Rs. {money(s.costPrice)}</td>
+                      <td style={{ padding: '10px 0', color: '#888', fontSize: 13 }}>{s.supplierProductCode ?? '—'}</td>
+                      <td style={{ padding: '10px 0', color: '#888', fontSize: 13 }}>
+                        {s.lastPurchaseDate ? s.lastPurchaseDate.toLocaleDateString('en-LK', { day: '2-digit', month: 'short', year: 'numeric' }) : '—'}
+                      </td>
+                      <td style={{ padding: '10px 0', textAlign: 'right' }}>
+                        <form action={removeProductSupplierAction} style={{ display: 'inline' }}>
+                          <input type="hidden" name="product_id" value={product!.id} />
+                          <input type="hidden" name="supplier_id" value={s.supplierId} />
+                          <button type="submit" style={{ background: 'none', border: 'none', color: '#d00', fontSize: 13, cursor: 'pointer', padding: '4px 8px' }}>Remove</button>
+                        </form>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p style={{ fontSize: 13, color: '#aaa', margin: 0 }}>No suppliers linked yet.</p>
+            )}
+
+            {unlinkedSuppliers.length > 0 && (
+              <form action={setProductSupplierAction} style={{ display: 'flex', gap: 10, alignItems: 'flex-end', flexWrap: 'wrap', marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0ee' }}>
+                <input type="hidden" name="product_id" value={product!.id} />
+                <div style={{ flex: '1 1 160px' }}>
+                  <label style={{ fontSize: 11, fontWeight: 600, color: '#666', display: 'block', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Supplier</label>
+                  <select name="supplier_id" required style={{ ...inp, cursor: 'pointer' }}>
+                    <option value="">Select supplier…</option>
+                    {unlinkedSuppliers.map(s => (
+                      <option key={s.id} value={s.id}>{s.name}</option>
+                    ))}
+                  </select>
+                </div>
+                <div style={{ flex: '0 1 140px' }}>
+                  <label style={{ fontSize: 11, fontWeight: 600, color: '#666', display: 'block', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost price (Rs.)</label>
+                  <input name="cost_price" type="number" required min={0} placeholder="0" style={inp} />
+                </div>
+                <div style={{ flex: '0 1 140px' }}>
+                  <label style={{ fontSize: 11, fontWeight: 600, color: '#666', display: 'block', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Supplier code</label>
+                  <input name="supplier_product_code" type="text" placeholder="Optional" style={inp} />
+                </div>
+                <button type="submit" style={{
+                  height: 44, padding: '0 20px', background: '#111110', color: '#fff',
+                  border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: 'pointer',
+                }}>
+                  Add supplier
+                </button>
+              </form>
+            )}
+          </Card>
+        </div>
       </div>
     </AdminShell>
   );

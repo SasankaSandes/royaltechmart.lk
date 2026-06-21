@@ -105,7 +105,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ re
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #f0f0ee' }}>
-                {['Code', 'Product', 'Qty', 'Unit', 'Total'].map((h, i) => (
+                {['Code', 'Product', 'Qty', 'Unit', 'Cost', 'Total'].map((h, i) => (
                   <th key={h} style={{ padding: '0 0 10px', textAlign: i >= 2 ? 'right' : 'left', fontSize: 11, fontWeight: 600, color: '#888', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{h}</th>
                 ))}
               </tr>
@@ -117,13 +117,30 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ re
                   <td style={{ padding: '12px 0', fontSize: 14, color: '#111110', fontWeight: 500 }}>{it.name}</td>
                   <td style={{ padding: '12px 0', fontSize: 14, color: '#555', textAlign: 'right' }}>{it.qty}</td>
                   <td style={{ padding: '12px 0', fontSize: 14, color: '#555', textAlign: 'right' }}>{money(it.unitPrice)}</td>
+                  <td style={{ padding: '12px 0', textAlign: 'right' }}>
+                    {it.unitCost != null ? (
+                      <div>
+                        <span style={{ fontSize: 13, color: '#555' }}>{money(it.unitCost)}</span>
+                        {it.unitCostConfirmed ? (
+                          <span style={{ marginLeft: 5, fontSize: 11, color: '#16a34a', fontWeight: 700 }}>✓</span>
+                        ) : (
+                          <span style={{ marginLeft: 4, fontSize: 11, color: '#aaa' }}>~est</span>
+                        )}
+                        {it.invoiceRef && (
+                          <div style={{ fontSize: 11, color: '#bbb', fontFamily: 'var(--mono)' }}>{it.invoiceRef}</div>
+                        )}
+                      </div>
+                    ) : (
+                      <span style={{ color: '#ddd' }}>—</span>
+                    )}
+                  </td>
                   <td style={{ padding: '12px 0', fontSize: 14, fontWeight: 600, color: '#111110', textAlign: 'right' }}>{money(it.qty * it.unitPrice)}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
               <tr>
-                <td colSpan={4} style={{ padding: '14px 0 0', textAlign: 'right', fontSize: 14, color: '#888' }}>Total</td>
+                <td colSpan={5} style={{ padding: '14px 0 0', textAlign: 'right', fontSize: 14, color: '#888' }}>Total</td>
                 <td style={{ padding: '14px 0 0', textAlign: 'right', fontSize: 20, fontWeight: 700, fontFamily: 'var(--font-head)', color: '#111110' }}>{money(order.total)}</td>
               </tr>
             </tfoot>

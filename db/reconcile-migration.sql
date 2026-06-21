@@ -1,0 +1,2 @@
+ALTER TABLE order_items ADD COLUMN IF NOT EXISTS unit_cost_confirmed BOOLEAN DEFAULT FALSE;
+ALTER TABLE order_items ADD COLUMN IF NOT EXISTS invoice_ref TEXT;
