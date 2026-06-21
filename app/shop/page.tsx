@@ -2,11 +2,12 @@
 import { CATEGORIES } from '@/lib/catalog';
 import { getAllProducts } from '@/lib/db';
 import HeaderWrapper from '@/components/HeaderWrapper';
+import Footer from '@/components/Footer';
 import ShopClient from './ShopClient';
 
 export const revalidate = 3600;
 
 export default async function ShopPage() {
   const products = await getAllProducts();
-  return <ShopClient products={products} categories={CATEGORIES} header={<HeaderWrapper />} />;
+  return <ShopClient products={products} categories={CATEGORIES} header={<HeaderWrapper />} footer={<Footer />} />;
 }

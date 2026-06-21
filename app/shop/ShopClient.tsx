@@ -2,7 +2,6 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import { Pill } from '@/components/ui/Pill';
 import { SearchField } from '@/components/ui/SearchField';
@@ -38,7 +37,7 @@ function sortProducts(products: Product[], sort: SortKey): Product[] {
   }
 }
 
-function ShopContent({ products, categories, header }: { products: Product[]; categories: CategoryInfo[]; header: React.ReactNode }) {
+function ShopContent({ products, categories, header, footer }: { products: Product[]; categories: CategoryInfo[]; header: React.ReactNode; footer: React.ReactNode }) {
   const params = useSearchParams();
   const router = useRouter();
 
@@ -123,15 +122,15 @@ function ShopContent({ products, categories, header }: { products: Product[]; ca
           </div>
         </section>
       </main>
-      <Footer />
+      {footer}
     </>
   );
 }
 
-export default function ShopClient({ products, categories, header }: { products: Product[]; categories: CategoryInfo[]; header: React.ReactNode }) {
+export default function ShopClient({ products, categories, header, footer }: { products: Product[]; categories: CategoryInfo[]; header: React.ReactNode; footer: React.ReactNode }) {
   return (
     <Suspense>
-      <ShopContent products={products} categories={categories} header={header} />
+      <ShopContent products={products} categories={categories} header={header} footer={footer} />
     </Suspense>
   );
 }
